@@ -1,0 +1,17 @@
+@import "cursor.scss";
+@import "btn-links.scss";
+
+html, body {
+  min-height: 100vh;
+
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+*:focus {
+  box-shadow: none  !important;
+}
+
