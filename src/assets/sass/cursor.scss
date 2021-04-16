@@ -30,3 +30,12 @@ html,
 body {
   // cursor: none;
 }
+
+@media only screen and (hover: none) and (pointer: coarse){
+
+  /* Regular CSS rules here*/
+  .cursor {
+    display: none;
+  }
+  
+  }

@@ -1,10 +1,14 @@
 @import "cursor.scss";
 @import "btn-links.scss";
+@import "highlight.scss";
+@import "font.scss";
 
 html, body {
   min-height: 100vh;
 
 }
+
+
 
 
 html {
@@ -15,3 +19,13 @@ html {
   box-shadow: none  !important;
 }
 
+::selection {
+  // background: #A3BCCF,//#ffb7b7; /* WebKit/Blink Browsers */
+  mix-blend-mode: 'exclusion';
+  background-color: currentcolor;
+}
+::-moz-selection {
+  mix-blend-mode: 'exclusion';
+  background-color: currentcolor;
+  // background: #A3BCCF,//#ffb7b7; /* Gecko Browsers */
+}

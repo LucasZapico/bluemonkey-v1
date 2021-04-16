@@ -1,5 +1,5 @@
 export { default as Layout } from './layout.js';
-export { default as ScrollAnimation } from './scroll-animation.js';
+export { ScrollAniFadeIn, ScrollAniMonkey } from './scroll-animation.js';
 export { default as SEO } from './seo';
 export { default as Header } from './header';
 export { default as Banner } from './banner';

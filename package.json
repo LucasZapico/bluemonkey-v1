@@ -1,8 +1,8 @@
 {
-  "name": "clairemorency-hypnotherapy",
+  "name": "bluemonkey",
   "version": "1.0.0",
   "private": true,
-  "description": "clairemorency-hypnotherapy",
+  "description": "blue monkey digital presence design and development",
   "author": "Lucas Zapico",
   "keywords": [
     "gatsby"
@@ -22,7 +22,7 @@
     "axios": "^0.21.1",
     "classnames": "^2.3.1",
     "framer-motion": "^4.0.3",
-    "gatsby": "^3.1.2",
+    "gatsby": "^3.2.1",
     "gatsby-image": "^3.1.0",
     "gatsby-plugin-chakra-ui": "^0.1.5",
     "gatsby-plugin-google-analytics": "^3.1.0",
