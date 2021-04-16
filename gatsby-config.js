@@ -3,10 +3,10 @@ module.exports = {
     title: 'Blue Monkey Business Savy Web Design and Development',
     titleTemplate: '%s · Blue Monkey Web Design and Development',
     description:
-      'Premium branding, design, development and business integration for small business and brands',
+      'Premium frugal branding, design, development and business integration for small business and brands',
     author: '@bluemonkey',
-    siteUrl: 'http://bluemonkey.com',
-    baseUrl: 'bluemonkey.com',
+    siteUrl: 'http://bluemonkeymakes.com',
+    baseUrl: 'bluemonkeymakes.com',
     image: '/opengraph-gen.png',
     twitterUsername: '@bluemonkey',
     phone: '111.111.1111',
@@ -27,8 +27,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'http://clairemorencyhypnotherapy.com',
-        sitemap: 'http://clairemorencyhypnotherapy.com/sitemap.xml',
+        host: 'http://bluemonkeymakes.com',
+        sitemap: 'http://bluemonkeymakes.com/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
@@ -37,7 +37,7 @@ module.exports = {
       options: {
         height: 5,
         prependToBody: false,
-        color: '#1E212D',
+        color: '#FAF3E0',
         footerHeight: 500,
         headerHeight: 0,
       },
