@@ -37,7 +37,7 @@ const Hero = ({ data }) => (
   >
     <Container maxW="container.xl" position="relative">
       <Box position="absolute" width="130vw">
-        <Heading
+        {/* <Heading
           as="h3"
           marginTop="-5%"
           marginLeft="-5%"
@@ -50,7 +50,7 @@ const Hero = ({ data }) => (
           }}
         >
           Plan | Design | Develope | Optimize | Iterate
-        </Heading>
+        </Heading> */}
       </Box>
 
       <Box
@@ -183,19 +183,20 @@ const SectionOne = ({ data }) => (
         backgroundColor="brand.five"
         p={{ base: 0, sm: 10 }}
         height="auto"
-        flexBasis={{ base: '100%', md: '100%', lg: '40%' }}
+        flexBasis={{ base: '100%', md: '100%', lg: '50%', xl: '40%' }}
         pb={20}
       >
-        <Container maxWidth="container.xl">
+        <Container maxWidth="container.xl" centerContent="true">
           <ScrollAniFadeIn>
             <Box mb={10} mr={10}>
               <Heading
                 as="h3"
                 fontSize={{
                   base: '90',
-                  sm: '110',
-                  md: '130',
-                  lg: '165',
+                  sm: '90',
+                  md: '100',
+                  lg: '80',
+                  xl: '110',
                 }}
                 fontFamily="montas-semibold"
                 lineHeight="base"
@@ -212,52 +213,58 @@ const SectionOne = ({ data }) => (
           </ScrollAniFadeIn>
         </Container>
       </Box>
-      <Box pb={20} flexBasis={{ base: '100%', md: '100%', lg: '60%' }}>
-        <ScrollAniFadeIn>
-          <Heading
-            p={{ base: 0, md: 20 }}
-            size="3xl"
-            m="auto"
-            lineHeight="base"
-            maxWidth="700px"
-          >
-            <Box
-              position="absolute"
-              right="-10%"
-              bottom="0"
-              transform="scaleX(1)"
+      <Box
+        pb={20}
+        flexBasis={{ base: '100%', md: '100%', lg: '50%', xl: '60%' }}
+      >
+        <Container maxW="container.xl">
+          <ScrollAniFadeIn>
+            <Heading
+              py={{ base: 0, md: 20 }}
+              px={{ base: 0, md: 10, lg: 10, xl: 20 }}
+              size="3xl"
+              m="auto"
+              lineHeight="base"
+              maxWidth="700px"
             >
-              {/* <MonkeyThree /> */}
-            </Box>
-            We are a one stop shop for frugal and competitive:
-          </Heading>
-          <Container maxWidth="container.xl" maxWidth="700px">
-            <Box mb={6}>
-              <LinkThree href="/services/#branding">
-                Branding
-                <ArrowForwardIcon />
-              </LinkThree>
-            </Box>
-            <Box mb={6}>
-              <LinkThree href="/services/#design">
-                Design
-                <ArrowForwardIcon />
-              </LinkThree>
-            </Box>
-            <Box mb={6}>
-              <LinkThree href="/services/#development">
-                Development
-                <ArrowForwardIcon />
-              </LinkThree>
-            </Box>
-            <Box mb={6}>
-              <LinkThree href="/services/#seo-and-business-integrations">
-                SEO and Business Integrations
-                <ArrowForwardIcon />
-              </LinkThree>
-            </Box>
-          </Container>
-        </ScrollAniFadeIn>
+              <Box
+                position="absolute"
+                right="-10%"
+                bottom="0"
+                transform="scaleX(1)"
+              >
+                {/* <MonkeyThree /> */}
+              </Box>
+              We are a one stop shop for frugal and competitive:
+            </Heading>
+            <Container maxWidth="container.xl" maxWidth="700px">
+              <Box mb={6}>
+                <LinkThree to="/services/#branding">
+                  Branding
+                  <ArrowForwardIcon />
+                </LinkThree>
+              </Box>
+              <Box mb={6}>
+                <LinkThree to="/services/#design">
+                  Design
+                  <ArrowForwardIcon />
+                </LinkThree>
+              </Box>
+              <Box mb={6}>
+                <LinkThree to="/services/#development">
+                  Development
+                  <ArrowForwardIcon />
+                </LinkThree>
+              </Box>
+              <Box mb={6}>
+                <LinkThree to="/services/#seo-and-business-integrations">
+                  SEO and Business Integrations
+                  <ArrowForwardIcon />
+                </LinkThree>
+              </Box>
+            </Container>
+          </ScrollAniFadeIn>
+        </Container>
       </Box>
     </Flex>
   </Box>
