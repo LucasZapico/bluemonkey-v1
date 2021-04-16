@@ -21,14 +21,13 @@ export const ScrollAniFadeIn = ({ children, props }) => {
 
     const onScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight;
-      console.log('load scroll post', scrollPosition);
+
       if (itemPostion < scrollPosition - 100) {
         setShow((prev) => true);
       }
     };
     const onLoad = () => {
       const scrollPosition = window.scrollY + window.innerHeight;
-      console.log('load scroll post', scrollPosition);
     };
     window.addEventListener('load', onLoad);
 
@@ -58,8 +57,7 @@ export const ScrollAniMonkey = ({ children, props, inOn = 0, outOn = 0 }) => {
     const topPosition = (item) => item.getBoundingClientRect().top;
     const itemPosition = topPosition(ourRef.current);
     const offset = window.pageYOffset - itemPosition;
-    console.log('offset', offset);
-    console.log('on out', offset > outOn, show);
+
     const scrollPosition = window.scrollY + window.innerHeight;
     if (offset > inOn && offset < outOn) {
       setShow((prev) => true);
@@ -74,7 +72,6 @@ export const ScrollAniMonkey = ({ children, props, inOn = 0, outOn = 0 }) => {
     const scrollPositionInit = window.scrollY + window.innerHeight;
     const onLoad = () => {
       const scrollPosition = window.scrollY + window.innerHeight;
-      console.log('load scroll post', scrollPosition);
     };
     window.addEventListener('load', onLoad);
   }, []);
