@@ -61,8 +61,9 @@ const SEO = ({ title, description, image, article }) => {
       <meta property="og:image:width" content="400" />
       <meta property="og:image:width" content="50" />
       <link rel="preconnect" href="https://fonts.gstatic.com" />
+
       <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&family=Open+Sans&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Noto+Sans+JP&display=swap"
         rel="stylesheet"
       />
     </Helmet>
