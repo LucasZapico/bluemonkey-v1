@@ -14,6 +14,15 @@ const Layout = ({ children }) => {
         <Box background="brand.two">{children}</Box>
         {/* <Banner /> */}
       </Box>
+
+      <script
+        type="text/javascript"
+        id="hs-script-loader"
+        async
+        defer
+        src="//js-na1.hs-scripts.com/19886034.js"
+      ></script>
+
       <Footer />
     </>
   );
