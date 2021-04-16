@@ -30,8 +30,8 @@ const Footer = ({ title, description }) => {
   };
   return (
     <>
-      <Box bg="brand.two" color="">
-        <Box height="400px" p={6}>
+      <Box bg="brand.five" color="brand.one">
+        <Box height="500px" p={6} py={10}>
           <Flex minHeight="100%" flexDirection="column">
             <Box flexGrow="1">
               <Flex alignItems="center" mb={4}>
@@ -43,31 +43,20 @@ const Footer = ({ title, description }) => {
                   fill="white"
                   bg="white"
                 /> */}
-                <Heading as="h6" size="md" fontFamily="alice" />
+                <Heading as="h6" size="md" color="brand.one" />
               </Flex>
-              <Heading as="h4" size="sm" mb={3}>
+              <Heading as="h4" size="sm" mb={3} color="brand.one">
                 Connect@
                 {baseUrl}
               </Heading>
 
-              <Heading
-                as="h4"
-                size="sm"
-                mb={3}
-                onClick={() => setConnect('address')}
-                onKeyDown={() => setConnect('address')}
-              >
-                Earth
+              <Heading as="h4" size="sm" mb={3} color="brand.one">
+                We are fully remote on Earth
               </Heading>
-              <Heading as="h4" size="sm" mb={3} />
-              <Heading
-                as="h4"
-                size="sm"
-                onClick={() => setConnect('phone')}
-                onKeyDown={() => setConnect('phone')}
-              >
+              <Heading as="h4" size="sm" mb={3} color="brand.one" />
+              {/* <Heading as="h4" size="sm" color="brand.one">
                 {phone}
-              </Heading>
+              </Heading> */}
             </Box>
             <Box pb={4}>
               <Text>Last updated: {moment(Date()).format('l')}</Text>
