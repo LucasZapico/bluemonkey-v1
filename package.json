@@ -47,6 +47,7 @@
     "react-helmet": "^6.1.0",
     "react-hook-form": "^6.15.5",
     "react-spring": "^9.0.0",
+    "react-use-clipboard": "^1.0.7",
     "sass": "^1.32.8"
   },
   "devDependencies": {
