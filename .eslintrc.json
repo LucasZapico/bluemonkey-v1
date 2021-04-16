@@ -22,6 +22,7 @@
         "react/jsx-filename-extension": "off",
         "arrow-body-style": "off",
         "react/prop-types": "off",
-        "no-else-return": "off"
+        "no-else-return": "off",
+        "prefer-default-export": "off",
     }
 }
