@@ -24,7 +24,7 @@ export const LinkOne = (props) => {
   return (
     <Box {...props} fontWeight="bold" color="brand.four">
       {href !== '' ? (
-        <a href={href}>{children}</a>
+        <ChLink href={href}>{children}</ChLink>
       ) : (
         <Link to={to}>
           {children}
@@ -41,7 +41,7 @@ export const LinkTwo = (props) => {
   return (
     <Box fontWeight="bold" color="brand.four">
       {href !== '' ? (
-        <a href={href}>{children}</a>
+        <ChLink href={href}>{children}</ChLink>
       ) : (
         <Link to={to}>{children}</Link>
       )}
@@ -49,16 +49,29 @@ export const LinkTwo = (props) => {
   );
 };
 
-export const LinkThree = ({ href, children }) => {
+export const LinkThree = ({ href = '', children, to = '' }) => {
   return (
-    <Link href={href} className="box-btn">
-      <span className="wall back">
-        <span className="supports top" />
-        <span className="supports bottom" />
-      </span>
-      <span className="wall front" />
-      <span className="text">{children}</span>
-    </Link>
+    <>
+      {href !== '' ? (
+        <ChLink href={href} className="box-btn">
+          <span className="wall back">
+            <span className="supports top" />
+            <span className="supports bottom" />
+          </span>
+          <span className="wall front" />
+          <span className="text">{children}</span>
+        </ChLink>
+      ) : (
+        <Link to={to} className="box-btn">
+          <span className="wall back">
+            <span className="supports top" />
+            <span className="supports bottom" />
+          </span>
+          <span className="wall front" />
+          <span className="text">{children}</span>
+        </Link>
+      )}
+    </>
   );
 };
 
@@ -66,9 +79,13 @@ export const LinkPhone = (props) => {
   const { children } = props;
   const formatedPhone = formatePhone(children);
   const formatedPhoneBot = formatePhoneBot(children);
-  const [isCopied, setCopied] = useClipboard(formatedPhone, {
+  const [isCopied, setCopied] = useClipboard(children, {
     successDuration: 1000,
   });
+  console.log(`phone, 
+  formatedphone: ${formatedPhone}
+  formatedphonebot: ${formatedPhoneBot}
+    `);
   const toast = useToast();
 
   return (
@@ -79,10 +96,10 @@ export const LinkPhone = (props) => {
       justifyContent="space-between"
       minWidth="180px"
     >
-      <Link fontWeight="semibold" mr={4} href={`tel:+1${formatedPhoneBot}`}>
+      <ChLink fontWeight="semibold" mr={4} href={`tel:+1${formatedPhoneBot}`}>
         <PhoneIcon mr={4} />
         {formatedPhone}
-      </Link>
+      </ChLink>
       <Tooltip
         label={isCopied ? 'Copied' : 'copy to clipboard'}
         aria-label="copy to clipboard"
@@ -92,19 +109,17 @@ export const LinkPhone = (props) => {
           variant="none"
           aria-label="copy to clipboard"
           icon={<CopyIcon opacity="0.5" />}
-          onClick={
-            (setCopied,
-            () => {
-              return toast({
-                title: 'Copied to Clipboard',
-                description: `${formatedPhone} copied to clipboard`,
-                status: 'info',
-                variant: 'top-accent',
-                duration: 1000,
-                isClosable: true,
-              });
-            })
-          }
+          onClick={() => {
+            setCopied();
+            return toast({
+              title: 'Copied to Clipboard',
+              description: `${children} copied to clipboard`,
+              status: 'info',
+              variant: 'top-accent',
+              duration: 2000,
+              isClosable: true,
+            });
+          }}
         />
       </Tooltip>
     </Flex>
@@ -126,10 +141,10 @@ export const LinkEmail = (props) => {
       justifyContent="space-between"
       minWidth="180px"
     >
-      <Link fontWeight="semibold" mr={4} href={`mailto:${children}`}>
+      <ChLink fontWeight="semibold" mr={4} href={`mailto:${children}`}>
         <EmailIcon mr={4} />
         {children}
-      </Link>
+      </ChLink>
       <Tooltip
         label={isCopied ? 'Copied' : 'copy to clipboard'}
         aria-label="copy to clipboard"
@@ -139,19 +154,17 @@ export const LinkEmail = (props) => {
           variant="none"
           aria-label="copy to clipboard"
           icon={<CopyIcon opacity="0.5" />}
-          onClick={
-            (setCopied,
-            () => {
-              return toast({
-                title: 'Copied to Clipboard',
-                description: `${children} copied to clipboard`,
-                status: 'info',
-                variant: 'top-accent',
-                duration: 2000,
-                isClosable: true,
-              });
-            })
-          }
+          onClick={() => {
+            setCopied();
+            return toast({
+              title: 'Copied to Clipboard',
+              description: `${children} copied to clipboard`,
+              status: 'info',
+              variant: 'top-accent',
+              duration: 2000,
+              isClosable: true,
+            });
+          }}
         />
       </Tooltip>
     </Flex>

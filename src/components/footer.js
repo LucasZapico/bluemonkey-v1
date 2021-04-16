@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import React, { useState } from 'react';
 import Link from 'gatsby-plugin-transition-link/AniLink';
 import moment from 'moment';
+import { LinkPhone, LinkEmail } from './index';
 // import Logo from '../assets/ccg-mark.svg';
 
 const Footer = ({ title, description }) => {
@@ -46,10 +47,9 @@ const Footer = ({ title, description }) => {
                 <Heading as="h6" size="md" color="brand.one" />
               </Flex>
               <Heading as="h4" size="sm" mb={3} color="brand.one">
-                Connect@
-                {baseUrl}
+                <LinkEmail>{`Connect@${baseUrl}`}</LinkEmail>
               </Heading>
-
+              <LinkPhone>111.111.111</LinkPhone>
               <Heading as="h4" size="sm" mb={3} color="brand.one">
                 We are fully remote on Earth
               </Heading>
