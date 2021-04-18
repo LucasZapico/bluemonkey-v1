@@ -29,3 +29,48 @@ html {
   background-color: currentcolor;
   // background: #A3BCCF,//#ffb7b7; /* Gecko Browsers */
 }
+
+// hover clip mask 
+
+.clip-show-effect {
+  
+    div {
+      transition: ease-in-out 0.4s;
+		clip-path: circle(0px at center);
+	
+    }
+    &:hover {
+      div {
+        clip-path: circle(250px at center);
+      }
+    }
+	}
+	
+// bounce text 
+
+.movy-text {
+  animation: movyText 15s ease-in-out infinite alternate;
+}
+
+@keyframes movyText {
+  from {
+    opacity: 0.5;
+    transform: translateY(0%) translateX(0%);
+  }
+  25% {
+    opacity: 1;
+  transform: translateY(400%) translateX(60%);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(200%) translateX(-20%);
+  }
+  75% {
+    opacity: 1;
+    transform: translateY(240%) translateX(40%);
+  }
+	to {
+    opacity: 1;
+		transform: translateY(100%) translateX(10%);
+	}
+}

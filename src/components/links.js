@@ -76,7 +76,7 @@ export const LinkThree = ({ href = '', children, to = '' }) => {
 };
 
 export const LinkPhone = (props) => {
-  const { children } = props;
+  const { children, color } = props;
   const formatedPhone = formatePhone(children);
   const formatedPhoneBot = formatePhoneBot(children);
   const [isCopied, setCopied] = useClipboard(children, {
@@ -96,7 +96,12 @@ export const LinkPhone = (props) => {
       justifyContent="space-between"
       minWidth="180px"
     >
-      <ChLink fontWeight="semibold" mr={4} href={`tel:+1${formatedPhoneBot}`}>
+      <ChLink
+        color={color}
+        fontWeight="semibold"
+        mr={4}
+        href={`tel:+1${formatedPhoneBot}`}
+      >
         <PhoneIcon mr={4} />
         {formatedPhone}
       </ChLink>
@@ -127,7 +132,8 @@ export const LinkPhone = (props) => {
 };
 
 export const LinkEmail = (props) => {
-  const { children } = props;
+  const { children, color } = props;
+
   const [isCopied, setCopied] = useClipboard(children, {
     successDuration: 1000,
   });
@@ -141,7 +147,12 @@ export const LinkEmail = (props) => {
       justifyContent="space-between"
       minWidth="180px"
     >
-      <ChLink fontWeight="semibold" mr={4} href={`mailto:${children}`}>
+      <ChLink
+        color={color}
+        fontWeight="semibold"
+        mr={4}
+        href={`mailto:${children}`}
+      >
         <EmailIcon mr={4} />
         {children}
       </ChLink>

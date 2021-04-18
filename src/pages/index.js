@@ -188,7 +188,7 @@ const SectionOne = ({ data }) => (
       >
         <Container maxWidth="container.xl" centerContent="true">
           <ScrollAniFadeIn>
-            <Box mb={10} mr={10}>
+            <Box mb={10} mr={10} position="relative">
               <Heading
                 as="h3"
                 fontSize={{
@@ -209,6 +209,45 @@ const SectionOne = ({ data }) => (
               {/* <Heading color="brand.one">
                 We do it all so you don't have&nbsp;to.
               </Heading> */}
+              <Box height="500px" position="relative">
+                <Heading
+                  as="h3"
+                  fontSize="lg"
+                  lineHeight="base"
+                  zIndex="1"
+                  color="brand.one"
+                  pb={10}
+                  className="movy-text"
+                >
+                  Hover Around Here
+                </Heading>
+                <Box
+                  position="absolute"
+                  top="20%"
+                  left="20%"
+                  width="100%"
+                  height="auto"
+                  className="clip-show-effect"
+                >
+                  <Img
+                    fit="cover"
+                    fluid={data.showcaseBrandImage.childImageSharp.fluid}
+                  />
+                </Box>
+                <Box
+                  left="-10%"
+                  top="60%"
+                  width="100%"
+                  position="absolute"
+                  height="auto"
+                  className="clip-show-effect"
+                >
+                  <Img
+                    fit="cover"
+                    fluid={data.showcaseDesignImage.childImageSharp.fluid}
+                  />
+                </Box>
+              </Box>
             </Box>
           </ScrollAniFadeIn>
         </Container>
@@ -477,6 +516,24 @@ export const query = graphql`
     bgImage: file(relativePath: { eq: "clouds-bg.png" }) {
       childImageSharp {
         fluid(maxWidth: 1400) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    showcaseBrandImage: file(
+      relativePath: { eq: "showcase/brand/brand-showcase-luv-coffee.png" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 1020) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    showcaseDesignImage: file(
+      relativePath: { eq: "showcase/design/web-ui-yoga-of-words.png" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 1020) {
           ...GatsbyImageSharpFluid
         }
       }

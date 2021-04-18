@@ -81,10 +81,6 @@ export const ScrollAniMonkey = ({ children, props, inOn = 0, outOn = 0 }) => {
   });
   return (
     <a.div style={action} ref={ourRef}>
-      {/* <div
-        className="test"
-        style={{ width: '100%', height: '2px', backgroundColor: 'red' }}
-      /> */}
       {children}
     </a.div>
   );

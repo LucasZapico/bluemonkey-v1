@@ -46,10 +46,10 @@ const Footer = ({ title, description }) => {
                 /> */}
                 <Heading as="h6" size="md" color="brand.one" />
               </Flex>
-              <Heading as="h4" size="sm" mb={3} color="brand.one">
-                <LinkEmail>{`Connect@${baseUrl}`}</LinkEmail>
+              <Heading as="h4" size="sm" mb={3}>
+                <LinkEmail color="brand.one">{`Connect@${baseUrl}`}</LinkEmail>
               </Heading>
-              <LinkPhone>111.111.111</LinkPhone>
+              <LinkPhone color="brand.one">{phone}</LinkPhone>
               <Heading as="h4" size="sm" mb={3} color="brand.one">
                 We are fully remote on Earth
               </Heading>
