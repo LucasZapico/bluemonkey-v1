@@ -17,7 +17,12 @@ import {
 import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { ArrowForwardIcon } from '@chakra-ui/icons';
-import { Layout, ScrollAnimation, LinkThree } from '../components/index';
+import {
+  Layout,
+  ScrollAnimation,
+  LinkThree,
+  SliderOne,
+} from '../components/index';
 
 // const servicesCopy = [{ Branding: [] }];
 
@@ -115,7 +120,14 @@ const services = ({ data }) => {
                   </UnorderedList>
                 </Box>
               </Box>
-              {/* <Carousel images={data.brandShowcaseImage.edges}></Carousel> */}
+              <Box
+                pr={{ base: 0, md: 6 }}
+                flexGrow="1"
+                flexBasis={{ base: '100%', md: '50%' }}
+                width={{ base: '100%', md: '50%' }}
+              >
+                <SliderOne slides={data.brandShowcaseImage.edges} />
+              </Box>
             </Flex>
           </Box>
           <Box minHeight="400px" height="auto">
@@ -132,12 +144,6 @@ const services = ({ data }) => {
                 <Text lineHeight="base" fontSize="xl">
                   Market competitiveness through unique brand differentiation
                 </Text>
-              </Box>
-              <Box
-                pl={{ base: 0, md: 6 }}
-                flexGrow="1"
-                flexBasis={{ base: '100%', md: '50%' }}
-              >
                 <UnorderedList>
                   <ListItem>Custom content driven design</ListItem>
                   <ListItem>
@@ -149,8 +155,16 @@ const services = ({ data }) => {
                   </ListItem>
                 </UnorderedList>
               </Box>
+
+              <Box
+                pr={{ base: 0, md: 6 }}
+                flexGrow="1"
+                flexBasis={{ base: '100%', md: '50%' }}
+                width={{ base: '100%', md: '50%' }}
+              >
+                <SliderOne slides={data.designShowcaseImage.edges} />
+              </Box>
             </Flex>
-            <Text lineHeight="base" fontSize="xl" />
           </Box>
           <Box minHeight="400px" height="auto">
             <Heading as="h3" lineHeight="base" size="2xl" mb={6} pt={28}>
@@ -166,12 +180,6 @@ const services = ({ data }) => {
                 <Text lineHeight="base" fontSize="xl">
                   Market competitiveness through unique brand differentiation
                 </Text>
-              </Box>
-              <Box
-                pl={{ base: 0, md: 6 }}
-                flexGrow="1"
-                flexBasis={{ base: '100%', md: '50%' }}
-              >
                 <UnorderedList>
                   <ListItem>Custom content driven design</ListItem>
                   <ListItem>
@@ -223,7 +231,6 @@ const services = ({ data }) => {
                 </UnorderedList>
               </Box>
             </Flex>
-            <Text lineHeight="base" fontSize="xl" />
           </Box>
         </Container>
       </Box>
