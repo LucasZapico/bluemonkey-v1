@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Img from 'gatsby-image';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import { useSpring, animated as a } from 'react-spring';
-import { Box, Flex, Heading } from '@chakra-ui/react';
+import { Box, Flex, Heading, Button } from '@chakra-ui/react';
 import { ArrowRightIcon, ArrowLeftIcon } from '@chakra-ui/icons';
 
 const SliderOne = ({ slides }) => {
@@ -116,14 +116,25 @@ const SliderOne = ({ slides }) => {
           <Heading
             as="h6"
             opacity=".6"
-            size="3xl"
+            fontSize="120px"
+            top="-240%"
+            left="0px"
             fontFamily="montas-semibold"
             position="absolute"
           >
             {current}
           </Heading>
-          <ArrowLeftIcon w={6} h={6} ml={6} onClick={() => handleBack()} />
-          <ArrowRightIcon w={6} h={6} ml={6} onClick={() => handleForward()} />
+          <Button variant="none">
+            <ArrowLeftIcon w={6} h={6} ml={6} onClick={() => handleBack()} />
+          </Button>
+          <Button variant="none">
+            <ArrowRightIcon
+              w={6}
+              h={6}
+              ml={6}
+              onClick={() => handleForward()}
+            />
+          </Button>
         </Flex>
       ) : (
         <div />
