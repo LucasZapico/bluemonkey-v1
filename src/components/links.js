@@ -37,9 +37,16 @@ export const LinkOne = (props) => {
 };
 
 export const LinkTwo = (props) => {
-  const { children, to = '', href = '', icon } = props;
+  const { children, to = '', href = '', icon, type = 'light' } = props;
   return (
-    <Box fontWeight="bold" color="brand.four">
+    <Box
+      {...props}
+      color={type == 'light' ? 'brand.one' : 'brand.five'}
+      border="2px"
+      borderColor={type == 'light' ? 'brand.one' : 'brand.five'}
+      py={4}
+      px={4}
+    >
       {href !== '' ? (
         <ChLink href={href}>{children}</ChLink>
       ) : (
@@ -49,11 +56,11 @@ export const LinkTwo = (props) => {
   );
 };
 
-export const LinkThree = ({ href = '', children, to = '' }) => {
+export const LinkThree = ({ href = '', children, to = '', type = 'dark' }) => {
   return (
     <>
       {href !== '' ? (
-        <ChLink href={href} className="box-btn">
+        <ChLink href={href} className={`box-btn ${type}`}>
           <span className="wall back">
             <span className="supports top" />
             <span className="supports bottom" />
@@ -62,7 +69,7 @@ export const LinkThree = ({ href = '', children, to = '' }) => {
           <span className="text">{children}</span>
         </ChLink>
       ) : (
-        <Link to={to} className="box-btn">
+        <Link to={to} className={`box-btn ${type}`}>
           <span className="wall back">
             <span className="supports top" />
             <span className="supports bottom" />

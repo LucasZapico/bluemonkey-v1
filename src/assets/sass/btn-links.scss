@@ -1,4 +1,90 @@
-.box-btn {
+.light.box-btn {
+	margin: 20px;
+	padding: 20px 50px;
+	padding: 31px 44px 19px 56px;
+	text-decoration: none;
+	color: #faf8f2;
+	display: block;
+	position: relative;
+	transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+	font-family: nimbus-sans-extended, sans-serif;
+	font-size: 22px;
+	text-transform: uppercase;
+	.text {
+		position: relative;
+		display: block;
+		transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+	}
+	.wall {
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		box-sizing: border-box;
+		border: 2px solid #faf8f2;
+		transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+	}
+	.wall.front {
+		top: 6px;
+		left: 6px;
+	}
+	.wall.back {
+		top: -6px;
+		left: -6px;
+		background-color: #1E212D;
+	}
+	.supports.bottom {
+		&::after {
+			top: calc(100% + 1px);
+		}
+		&::before {
+			top: calc(100% + 1px);
+		}
+	}
+	.supports {
+		&::before {
+			left: -2px;
+			content: "";
+			height: 17px;
+			width: 2px;
+			background: #faf8f2;
+			position: absolute;
+			transform-origin: top center;
+			transform: rotate(-45deg);
+			transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+			left: -2px;
+		}
+		&::after {
+			content: "";
+			height: 17px;
+			width: 2px;
+			background: #faf8f2;
+			position: absolute;
+			transform-origin: top center;
+			transform: rotate(-45deg);
+			transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+			right: -2px;
+		}
+	}
+	&:hover {
+		.supports {
+			&::after {
+				height: 10px;
+			}
+			&::before {
+				height: 10px;
+			}
+		}
+		.text {
+			transform: translate(-5px, -5px);
+		}
+		.wall.front {
+			transform: translate(-5px, -5px);
+		}
+	}
+}
+
+.dark.box-btn {
 	margin: 20px;
 	padding: 20px 50px;
 	padding: 31px 44px 19px 56px;
@@ -10,68 +96,76 @@
 	font-family: nimbus-sans-extended, sans-serif;
 	font-size: 22px;
 	text-transform: uppercase;
-}
-
-.box-btn .text {
-	position: relative;
-	display: block;
-	transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-}
-
-.box-btn .wall {
-	display: block;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	box-sizing: border-box;
-	border: 2px solid #2d2a26;
-	transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-}
-
-.box-btn .wall.front {
-	top: 6px;
-	left: 6px;
-}
-
-.box-btn .wall.back {
-	top: -6px;
-	left: -6px;
-	background-color: #fff9f3;
-}
-
-.box-btn .supports.bottom::after,
-.box-btn .supports.bottom::before {
-	top: calc(100% + 1px);
-}
-.box-btn .supports::before {
-	left: -2px;
-}
-.box-btn .supports::after,
-.box-btn .supports::before {
-	content: "";
-	height: 17px;
-	width: 2px;
-	background: #2d2a26;
-	position: absolute;
-	transform-origin: top center;
-	transform: rotate(-45deg);
-	transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-}
-
-.box-btn .supports::before {
-	left: -2px;
-}
-
-.box-btn .supports::after {
-	right: -2px;
-}
-
-.box-btn:hover .supports::after,
-.box-btn:hover .supports::before {
-	height: 10px;
-}
-
-.box-btn:hover .text,
-.box-btn:hover .wall.front {
-	transform: translate(-5px, -5px);
+	.text {
+		position: relative;
+		display: block;
+		transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+	}
+	.wall {
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		box-sizing: border-box;
+		border: 2px solid #2d2a26;
+		transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+	}
+	.wall.front {
+		top: 6px;
+		left: 6px;
+	}
+	.wall.back {
+		top: -6px;
+		left: -6px;
+		background-color: #fff9f3;
+	}
+	.supports.bottom {
+		&::after {
+			top: calc(100% + 1px);
+		}
+		&::before {
+			top: calc(100% + 1px);
+		}
+	}
+	.supports {
+		&::before {
+			left: -2px;
+			content: "";
+			height: 17px;
+			width: 2px;
+			background: #2d2a26;
+			position: absolute;
+			transform-origin: top center;
+			transform: rotate(-45deg);
+			transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+			left: -2px;
+		}
+		&::after {
+			content: "";
+			height: 17px;
+			width: 2px;
+			background: #2d2a26;
+			position: absolute;
+			transform-origin: top center;
+			transform: rotate(-45deg);
+			transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+			right: -2px;
+		}
+	}
+	&:hover {
+		.supports {
+			&::after {
+				height: 10px;
+			}
+			&::before {
+				height: 10px;
+			}
+		}
+		.text {
+			transform: translate(-5px, -5px);
+		}
+		.wall.front {
+			transform: translate(-5px, -5px);
+		}
+	}
 }

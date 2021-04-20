@@ -7,3 +7,4 @@ export { default as Footer } from './footer.js';
 export { default as Cursor } from './cursor.js';
 export { LinkOne, LinkTwo, LinkThree, LinkEmail, LinkPhone } from './links';
 export { default as SliderOne } from './slider';
+export { default as StartAConversation } from './start-a-conversation';

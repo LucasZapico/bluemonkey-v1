@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import React, { useState } from 'react';
 import Link from 'gatsby-plugin-transition-link/AniLink';
 import moment from 'moment';
-import { LinkPhone, LinkEmail } from './index';
+import { LinkPhone, LinkEmail, StartAConversation } from './index';
 // import Logo from '../assets/ccg-mark.svg';
 
 const Footer = ({ title, description }) => {
@@ -31,41 +31,36 @@ const Footer = ({ title, description }) => {
   };
   return (
     <>
-      <Box bg="brand.five" color="brand.one">
-        <Box height="500px" p={6} py={10}>
+      <Box background="brand.two">
+        <Box minHeight="500px">
           <Flex minHeight="100%" flexDirection="column">
             <Box flexGrow="1">
-              <Flex alignItems="center" mb={4}>
-                {/* <Logo
-                  height="auto"
-                  width={60}
-                  color="white"
-                  stroke="white"
-                  fill="white"
-                  bg="white"
-                /> */}
-                <Heading as="h6" size="md" color="brand.one" />
+              <Flex alignItems="center" mb={4} p={6}>
+                <StartAConversation />
               </Flex>
-              <Heading as="h4" size="sm" mb={3}>
-                <LinkEmail color="brand.one">{`Connect@${baseUrl}`}</LinkEmail>
-              </Heading>
-              <LinkPhone color="brand.one">{phone}</LinkPhone>
-              <Heading as="h4" size="sm" mb={3} color="brand.one">
-                We are fully remote on Earth
-              </Heading>
-              <Heading as="h4" size="sm" mb={3} color="brand.one" />
-              {/* <Heading as="h4" size="sm" color="brand.one">
+              <Box bg="brand.five" color="brand.one" p={6}>
+                <Heading as="h4" size="sm" mb={3}>
+                  <LinkEmail color="brand.one">{`Connect@${baseUrl}`}</LinkEmail>
+                </Heading>
+                <LinkPhone color="brand.one">{phone}</LinkPhone>
+                <Heading as="h4" size="sm" mb={3} color="brand.one">
+                  We are fully remote on Earth
+                </Heading>
+                <Heading as="h4" size="sm" mb={3} color="brand.one" />
+                {/* <Heading as="h4" size="sm" color="brand.one">
                 {phone}
               </Heading> */}
-            </Box>
-            <Box pb={4}>
-              <Text>Last updated: {moment(Date()).format('l')}</Text>
-              <Text>
-                Copyright {baseUrl} {moment(Date()).format('y')}
-              </Text>
-              <Link to="/privacy" swipe direction="left">
-                <Text>Privacy</Text>
-              </Link>
+
+                <Box pb={4} mt={10}>
+                  <Text>Last updated: {moment(Date()).format('l')}</Text>
+                  <Text>
+                    Copyright {baseUrl} {moment(Date()).format('y')}
+                  </Text>
+                  <Link to="/privacy" swipe direction="left">
+                    <Text>Privacy</Text>
+                  </Link>
+                </Box>
+              </Box>
             </Box>
           </Flex>
         </Box>
