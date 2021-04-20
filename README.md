@@ -16,8 +16,11 @@
 - [ ] hubspot integration with from submission
 - [ ] integrate with mailchimp 
 - [ ] set up mailchimp email with trigger
-- [ ] 
-
+- [ ] btn hover state
+- [ ] page transitions
+- [ ] start a conversation 
+- [ ] FAQ
+- [ ] enhance links
 ### Issues 
 
 ## Stack 
