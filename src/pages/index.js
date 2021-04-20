@@ -229,10 +229,12 @@ const SectionOne = ({ data }) => (
                   height="auto"
                   className="clip-show-effect"
                 >
-                  <Img
-                    fit="cover"
-                    fluid={data.showcaseBrandImage.childImageSharp.fluid}
-                  />
+                  <Link to="/services/#branding">
+                    <Img
+                      fit="cover"
+                      fluid={data.showcaseBrandImage.childImageSharp.fluid}
+                    />
+                  </Link>
                 </Box>
                 <Box
                   left="-10%"
@@ -242,10 +244,28 @@ const SectionOne = ({ data }) => (
                   height="auto"
                   className="clip-show-effect"
                 >
-                  <Img
-                    fit="cover"
-                    fluid={data.showcaseDesignImage.childImageSharp.fluid}
-                  />
+                  <Link to="/services/#design">
+                    <Img
+                      fit="cover"
+                      fluid={data.showcaseDesignImageOne.childImageSharp.fluid}
+                    />
+                  </Link>
+                </Box>
+
+                <Box
+                  left="-10%"
+                  top="40%"
+                  width="100%"
+                  position="absolute"
+                  height="auto"
+                  className="clip-show-effect"
+                >
+                  <Link to="/services/#design">
+                    <Img
+                      fit="cover"
+                      fluid={data.showcaseDesignImageTwo.childImageSharp.fluid}
+                    />
+                  </Link>
                 </Box>
               </Box>
             </Box>
@@ -529,7 +549,16 @@ export const query = graphql`
         }
       }
     }
-    showcaseDesignImage: file(
+    showcaseDesignImageTwo: file(
+      relativePath: { eq: "showcase/design/web-ui-luv-coffee.png" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 1020) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    showcaseDesignImageOne: file(
       relativePath: { eq: "showcase/design/web-ui-yoga-of-words.png" }
     ) {
       childImageSharp {
