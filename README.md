@@ -21,6 +21,8 @@
 - [ ] start a conversation 
 - [ ] FAQ
 - [ ] enhance links
+- [ ] enhance lead capture
+- [ ] 
 ### Issues 
 
 ## Stack 

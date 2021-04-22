@@ -20,21 +20,24 @@ import {
   Radio,
   RadioGroup,
 } from '@chakra-ui/react';
-import { LinkThree } from './index';
+import { LinkThree, LinkTwo, BtnOne } from './index';
 import { CloseIcon, ArrowForwardIcon, ArrowBackIcon } from '@chakra-ui/icons';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-import { LinkTwo } from './links';
+import { useSpring, animated as a, useTransition } from 'react-spring';
 
 const steps = ['email', 'name', 'notes', 'enthusiasm'];
 
 const StartAConversation = () => {
   const { handleSubmit, errors, register, watch, formState } = useForm();
   const [current, setCurrent] = useState([0, steps[0]]);
+
   const [alertMessage, setAlertMessage] = useState({
     type: 'warning',
     message: '',
   });
+  // spring animations
+
   // todo consolidate
   const validateName = (value) => {
     if (!value) {
@@ -76,7 +79,7 @@ const StartAConversation = () => {
       <>
         <GridItem colSpan={{ base: '2', md: '1' }}>
           {' '}
-          <FormControl isInvalid={errors.firstname}>
+          <FormControl color="brand.five" isInvalid={errors.firstname}>
             <FormLabel htmlFor="notes">Notes</FormLabel>
             <Textarea
               name="notes"
@@ -98,7 +101,7 @@ const StartAConversation = () => {
       <>
         <GridItem colSpan={{ base: '2', md: '1' }}>
           {' '}
-          <FormControl isInvalid={errors.firstname}>
+          <FormControl color="brand.five" isInvalid={errors.firstname}>
             <FormLabel htmlFor="enthusiasm">Enthusiasm</FormLabel>
             <RadioGroup onChange={setValue} value={value}>
               <Stack>
@@ -132,6 +135,7 @@ const StartAConversation = () => {
           <FormControl isInvalid={errors.firstname}>
             <FormLabel htmlFor="firstname">First name</FormLabel>
             <Input
+              borderColor="brand.five"
               name="firstname"
               placeholder="First name"
               ref={register({ validate: validateName })}
@@ -148,6 +152,7 @@ const StartAConversation = () => {
           >
             <FormLabel htmlFor="lastname">Last name</FormLabel>
             <Input
+              borderColor="brand.five"
               name="lastname"
               placeholder="Last name"
               ref={register({ validate: validateName })}
@@ -162,22 +167,41 @@ const StartAConversation = () => {
   };
 
   const AddEmail = () => {
-    return (
-      <FormControl isInvalid={errors.email}>
-        <FormLabel htmlFor="email">Email</FormLabel>
-        <Input
-          height="80px"
-          fontSize="40px"
-          name="email"
-          placeholder="email"
-          ref={register({ validate: validateEmail })}
-        />
-        <FormErrorMessage>
-          {errors.email && errors.email.message}
-        </FormErrorMessage>
-      </FormControl>
-    );
+    <FormControl isInvalid={errors.email}>
+      <FormLabel color="brand.five" htmlFor="email">
+        Email
+      </FormLabel>
+      <Input
+        color="brand.five"
+        borderColor="brand.five"
+        height="80px"
+        fontSize="40px"
+        name="email"
+        placeholder="email"
+        ref={register({ validate: validateEmail })}
+      />
+      <FormErrorMessage>
+        {errors.email && errors.email.message}
+      </FormErrorMessage>
+    </FormControl>;
   };
+
+  // const StepGroup = () => {
+  //   const transitions = useTransition(current, {
+  //     key: current[0],
+  //     from: { opacity: 0 },
+  //     enter: { opacity: 1 },
+  //     leave: { opacity: 0 },
+  //   });
+  //   return;
+  //   <>
+  //     {current[1] === 'email' ? <AddEmail /> : <div></div>}
+  //     {current[1] === 'name' ? <AddName /> : <div></div>}
+  //     {current[1] === 'notes' ? <AddNotes /> : <div></div>}
+  //     {current[1] === 'enthusiasm' ? <AddEnthusiasm /> : <div></div>}
+  //   </>;
+  // };
+
   const handleNext = () => {
     if (current[0] != steps.length - 1) {
       setCurrent((prev) => {
@@ -202,7 +226,7 @@ const StartAConversation = () => {
     current: ${current}`);
   });
 
-  const onSubmit = async (data) => {
+  const onSubmitApi = async (data) => {
     const formatedPhone = formatePhone(data.phone);
     const results = await axios
       .post(
@@ -246,6 +270,7 @@ const StartAConversation = () => {
       });
     return results;
   };
+  const onSubmit = (data) => console.log(data);
   return (
     <Box width="100%" py={20}>
       <Box>
@@ -254,15 +279,16 @@ const StartAConversation = () => {
         </Heading>
       </Box>
       <Box width="100%">
-        <form name="start-a-conversation" width="100%">
-          {current[1] === 'email' ? <AddEmail /> : <div></div>}
-          {current[1] === 'name' ? <AddName /> : <div></div>}
-          {current[1] === 'notes' ? <AddNotes /> : <div></div>}
-          {current[1] === 'enthusiasm' ? <AddEnthusiasm /> : <div></div>}
+        <form
+          name="start-a-conversation"
+          width="100%"
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          {/* <StepGroup /> */}
           <Flex>
             {current[0] !== 0 ? (
-              <LinkTwo
-                type="dark"
+              <BtnOne
+                colortype="dark"
                 mr={4}
                 onClick={() => handleBack()}
                 mt={6}
@@ -270,35 +296,30 @@ const StartAConversation = () => {
               >
                 Back
                 <ArrowBackIcon />
-              </LinkTwo>
+              </BtnOne>
             ) : (
               <div></div>
             )}
             {current[0] !== steps.length - 1 ? (
-              <LinkTwo
-                type="dark"
-                onClick={() => handleNext()}
+              <BtnOne
+                colortype="dark"
+                ml={4}
                 mt={6}
                 width="200px"
+                onClick={() => handleNext()}
               >
                 Next
                 <ArrowForwardIcon />
-              </LinkTwo>
+              </BtnOne>
             ) : (
               <div></div>
             )}
 
             {current[0] === steps.length - 1 ? (
-              <LinkTwo
-                type="dark"
-                ml={4}
-                onClick={() => handleBack()}
-                mt={6}
-                width="200px"
-              >
+              <BtnOne colortype="dark" ml={4} mt={6} width="200px">
                 Submit
                 <ArrowForwardIcon />
-              </LinkTwo>
+              </BtnOne>
             ) : (
               <div></div>
             )}

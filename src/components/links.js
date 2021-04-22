@@ -5,6 +5,7 @@ import {
   useToast,
   Tooltip,
   Button,
+  Center,
   Flex,
   Link as ChLink,
 } from '@chakra-ui/react';
@@ -37,30 +38,56 @@ export const LinkOne = (props) => {
 };
 
 export const LinkTwo = (props) => {
-  const { children, to = '', href = '', icon, type = 'light' } = props;
+  const { children, to = '', href = '', icon, colortype = 'light' } = props;
   return (
     <Box
       {...props}
-      color={type == 'light' ? 'brand.one' : 'brand.five'}
+      color={colortype == 'light' ? 'brand.one' : 'brand.five'}
       border="2px"
-      borderColor={type == 'light' ? 'brand.one' : 'brand.five'}
+      borderColor={colortype == 'light' ? 'brand.one' : 'brand.five'}
       py={4}
       px={4}
     >
       {href !== '' ? (
-        <ChLink href={href}>{children}</ChLink>
+        <ChLink href={href}>
+          <Center>{children}</Center>
+        </ChLink>
       ) : (
-        <Link to={to}>{children}</Link>
+        <Link to={to}>
+          <Center>{children}</Center>
+        </Link>
       )}
     </Box>
   );
 };
 
-export const LinkThree = ({ href = '', children, to = '', type = 'dark' }) => {
+export const BtnOne = (props) => {
+  const { children, to = '', href = '', icon, colortype = 'light' } = props;
+  return (
+    <Box
+      {...props}
+      color={colortype == 'light' ? 'brand.one' : 'brand.five'}
+      border="2px"
+      borderColor={colortype == 'light' ? 'brand.one' : 'brand.five'}
+      py={4}
+      px={4}
+      as="button"
+    >
+      <Center>{children}</Center>
+    </Box>
+  );
+};
+
+export const LinkThree = ({
+  href = '',
+  children,
+  to = '',
+  colortype = 'dark',
+}) => {
   return (
     <>
       {href !== '' ? (
-        <ChLink href={href} className={`box-btn ${type}`}>
+        <ChLink href={href} className={`box-btn ${colortype}`}>
           <span className="wall back">
             <span className="supports top" />
             <span className="supports bottom" />
@@ -69,7 +96,7 @@ export const LinkThree = ({ href = '', children, to = '', type = 'dark' }) => {
           <span className="text">{children}</span>
         </ChLink>
       ) : (
-        <Link to={to} className={`box-btn ${type}`}>
+        <Link to={to} className={`box-btn ${colortype}`}>
           <span className="wall back">
             <span className="supports top" />
             <span className="supports bottom" />
