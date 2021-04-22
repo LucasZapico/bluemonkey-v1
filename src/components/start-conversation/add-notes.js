@@ -29,7 +29,7 @@ const AddNotes = (props) => {
           item && (
             <a.div style={styles}>
               {/* // <FormControl isInvalid={errors.email}> */}
-              <FormControl>
+              <FormControl width={{ base: '100%', md: '60%' }}>
                 <FormLabel htmlFor="notes">Project Notes</FormLabel>
                 <Textarea
                   borderColor="brand.five"

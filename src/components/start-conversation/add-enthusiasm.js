@@ -31,7 +31,10 @@ const AddEnthusiasm = (props) => {
         (styles, item) =>
           item && (
             <a.div style={styles}>
-              <GridItem colSpan={{ base: '2', md: '1' }}>
+              <GridItem
+                colSpan={{ base: '2', md: '1' }}
+                width={{ base: '100%', md: '60%' }}
+              >
                 {' '}
                 {/* <FormControl color="brand.five" isInvalid={errors.firstname}> */}
                 <FormControl>

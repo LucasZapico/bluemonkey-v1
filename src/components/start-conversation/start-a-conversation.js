@@ -49,9 +49,18 @@ const StartAConversation = () => {
           display="flex"
           justifyContent="space-between"
           flexDirection="column"
-          height="300px"
+          height="250px"
         >
-          <form name="start-a-conversation" onSubmit={handleSubmit(onSubmit)}>
+          <form
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              height: '100%',
+            }}
+            name="start-a-conversation"
+            onSubmit={handleSubmit(onSubmit)}
+          >
             <>
               {current[1] === 'email' ? (
                 <AddEmail register={register} errors={errors} />

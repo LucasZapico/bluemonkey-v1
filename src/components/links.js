@@ -133,7 +133,6 @@ export const LinkPhone = (props) => {
       <ChLink
         color={color}
         fontWeight="semibold"
-        mr={4}
         href={`tel:+1${formatedPhoneBot}`}
       >
         <PhoneIcon mr={4} />
@@ -148,6 +147,7 @@ export const LinkPhone = (props) => {
           variant="none"
           aria-label="copy to clipboard"
           icon={<CopyIcon opacity="0.5" />}
+          m={0}
           onClick={() => {
             setCopied();
             return toast({
@@ -181,12 +181,7 @@ export const LinkEmail = (props) => {
       justifyContent="space-between"
       minWidth="180px"
     >
-      <ChLink
-        color={color}
-        fontWeight="semibold"
-        mr={4}
-        href={`mailto:${children}`}
-      >
+      <ChLink color={color} fontWeight="semibold" href={`mailto:${children}`}>
         <EmailIcon mr={4} />
         {children}
       </ChLink>
@@ -196,6 +191,7 @@ export const LinkEmail = (props) => {
         placement="right"
       >
         <IconButton
+          m={0}
           variant="none"
           aria-label="copy to clipboard"
           icon={<CopyIcon opacity="0.5" />}

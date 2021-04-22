@@ -33,7 +33,11 @@ const AddName = (props) => {
           item && (
             <a.div style={styles}>
               {/* // <FormControl isInvalid={errors.email}> */}
-              <Grid templateColumns="repeat(2, 1fr)" gap={4}>
+              <Grid
+                templateColumns="repeat(2, 1fr)"
+                gap={4}
+                width={{ base: '100%', md: '60%' }}
+              >
                 <GridItem colSpan={{ base: '1', md: '1' }}>
                   {' '}
                   {/* <FormControl isInvalid={errors.firstname}> */}

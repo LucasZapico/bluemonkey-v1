@@ -22,7 +22,9 @@
 - [ ] FAQ
 - [ ] enhance links
 - [ ] enhance lead capture
-- [ ] 
+- [ ] add shift + enter to form 
+
+
 ### Issues 
 
 ## Stack 
