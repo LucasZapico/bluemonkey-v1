@@ -45,7 +45,7 @@ const AddEnthusiasm = (props) => {
                         You look like a great fit for our project. Let's Go!
                       </Radio>
                       <Radio value="2">
-                        We're interested, let chat and see if we align.
+                        We're interested, let's chat and see if we align.
                       </Radio>
                       <Radio value="3">
                         I'm filling out all the forms I find.

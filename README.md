@@ -21,9 +21,11 @@
 - [ ] start a conversation 
 - [ ] FAQ
 - [ ] enhance links
+
+__form__
 - [ ] enhance lead capture
 - [ ] add shift + enter to form 
-
+- [ ] show steps
 
 ### Issues 
 

@@ -6,6 +6,17 @@ const components = {};
 const theme = extendTheme({
   textStyles: {},
   components: {
+    Input: {
+      baseStyle: {
+        borderRadius: 'none',
+      },
+    },
+    Textarea: {
+      baseStyle: {
+        borderRadius: 'none',
+      },
+    },
+
     Box: {
       variants: {
         dark: {

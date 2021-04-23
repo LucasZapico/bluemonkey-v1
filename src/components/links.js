@@ -123,45 +123,51 @@ export const LinkPhone = (props) => {
   const toast = useToast();
 
   return (
-    <Flex
-      {...props}
-      display="inline"
-      alignItems="center"
-      justifyContent="space-between"
-      minWidth="180px"
-    >
-      <ChLink
-        color={color}
-        fontWeight="semibold"
-        href={`tel:+1${formatedPhoneBot}`}
-      >
-        <PhoneIcon mr={4} />
-        {formatedPhone}
-      </ChLink>
-      <Tooltip
-        label={isCopied ? 'Copied' : 'copy to clipboard'}
-        aria-label="copy to clipboard"
-        placement="right"
-      >
-        <IconButton
-          variant="none"
-          aria-label="copy to clipboard"
-          icon={<CopyIcon opacity="0.5" />}
-          m={0}
-          onClick={() => {
-            setCopied();
-            return toast({
-              title: 'Copied to Clipboard',
-              description: `${children} copied to clipboard`,
-              status: 'info',
-              variant: 'top-accent',
-              duration: 2000,
-              isClosable: true,
-            });
-          }}
-        />
-      </Tooltip>
-    </Flex>
+    <>
+      {formatedPhone ? (
+        <Flex
+          {...props}
+          display="inline"
+          alignItems="center"
+          justifyContent="space-between"
+          minWidth="180px"
+        >
+          <ChLink
+            color={color}
+            fontWeight="semibold"
+            href={`tel:+1${formatedPhoneBot}`}
+          >
+            <PhoneIcon mr={4} />
+            {formatedPhone}
+          </ChLink>
+          <Tooltip
+            label={isCopied ? 'Copied' : 'copy to clipboard'}
+            aria-label="copy to clipboard"
+            placement="right"
+          >
+            <IconButton
+              variant="none"
+              aria-label="copy to clipboard"
+              icon={<CopyIcon opacity="0.5" />}
+              m={0}
+              onClick={() => {
+                setCopied();
+                return toast({
+                  title: 'Copied to Clipboard',
+                  description: `${children} copied to clipboard`,
+                  status: 'info',
+                  variant: 'top-accent',
+                  duration: 2000,
+                  isClosable: true,
+                });
+              }}
+            />
+          </Tooltip>
+        </Flex>
+      ) : (
+        <div></div>
+      )}
+    </>
   );
 };
 

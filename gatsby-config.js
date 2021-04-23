@@ -9,7 +9,7 @@ module.exports = {
     baseUrl: 'bluemonkeymakes.com',
     image: '/opengraph-gen.png',
     twitterUsername: '@bluemonkey',
-    phone: '111.111.1111',
+    phone: '',
   },
   plugins: [
     'gatsby-plugin-netlify-cms',

@@ -61,7 +61,10 @@ const StartAConversation = () => {
             name="start-a-conversation"
             onSubmit={handleSubmit(onSubmit)}
           >
-            <>
+            <Box>
+              Step {current[0] + 1} of {steps.length}
+            </Box>
+            <Box>
               {current[1] === 'email' ? (
                 <AddEmail register={register} errors={errors} />
               ) : (
@@ -82,7 +85,7 @@ const StartAConversation = () => {
               ) : (
                 <div></div>
               )}
-            </>
+            </Box>
 
             <Flex>
               {current[0] !== 0 ? (
