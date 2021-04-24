@@ -44,7 +44,7 @@ const Footer = ({ title, description }) => {
                 </Heading>
                 <LinkPhone color="brand.one">{phone}</LinkPhone>
                 <Heading as="h4" size="sm" mb={3} color="brand.one">
-                  We are fully remote on Earth
+                  We are fully remote on Earth 🌎
                 </Heading>
                 <Heading as="h4" size="sm" mb={3} color="brand.one" />
                 {/* <Heading as="h4" size="sm" color="brand.one">

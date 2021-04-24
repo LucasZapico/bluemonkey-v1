@@ -3,7 +3,7 @@ import { useSpring, animated as a } from 'react-spring';
 import { StarIcon } from '@chakra-ui/icons';
 import useClipboard from 'react-use-clipboard';
 
-const calc = (o) => `translateY(${o * 0.3}px)`;
+const calc = (o) => `translateY(${o * (0.3 * -1)}px)`;
 
 const container = {
   position: 'relative',

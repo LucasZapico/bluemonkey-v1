@@ -23,15 +23,11 @@ import LongArrow from '../assets/long-arrow.svg';
 export const LinkOne = (props) => {
   const { children, to = '', href = '', icon } = props;
   return (
-    <Box {...props} fontWeight="bold" color="brand.four">
+    <Box {...props} color="brand.four">
       {href !== '' ? (
         <ChLink href={href}>{children}</ChLink>
       ) : (
-        <Link to={to}>
-          {children}
-          {}
-          <ArrowForwardIcon />
-        </Link>
+        <Link to={to}>{children}</Link>
       )}
     </Box>
   );

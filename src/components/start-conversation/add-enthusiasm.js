@@ -42,13 +42,13 @@ const AddEnthusiasm = (props) => {
                   <RadioGroup onChange={setValue} value={value}>
                     <Stack>
                       <Radio value="1">
-                        You look like a great fit for our project. Let's Go!
+                        You look like a great fit for our project. Let's Go! 🥳
                       </Radio>
                       <Radio value="2">
-                        We're interested, let's chat and see if we align.
+                        We're interested, let's chat and see if we align. 🤔
                       </Radio>
                       <Radio value="3">
-                        I'm filling out all the forms I find.
+                        I'm filling out all the forms I find. 🙃
                       </Radio>
                     </Stack>
                   </RadioGroup>

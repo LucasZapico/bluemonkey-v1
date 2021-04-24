@@ -48,6 +48,10 @@ const Header = () => {
           <Box pr={4}>
             <Link to="/services">Services</Link>
           </Box>
+          <Box pr={4}>
+            <Link to="/about">About</Link>
+          </Box>
+
           <Box>
             {/* <Heading as="h5" size="lg">
               111.111.111
