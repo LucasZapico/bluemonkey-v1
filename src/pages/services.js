@@ -105,8 +105,8 @@ const services = ({ data }) => {
               >
                 <a id="branding">Branding</a>
               </Heading>
-              <Flex flexDirection="row" flexWrap="wrap">
-                <Box>
+              <Flex flexDirection="row" flexWrap="wrap" mb={20}>
+                <Box mb={20}>
                   <Box
                     pr={{ base: 0, md: 6 }}
                     flexGrow="1"
@@ -151,7 +151,7 @@ const services = ({ data }) => {
               </Flex>
             </Container>
           </Box>
-          <Box minHeight="400px" height="auto" py={20}>
+          <Box minHeight="400px" height="auto" py={20} mb={20}>
             <Container maxW="container.xl">
               <Heading
                 as="h3"
@@ -165,6 +165,7 @@ const services = ({ data }) => {
               </Heading>
               <Flex flexDirection="row" flexWrap="wrap">
                 <Box
+                  mb={20}
                   pr={{ base: 0, md: 6 }}
                   flexGrow="1"
                   flexBasis={{ base: '100%', md: '50%' }}
@@ -217,7 +218,7 @@ const services = ({ data }) => {
               >
                 <a id="development">Development</a>
               </Heading>
-              <Flex flexDirection="row" flexWrap="wrap">
+              <Flex flexDirection="row" flexWrap="wrap" mb={20}>
                 <Box
                   pr={{ base: 0, md: 6 }}
                   flexGrow="1"
