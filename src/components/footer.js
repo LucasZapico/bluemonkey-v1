@@ -1,11 +1,12 @@
 import { Flex, Box, Container, Heading, Text } from '@chakra-ui/layout';
 import PropTypes from 'prop-types';
 import { useLocation } from '@reach/router';
+import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { useStaticQuery, graphql } from 'gatsby';
 import React, { useState } from 'react';
 import Link from 'gatsby-plugin-transition-link/AniLink';
 import moment from 'moment';
-import { LinkPhone, LinkEmail, StartAConversation } from './index';
+import { LinkPhone, LinkEmail, StartAConversation, LinkOne } from './index';
 // import Logo from '../assets/ccg-mark.svg';
 
 const Footer = ({ title, description }) => {
@@ -43,10 +44,23 @@ const Footer = ({ title, description }) => {
                   <LinkEmail color="brand.one">{`Connect@${baseUrl}`}</LinkEmail>
                 </Heading>
                 <LinkPhone color="brand.one">{phone}</LinkPhone>
-                <Heading as="h4" size="sm" mb={3} color="brand.one">
-                  We are fully remote on Earth 🌎
+                <Heading
+                  as="h4"
+                  size="sm"
+                  mb={3}
+                  color="brand.one"
+                  maxWidth="600px"
+                >
+                  We are fully remote on Earth 🌎 but we are almost always
+                  available via slack.
                 </Heading>
                 <Heading as="h4" size="sm" mb={3} color="brand.one" />
+                <LinkOne
+                  color="brand.one"
+                  href="https://join.slack.com/t/bluemonkey-group/shared_invite/zt-pgxxc4tc-B2KVEZkicybmpBdS3o6I4A"
+                >
+                  Join our slack channel <ExternalLinkIcon />
+                </LinkOne>
                 {/* <Heading as="h4" size="sm" color="brand.one">
                 {phone}
               </Heading> */}

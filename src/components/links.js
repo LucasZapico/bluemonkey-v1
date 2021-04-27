@@ -21,11 +21,13 @@ import { formatePhone, formatePhoneBot } from '../helpers/index';
 import LongArrow from '../assets/long-arrow.svg';
 
 export const LinkOne = (props) => {
-  const { children, to = '', href = '', icon } = props;
+  const { color, children, to = '', href = '', icon } = props;
   return (
-    <Box {...props} color="brand.four">
+    <Box color={color}>
       {href !== '' ? (
-        <ChLink href={href}>{children}</ChLink>
+        <ChLink color={color} href={href}>
+          {children}
+        </ChLink>
       ) : (
         <Link to={to}>{children}</Link>
       )}
@@ -58,13 +60,23 @@ export const LinkTwo = (props) => {
 };
 
 export const BtnOne = (props) => {
-  const { children, to = '', href = '', icon, colortype = 'light' } = props;
+  const {
+    children,
+    to = '',
+    href = '',
+    icon,
+    ColorType = 'light',
+    IsDisabled,
+  } = props;
+  console.log('dis', IsDisabled);
   return (
     <Box
-      {...props}
-      color={colortype == 'light' ? 'brand.one' : 'brand.five'}
+      minWidth="200px"
+      opacity={IsDisabled ? 0.3 : 1}
+      cursor={IsDisabled ? 'not-allowed' : 'pointer'}
+      color={ColorType == 'light' ? 'brand.one' : 'brand.five'}
       border="2px"
-      borderColor={colortype == 'light' ? 'brand.one' : 'brand.five'}
+      borderColor={ColorType == 'light' ? 'brand.one' : 'brand.five'}
       py={4}
       px={4}
       as="button"
@@ -89,7 +101,7 @@ export const LinkThree = ({
             <span className="supports bottom" />
           </span>
           <span className="wall front" />
-          <span className="text">{children}</span>
+          <div className="text">{children}</div>
         </ChLink>
       ) : (
         <Link to={to} className={`box-btn ${colortype}`}>
@@ -98,7 +110,7 @@ export const LinkThree = ({
             <span className="supports bottom" />
           </span>
           <span className="wall front" />
-          <span className="text">{children}</span>
+          <div className="text">{children}</div>
         </Link>
       )}
     </>
@@ -112,10 +124,6 @@ export const LinkPhone = (props) => {
   const [isCopied, setCopied] = useClipboard(children, {
     successDuration: 1000,
   });
-  console.log(`phone, 
-  formatedphone: ${formatedPhone}
-  formatedphonebot: ${formatedPhoneBot}
-    `);
   const toast = useToast();
 
   return (
@@ -183,7 +191,7 @@ export const LinkEmail = (props) => {
       justifyContent="space-between"
       minWidth="180px"
     >
-      <ChLink color={color} fontWeight="semibold" href={`mailto:${children}`}>
+      <ChLink color={color} href={`mailto:${children}`}>
         <EmailIcon mr={4} />
         {children}
       </ChLink>
