@@ -65,7 +65,7 @@ const AboutPage = () => {
               <ScrollAniFadeIn>
                 <Heading as="h2" size="xl" mb={10} lineHeight="base">
                   We are a fully remote group of solvers and makers. Who turn
-                  coffee solutions. 🤩
+                  coffee into solutions.
                 </Heading>
               </ScrollAniFadeIn>
             </Container>
@@ -87,7 +87,7 @@ const AboutPage = () => {
               <ScrollAniFadeIn>
                 <Heading as="h3" size="xl" mb={10} lineHeight="base">
                   We see this as a partnership where our job is to enable you to
-                  succeed. Period. 😎
+                  succeed. Period.
                 </Heading>
               </ScrollAniFadeIn>
             </Container>
