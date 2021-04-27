@@ -18,6 +18,29 @@ import { Link } from 'gatsby';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import Logo from '../assets/blue-monkey-hanging.svg';
 
+const ROUTES = [
+  // {
+  //   name: 'Home',
+  //   to: '/',
+  //   id: 'KEN131',
+  // },
+  {
+    name: 'Services',
+    to: '/services',
+    id: 'FW93FP',
+  },
+  {
+    name: 'Our Work',
+    to: '/cases',
+    id: 'VEOWHV',
+  },
+  {
+    name: 'About',
+    to: '/about',
+    id: '9PJZH8',
+  },
+];
+
 const Header = () => {
   return (
     <>
@@ -45,12 +68,11 @@ const Header = () => {
         </Box>
 
         <Flex alignItems="center">
-          <Box pr={4}>
-            <Link to="/services">Services</Link>
-          </Box>
-          <Box pr={4}>
-            <Link to="/about">About</Link>
-          </Box>
+          {ROUTES.map((r) => (
+            <Box pr={4} key={`route${r.id}`}>
+              <Link to={`${r.to}`}>{r.name}</Link>
+            </Box>
+          ))}
 
           <Box>
             {/* <Heading as="h5" size="lg">
