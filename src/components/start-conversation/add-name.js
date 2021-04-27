@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import {
   Box,
   Grid,
@@ -7,19 +7,39 @@ import {
   FormControl,
   FormLabel,
   Input,
+  Alert,
+  FormHelperText,
+  AlertIcon,
+  AlertTitle,
   FormErrorMessage,
   FormErrorIcon,
 } from '@chakra-ui/react';
 import { useTransition, animated as a } from 'react-spring';
 
-const AddName = (props) => {
+const AddName = ({ onSubmit, store }) => {
   const [show, setShow] = useState(true);
-  const { errors, register } = props;
+  const { register, handleSubmit, watch, errors, formState } = useForm({
+    defaultValues: store,
+  });
+  const [alertMessage, setAlertMessage] = useState({
+    type: 'warning',
+    message: '',
+  });
+
   const validateName = (value) => {
     if (!value) {
-      return 'Name is required';
+      setAlertMessage({
+        type: 'warning',
+        message: 'Name is required',
+      });
+    } else {
+      setAlertMessage({
+        type: 'info',
+        message: 'Looking good',
+      });
     }
   };
+
   const transitions = useTransition(show, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
@@ -32,51 +52,49 @@ const AddName = (props) => {
         (styles, item) =>
           item && (
             <a.div style={styles}>
-              {/* // <FormControl isInvalid={errors.email}> */}
-              <Grid
-                templateColumns="repeat(2, 1fr)"
-                gap={4}
-                width={{ base: '100%', md: '60%' }}
-              >
-                <GridItem colSpan={{ base: '1', md: '1' }}>
+              <Box width={{ base: '100%', md: '60%' }}>
+                <form onSubmit={handleSubmit(onSubmit)}>
                   {' '}
-                  {/* <FormControl isInvalid={errors.firstname}> */}
                   <FormControl>
+                    {/* <FormControl> */}
                     <FormLabel htmlFor="firstname">First name</FormLabel>
                     <Input
                       borderColor="brand.five"
                       color="brand.five"
                       name="firstname"
                       placeholder="First name"
-                      ref={{
-                        ...register('firstname', { validate: validateName }),
-                      }}
+                      onChange={(e) => validateName(e.target.value)}
+                      {...register('firstname', { required: true })}
                     />
-                    {/* <FormErrorMessage>
+                    <FormErrorMessage>
                       {errors.firstname && errors.firstname.message}
-                    </FormErrorMessage> */}
+                    </FormErrorMessage>
                   </FormControl>
-                </GridItem>
-                <GridItem colSpan={{ base: '1', md: '1' }}>
-                  <FormControl
-                    // isInvalid={errors.lastname}
-                    flexBasis={{ base: '100%', md: '50%' }}
-                  >
+                  <FormControl flexBasis={{ base: '100%', md: '50%' }}>
                     <FormLabel htmlFor="lastname">Last name</FormLabel>
                     <Input
                       borderColor="brand.five"
                       name="lastname"
                       placeholder="Last name"
-                      ref={{
-                        ...register('lastname', { validate: validateName }),
-                      }}
+                      onChange={(e) => validateName(e.target.value)}
+                      {...register('lastname', { required: true })}
                     />
-                    {/* <FormErrorMessage>
-                      {errors.lastname && errors.lastname.message}
-                    </FormErrorMessage> */}
+                    {alertMessage.message !== '' ? (
+                      <Alert
+                        backgroundColor="transparent"
+                        status={alertMessage.type}
+                      >
+                        <AlertIcon />
+                        <AlertTitle>{alertMessage.message}</AlertTitle>
+                      </Alert>
+                    ) : (
+                      <FormHelperText>
+                        Don't fret your name is safe with us.
+                      </FormHelperText>
+                    )}
                   </FormControl>
-                </GridItem>
-              </Grid>
+                </form>
+              </Box>
             </a.div>
           )
       )}
