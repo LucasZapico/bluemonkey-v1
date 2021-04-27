@@ -91,7 +91,7 @@ const Hero = ({ data }) => (
         maxWidth="800px"
         fontFamily="montas-semibold"
         fontSize={{
-          base: '100',
+          base: '80',
           sm: '120',
           md: '140',
           lg: '175',
@@ -192,7 +192,7 @@ const SectionOne = ({ data }) => (
               <Heading
                 as="h3"
                 fontSize={{
-                  base: '90',
+                  base: '80',
                   sm: '90',
                   md: '100',
                   lg: '80',
@@ -209,7 +209,11 @@ const SectionOne = ({ data }) => (
               {/* <Heading color="brand.one">
                 We do it all so you don't have&nbsp;to.
               </Heading> */}
-              <Box height="500px" position="relative">
+              <Box
+                display={{ base: 'none', md: 'block' }}
+                height="500px"
+                position="relative"
+              >
                 <Heading
                   as="h3"
                   fontSize="lg"
@@ -283,6 +287,8 @@ const SectionOne = ({ data }) => (
               px={{ base: 0, md: 10, lg: 10, xl: 20 }}
               size="3xl"
               m="auto"
+              mb={{ base: 10, md: 'auto' }}
+              mt={{ base: 10, md: 'auto' }}
               lineHeight="base"
               maxWidth="700px"
             >
@@ -296,32 +302,32 @@ const SectionOne = ({ data }) => (
               </Box>
               We are a one stop shop for frugal and competitive:
             </Heading>
-            <Container maxWidth="container.xl" maxWidth="700px">
-              <Box mb={6}>
+            <Box ml={-4}>
+              <Box mb={10}>
                 <LinkThree to="/services/#branding">
                   Branding
                   <ArrowForwardIcon />
                 </LinkThree>
               </Box>
-              <Box mb={6}>
+              <Box mb={10}>
                 <LinkThree to="/services/#design">
                   Design
                   <ArrowForwardIcon />
                 </LinkThree>
               </Box>
-              <Box mb={6}>
+              <Box mb={10}>
                 <LinkThree to="/services/#development">
                   Development
                   <ArrowForwardIcon />
                 </LinkThree>
               </Box>
-              <Box mb={6}>
+              <Box mb={10}>
                 <LinkThree to="/services/#seo-and-business-integrations">
                   SEO and Business Integrations
                   <ArrowForwardIcon />
                 </LinkThree>
               </Box>
-            </Container>
+            </Box>
           </ScrollAniFadeIn>
         </Container>
       </Box>
