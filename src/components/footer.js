@@ -32,14 +32,19 @@ const Footer = ({ title, description }) => {
   };
   return (
     <>
-      <Box background="brand.two" py={6}>
+      <Box background="brand.two" pt={10}>
         <Box minHeight="500px">
           <Flex minHeight="100%" flexDirection="column">
             <Box flexGrow="1">
               <Flex alignItems="center" mb={4} p={{ base: 0, sm: 6 }}>
                 <StartAConversation />
               </Flex>
-              <Box bg="brand.five" color="brand.one" p={{ base: 2, sm: 6 }}>
+              <Box
+                bg="brand.five"
+                color="brand.one"
+                p={{ base: 2, sm: 6 }}
+                py={10}
+              >
                 <Heading as="h4" size="sm" mb={3}>
                   <LinkEmail color="brand.one">{`Connect@${baseUrl}`}</LinkEmail>
                 </Heading>
