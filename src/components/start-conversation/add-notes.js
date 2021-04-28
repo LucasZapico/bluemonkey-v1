@@ -1,28 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import {
   Box,
   Grid,
   GridItem,
-  FormControl,
   Textarea,
   FormLabel,
   Flex,
   Input,
-  FormErrorMessage,
-  FormErrorIcon,
+  Alert,
+  AlertIcon,
+  AlertTitle,
 } from '@chakra-ui/react';
 import { ArrowForwardIcon, ArrowBackIcon } from '@chakra-ui/icons';
 import { BtnOne } from '../index';
 import { useTransition, animated as a } from 'react-spring';
 
-const AddNotes = ({ onSubmit, store }) => {
-  const { register, handleSubmit, watch, errors, formState } = useForm({
-    defaultValues: store,
-    mode: 'all',
-  });
+const AddNotes = ({ onSubmit, store, handleNext, handleBack }) => {
   const [show, setShow] = useState(true);
-
+  const [isDisabled, setIsDisabled] = useState(true);
+  const [alertMessage, setAlertMessage] = useState({
+    type: 'info',
+    message: 'A brief note on your goals will help us get the ball rolling',
+  });
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm({
+    defaultValues: store,
+    reValidateMode: 'onChange',
+  });
   const transitions = useTransition(show, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
@@ -31,8 +40,34 @@ const AddNotes = ({ onSubmit, store }) => {
 
   const validateNotes = (value) => {
     if (!value) {
-      return 'Project notes required';
+      setAlertMessage({
+        type: 'warning',
+        message: 'A project notes required',
+      });
+    } else if (value.length > 10) {
+      setAlertMessage({
+        type: 'success',
+        message: 'Looking good',
+      });
     }
+  };
+
+  useEffect(() => {
+    if (alertMessage.type === 'success') {
+      setIsDisabled(false);
+    }
+  }, [alertMessage]);
+
+  useEffect(() => {
+    if (store.notes) {
+      validateNotes(store.notes);
+    }
+  }, []);
+
+  const submitAndNext = (data) => {
+    console.log('sub and next');
+    handleNext();
+    onSubmit(data);
   };
 
   return (
@@ -42,25 +77,46 @@ const AddNotes = ({ onSubmit, store }) => {
           item && (
             <a.div style={styles}>
               <Box width={{ base: '100%', md: '60%' }}>
-                <form onSubmit={handleSubmit(onSubmit)}>
-                  <FormControl isInvalid={errors.notes}>
-                    <FormLabel htmlFor="notes">Project Notes</FormLabel>
-                    <Flex flexDirection="column" width="100%">
-                      <Textarea
-                        flexBasis="200px"
-                        flexGrow="1"
-                        borderColor="brand.five"
-                        color="brand.five"
-                        name="notes"
+                <Box width={{ base: '100%', md: '60%' }}>
+                  <form onSubmit={handleSubmit(submitAndNext)}>
+                    <div className="input-container add-notes">
+                      <label htmlFor="notes">Project Notes</label>
+                      <textarea
+                        id="notes"
                         placeholder="Add a brief note about what you want to accomplish. For example, a site that reflect your brand better. Or more engagement on you website. "
-                        {...register('notes', { validate: validateNotes })}
+                        {...register('notes')}
+                        onChange={(e) => validateNotes(e.target.value)}
                       />
+                      <Alert
+                        opacity="0.7"
+                        backgroundColor="transparent"
+                        status={alertMessage.type}
+                      >
+                        <AlertIcon />
+                        <AlertTitle mr={2}>{alertMessage.message}</AlertTitle>
+                      </Alert>
+                    </div>
+                    <Flex flexDirection={{ base: 'column-reverse', sm: 'row' }}>
+                      <Box mt={4} mr={4}>
+                        <button
+                          className="dark btn-one"
+                          onClick={() => handleBack()}
+                        >
+                          Back
+                        </button>
+                      </Box>
+                      <Box mt={4}>
+                        <input
+                          className="dark btn-one"
+                          type="submit"
+                          value="Next"
+                          disabled={isDisabled}
+                        />
+                        <ArrowForwardIcon />
+                      </Box>
                     </Flex>
-                    <FormErrorMessage>
-                      {errors.notes && errors.notes.message}
-                    </FormErrorMessage>
-                  </FormControl>
-                </form>
+                  </form>
+                </Box>
               </Box>
             </a.div>
           )

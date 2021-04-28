@@ -1,15 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {
-  FormControl,
-  FormLabel,
-  FormErrorMessage,
-  Input,
-  FormHelperText,
-  Alert,
-  AlertIcon,
-  AlertTitle,
-  Box,
-} from '@chakra-ui/react';
+import { Alert, AlertIcon, AlertTitle, Box } from '@chakra-ui/react';
 import { ArrowForwardIcon, ArrowBackIcon } from '@chakra-ui/icons';
 import { BtnOne } from '../index';
 import { useForm } from 'react-hook-form';
@@ -22,12 +12,22 @@ const AddEmail = ({ onSubmit, store, handleNext }) => {
   const [show, setShow] = useState(true);
   const [isDisabled, setIsDisabled] = useState(true);
   const [alertMessage, setAlertMessage] = useState({
-    type: 'warning',
-    message: '',
+    type: 'info',
+    message: "We'll never share your email.",
   });
-  const { register, handleSubmit, watch, errors } = useForm();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm({
+    defaultValues: store,
+    reValidateMode: 'onChange',
+  });
 
+  const watchAll = watch();
   const validateEmail = (value) => {
+    console.log('valid email');
     if (!value) {
       setAlertMessage({
         type: 'warning',
@@ -53,9 +53,10 @@ const AddEmail = ({ onSubmit, store, handleNext }) => {
   });
 
   useEffect(() => {
-    console.log('error', alertMessage);
-    console.log('disabled', isDisabled);
-  });
+    if (store.email) {
+      validateEmail(store.email);
+    }
+  }, []);
 
   useEffect(() => {
     if (alertMessage.type === 'success') {
@@ -63,10 +64,10 @@ const AddEmail = ({ onSubmit, store, handleNext }) => {
     }
   }, [alertMessage]);
 
-  const submitAndNext = () => {
+  const submitAndNext = (data) => {
     console.log('sub and next');
     handleNext();
-    onSubmit();
+    onSubmit(data);
   };
 
   return (
@@ -74,53 +75,41 @@ const AddEmail = ({ onSubmit, store, handleNext }) => {
       {transitions(
         (styles, item) =>
           item && (
-            <a.div style={styles}>
-              <Box width={{ base: '100%', md: '60%' }}>
+            <a.div style={{ ...styles, height: '100%' }}>
+              <Box width={{ base: '100%', md: '60%' }} height="100%">
                 <form onSubmit={handleSubmit(submitAndNext)}>
-                  <FormControl>
-                    {/* <FormControl> */}
-                    <FormLabel color="brand.five" htmlFor="email">
-                      Email
-                    </FormLabel>
-                    <Input
-                      defaultValue=""
-                      color="brand.five"
-                      borderColor="brand.five"
-                      height="80px"
-                      fontSize={{ base: '30px', md: '40px' }}
-                      name="email"
-                      placeholder="email"
-                      {...register('email', { required: true })}
+                  <div className="add-email input-container">
+                    <label htmlFor="email">Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      placeholder="smcqueen@kingofcool.com"
+                      {...register('email', { required: true, maxLength: 30 })}
                       onChange={(e) => validateEmail(e.target.value)}
                     />
-                    {alertMessage.message !== '' ? (
-                      <Alert
-                        backgroundColor="transparent"
-                        status={alertMessage.type}
-                      >
-                        <AlertIcon />
-                        <AlertTitle>{alertMessage.message}</AlertTitle>
-                      </Alert>
-                    ) : (
-                      <FormHelperText>
-                        We'll never share your email.
-                      </FormHelperText>
+                    {errors.email && errors.email.type === 'required' && (
+                      <span>This is required</span>
                     )}
-                  </FormControl>
+                    {errors.email && errors.email.type === 'maxLength' && (
+                      <span>Max length exceeded</span>
+                    )}
+                    <Alert
+                      opacity="0.7"
+                      backgroundColor="transparent"
+                      status={alertMessage.type}
+                    >
+                      <AlertIcon />
+                      <AlertTitle mr={2}>{alertMessage.message}</AlertTitle>
+                    </Alert>
+                  </div>
 
-                  <Box
-                    minWidth="200px"
-                    cursor={isDisabled ? 'not-allowed' : 'pointer'}
-                    opacity={isDisabled ? 0.3 : 1}
-                    color="brand.five"
-                    border="2px"
-                    borderColor="brand.five"
-                    mt={6}
-                    py={4}
-                    px={4}
-                    as="button"
-                  >
-                    <input value="Next" type="submit"></input>
+                  <Box mt={4}>
+                    <input
+                      className="dark btn-one"
+                      type="submit"
+                      value="Next"
+                      disabled={isDisabled}
+                    />
                     <ArrowForwardIcon />
                   </Box>
                 </form>

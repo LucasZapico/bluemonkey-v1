@@ -14,6 +14,7 @@ const StartAConversation = () => {
   const [current, setCurrent] = useState([0, steps[0]]);
   const [store, setStore] = useState({});
   const handleNext = () => {
+    console.log('next');
     if (current[0] !== steps.length - 1) {
       setCurrent((prev) => {
         return [prev[0] + 1, steps[prev[0] + 1]];
@@ -21,6 +22,7 @@ const StartAConversation = () => {
     }
   };
   const handleBack = () => {
+    console.log('back');
     if (current[0] !== 0) {
       setCurrent((prev) => {
         return [prev[0] - 1, steps[prev[0] - 1]];
@@ -37,10 +39,13 @@ const StartAConversation = () => {
 
   const onSubmit = (data) => {
     console.log('on submit ran', data);
-    // setStore({
-    //   ...store,
-    //   data,
-    // });
+    setStore({
+      ...store,
+      ...data,
+    });
+    if (current[0] === steps.length - 1) {
+      onSubmitAll();
+    }
   };
 
   const onSubmitAll = () => {
@@ -59,82 +64,54 @@ const StartAConversation = () => {
             Start A Conversation
           </Heading>
         </Box>
-        <Box
-          display="flex"
-          justifyContent="space-between"
-          flexDirection="column"
-          height="350px"
-        >
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              height: '100%',
-            }}
-            name="start-a-conversation"
-          >
-            <Box>
-              Step {current[0] + 1} of {steps.length}
-            </Box>
-            <Box>
-              {current[1] === 'email' ? (
-                <AddEmail
-                  onSubmit={onSubmit}
-                  store={store}
-                  handleNext={handleNext}
-                />
-              ) : (
-                <div></div>
-              )}
-              {current[1] === 'name' ? (
-                <AddName
-                  onSubmit={onSubmit}
-                  store={store}
-                  handleNext={handleNext}
-                  handleBack={handleBack}
-                />
-              ) : (
-                <div></div>
-              )}
-              {current[1] === 'notes' ? (
-                <AddNotes
-                  onSubmit={onSubmit}
-                  store={store}
-                  handleNext={handleNext}
-                  handleBack={handleBack}
-                />
-              ) : (
-                <div></div>
-              )}
-              {current[1] === 'enthusiasm' ? (
-                <AddEnthusiasm
-                  onSubmit={onSubmit}
-                  store={store}
-                  handleBack={handleBack}
-                  handleSubmitAll={handleSubmitAll}
-                />
-              ) : (
-                <div></div>
-              )}
-            </Box>
+        <Box className="start-conversation">
+          <Box>
+            Step {current[0] + 1} of {steps.length}
+          </Box>
+          <Box height="100%">
+            {current[1] === 'email' ? (
+              <AddEmail
+                onSubmit={onSubmit}
+                store={store}
+                handleNext={handleNext}
+              />
+            ) : (
+              <div></div>
+            )}
+            {current[1] === 'name' ? (
+              <AddName
+                onSubmit={onSubmit}
+                store={store}
+                handleNext={handleNext}
+                handleBack={handleBack}
+              />
+            ) : (
+              <div></div>
+            )}
+            {current[1] === 'notes' ? (
+              <AddNotes
+                onSubmit={onSubmit}
+                store={store}
+                handleNext={handleNext}
+                handleBack={handleBack}
+              />
+            ) : (
+              <div></div>
+            )}
+            {current[1] === 'enthusiasm' ? (
+              <AddEnthusiasm
+                onSubmit={onSubmit}
+                store={store}
+                handleBack={handleBack}
+                handleSubmitAll={onSubmitAll}
+              />
+            ) : (
+              <div></div>
+            )}
+          </Box>
 
-            <Flex>
-              {current[0] !== 0 ? (
-                <BtnOne
-                  colortype="dark"
-                  mr={4}
-                  onClick={() => handleBack()}
-                  mt={6}
-                  width="200px"
-                >
-                  Back
-                  <ArrowBackIcon />
-                </BtnOne>
-              ) : (
-                <div></div>
-              )}
-              {/* {current[0] !== steps.length - 1 ? (
+          <Flex>
+            {/* {current[0] !== steps.length - 1 ? (
                 <BtnOne
                   colortype="dark"
                   mt={6}
@@ -152,26 +129,7 @@ const StartAConversation = () => {
               ) : (
                 <div></div>
               )} */}
-
-              {current[0] === steps.length - 1 ? (
-                <BtnOne
-                  colortype="dark"
-                  onKeyPress={(e) => {
-                    if (e.keyCode === 13) {
-                      onSubmitAll();
-                    }
-                  }}
-                  mt={6}
-                  width="200px"
-                >
-                  Submit
-                  <ArrowForwardIcon />
-                </BtnOne>
-              ) : (
-                <div></div>
-              )}
-            </Flex>
-          </div>
+          </Flex>
         </Box>
       </Container>
     </Box>
