@@ -1,60 +1,119 @@
-import React, { useState } from 'react';
-import {
-  FormControl,
-  FormLabel,
-  FormErrorMessage,
-  Input,
-} from '@chakra-ui/react';
+import React, { useEffect, useState } from 'react';
+import { Alert, AlertIcon, AlertTitle, Box } from '@chakra-ui/react';
+import { ArrowForwardIcon, ArrowBackIcon } from '@chakra-ui/icons';
+import { BtnOne } from '../index';
 import { useForm } from 'react-hook-form';
 import { useTransition, animated as a } from 'react-spring';
 
-const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+const emailRegexOne = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
 
-const AddEmail = (props) => {
+const AddEmail = ({ onSubmit, store, handleNext }) => {
   const [show, setShow] = useState(true);
-  const { errors, register } = props;
-  // const { errors, register, formState } = useForm();
-  const validateEmail = (value) => {
-    if (!value) {
-      return 'Emails is required';
-    } else if (!emailRegex.test(value)) {
-      return 'Not a valid email';
-    } else return true;
-  };
+  const [isDisabled, setIsDisabled] = useState(true);
   const [alertMessage, setAlertMessage] = useState({
-    type: 'warning',
-    message: '',
+    type: 'info',
+    message: "We'll never share your email.",
   });
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm({
+    defaultValues: store,
+    reValidateMode: 'onChange',
+  });
+
+  const watchAll = watch();
+  const validateEmail = (value) => {
+    console.log('valid email');
+    if (!value) {
+      setAlertMessage({
+        type: 'warning',
+        message: 'Emails is required',
+      });
+    } else if (!emailRegex.test(value)) {
+      setAlertMessage({
+        type: 'warning',
+        message: 'Not a valid email',
+      });
+    } else {
+      setAlertMessage({
+        type: 'success',
+        message: 'Looking good',
+      });
+    }
+  };
+
   const transitions = useTransition(show, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
     leave: { opacity: 0 },
   });
 
+  useEffect(() => {
+    if (store.email) {
+      validateEmail(store.email);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (alertMessage.type === 'success') {
+      setIsDisabled(false);
+    }
+  }, [alertMessage]);
+
+  const submitAndNext = (data) => {
+    console.log('sub and next');
+    handleNext();
+    onSubmit(data);
+  };
+
   return (
     <>
       {transitions(
         (styles, item) =>
           item && (
-            <a.div style={styles}>
-              {/* // <FormControl isInvalid={errors.email}> */}
-              <FormControl>
-                <FormLabel color="brand.five" htmlFor="email">
-                  Email
-                </FormLabel>
-                <Input
-                  color="brand.five"
-                  borderColor="brand.five"
-                  height="80px"
-                  fontSize="40px"
-                  name="email"
-                  placeholder="email"
-                  ref={{ ...register('email', { required: true }) }}
-                />
-                {/* <FormErrorMessage>
-        {errors.email && errors.email.message}
-      </FormErrorMessage> */}
-              </FormControl>
+            <a.div style={{ ...styles, height: '100%' }}>
+              <Box width={{ base: '100%', md: '60%' }} height="100%">
+                <form onSubmit={handleSubmit(submitAndNext)}>
+                  <div className="add-email input-container">
+                    <label htmlFor="email">Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      placeholder="smcqueen@kingofcool.com"
+                      {...register('email', { required: true, maxLength: 30 })}
+                      onChange={(e) => validateEmail(e.target.value)}
+                    />
+                    {errors.email && errors.email.type === 'required' && (
+                      <span>This is required</span>
+                    )}
+                    {errors.email && errors.email.type === 'maxLength' && (
+                      <span>Max length exceeded</span>
+                    )}
+                    <Alert
+                      opacity="0.7"
+                      backgroundColor="transparent"
+                      status={alertMessage.type}
+                    >
+                      <AlertIcon />
+                      <AlertTitle mr={2}>{alertMessage.message}</AlertTitle>
+                    </Alert>
+                  </div>
+
+                  <Box mt={4}>
+                    <input
+                      className="dark btn-one"
+                      type="submit"
+                      value="Next"
+                      disabled={isDisabled}
+                    />
+                    <ArrowForwardIcon />
+                  </Box>
+                </form>
+              </Box>
             </a.div>
           )
       )}

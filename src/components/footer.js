@@ -32,7 +32,7 @@ const Footer = ({ title, description }) => {
   };
   return (
     <>
-      <Box background="brand.two">
+      <Box background="brand.two" py={6}>
         <Box minHeight="500px">
           <Flex minHeight="100%" flexDirection="column">
             <Box flexGrow="1">

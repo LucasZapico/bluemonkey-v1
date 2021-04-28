@@ -177,3 +177,52 @@
 		}
 	}
 }
+
+
+.light.btn-one {
+		
+	&:hover {
+
+	}
+	&:focus {
+
+	}
+	&:active {
+
+	}
+}
+
+.dark.btn-one {
+	width: 200px;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	background-color: $color-two;
+  border-width: 2px;
+	text-align: center;
+  border-color: $color-three;
+	cursor: pointer;
+	position: relative;
+		& + svg {
+			position: absolute;
+			display: none;
+			z-index: 2;
+			top: 50%;
+			left: 70%;
+			transform: translateX(-50%) translateY(-50%);
+		}
+	
+	
+	&:hover {
+
+	}
+	&:focus {
+
+	}
+	&:active {
+		
+	}
+	&[disabled] {
+		opacity: .6;
+		cursor: not-allowed;
+	}
+}

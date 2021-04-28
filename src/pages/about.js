@@ -8,7 +8,7 @@ import MonkeyThree from '../assets/monkey_3.svg';
 const AboutPage = () => {
   const ref = useRef();
   const [{ offset }, set] = useSpring(() => ({ offset: 0 }));
-  const calc = (o) => `translateY(${o * (0.3 * -1)}px)`;
+  const calc = (o) => `translateY(${o * (0.2 * -1)}px)`;
 
   const handleScroll = () => {
     const posY = ref.current.getBoundingClientRect().top;

@@ -11,10 +11,10 @@ import AddEnthusiasm from './add-enthusiasm';
 const steps = ['email', 'name', 'notes', 'enthusiasm'];
 
 const StartAConversation = () => {
-  const { handleSubmit, errors, register, watch, formState } = useForm();
   const [current, setCurrent] = useState([0, steps[0]]);
-
+  const [store, setStore] = useState({});
   const handleNext = () => {
+    console.log('next');
     if (current[0] !== steps.length - 1) {
       setCurrent((prev) => {
         return [prev[0] + 1, steps[prev[0] + 1]];
@@ -22,6 +22,7 @@ const StartAConversation = () => {
     }
   };
   const handleBack = () => {
+    console.log('back');
     if (current[0] !== 0) {
       setCurrent((prev) => {
         return [prev[0] - 1, steps[prev[0] - 1]];
@@ -32,81 +33,94 @@ const StartAConversation = () => {
   useEffect(() => {
     console.log(`
     current: ${current}, 
-    errors, ${errors}`);
+    `);
+    console.log('store:', store);
   });
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    console.log('on submit ran', data);
+    setStore({
+      ...store,
+      ...data,
+    });
+    if (current[0] === steps.length - 1) {
+      onSubmitAll();
+    }
+  };
+
+  const onSubmitAll = () => {
+    console.log('submit all', store);
+  };
+
+  useEffect(() => {
+    console.log('store', store);
+  }, [store]);
 
   return (
     <Box width="100%" py={20}>
       <Container maxW="container.xl">
         <Box>
-          <Heading size="4xl" fontFamily="montas-semibold" mb={6}>
+          <Heading size="3xl" fontFamily="montas-semibold" mb={6}>
             Start A Conversation
           </Heading>
         </Box>
-        <Box
-          display="flex"
-          justifyContent="space-between"
-          flexDirection="column"
-          height="250px"
-        >
-          <form
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              height: '100%',
-            }}
-            name="start-a-conversation"
-            onSubmit={handleSubmit(onSubmit)}
-          >
-            <Box>
-              Step {current[0] + 1} of {steps.length}
-            </Box>
-            <Box>
-              {current[1] === 'email' ? (
-                <AddEmail register={register} errors={errors} />
-              ) : (
-                <div></div>
-              )}
-              {current[1] === 'name' ? (
-                <AddName register={register} errors={errors} />
-              ) : (
-                <div></div>
-              )}
-              {current[1] === 'notes' ? (
-                <AddNotes register={register} errors={errors} />
-              ) : (
-                <div></div>
-              )}
-              {current[1] === 'enthusiasm' ? (
-                <AddEnthusiasm register={register} errors={errors} />
-              ) : (
-                <div></div>
-              )}
-            </Box>
+        <Box className="start-conversation">
+          <Box>
+            Step {current[0] + 1} of {steps.length}
+          </Box>
+          <Box height="100%">
+            {current[1] === 'email' ? (
+              <AddEmail
+                onSubmit={onSubmit}
+                store={store}
+                handleNext={handleNext}
+              />
+            ) : (
+              <div></div>
+            )}
+            {current[1] === 'name' ? (
+              <AddName
+                onSubmit={onSubmit}
+                store={store}
+                handleNext={handleNext}
+                handleBack={handleBack}
+              />
+            ) : (
+              <div></div>
+            )}
+            {current[1] === 'notes' ? (
+              <AddNotes
+                onSubmit={onSubmit}
+                store={store}
+                handleNext={handleNext}
+                handleBack={handleBack}
+              />
+            ) : (
+              <div></div>
+            )}
+            {current[1] === 'enthusiasm' ? (
+              <AddEnthusiasm
+                onSubmit={onSubmit}
+                store={store}
+                handleBack={handleBack}
+                handleSubmitAll={onSubmitAll}
+              />
+            ) : (
+              <div></div>
+            )}
+          </Box>
 
-            <Flex>
-              {current[0] !== 0 ? (
-                <BtnOne
-                  colortype="dark"
-                  mr={4}
-                  onClick={() => handleBack()}
-                  mt={6}
-                  width="200px"
-                >
-                  Back
-                  <ArrowBackIcon />
-                </BtnOne>
-              ) : (
-                <div></div>
-              )}
-              {current[0] !== steps.length - 1 ? (
+          <Flex>
+            {/* {current[0] !== steps.length - 1 ? (
                 <BtnOne
                   colortype="dark"
                   mt={6}
                   width="200px"
+                  onKeyPress={(e) => {
+                    if (e.keyCode === 13) {
+                      handleNext();
+                    }
+                  }}
                   onClick={() => handleNext()}
                 >
                   Next
@@ -114,18 +128,8 @@ const StartAConversation = () => {
                 </BtnOne>
               ) : (
                 <div></div>
-              )}
-
-              {current[0] === steps.length - 1 ? (
-                <BtnOne colortype="dark" mt={6} width="200px">
-                  Submit
-                  <ArrowForwardIcon />
-                </BtnOne>
-              ) : (
-                <div></div>
-              )}
-            </Flex>
-          </form>
+              )} */}
+          </Flex>
         </Box>
       </Container>
     </Box>

@@ -65,18 +65,18 @@ export const BtnOne = (props) => {
     to = '',
     href = '',
     icon,
-    ColorType = 'light',
+    colorType = 'light',
     IsDisabled,
   } = props;
-  console.log('dis', IsDisabled);
+
   return (
     <Box
       minWidth="200px"
       opacity={IsDisabled ? 0.3 : 1}
       cursor={IsDisabled ? 'not-allowed' : 'pointer'}
-      color={ColorType == 'light' ? 'brand.one' : 'brand.five'}
+      color={colorType == 'light' ? 'brand.one' : 'brand.five'}
       border="2px"
-      borderColor={ColorType == 'light' ? 'brand.one' : 'brand.five'}
+      borderColor={colorType == 'light' ? 'brand.one' : 'brand.five'}
       py={4}
       px={4}
       as="button"

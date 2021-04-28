@@ -36,23 +36,6 @@ const Hero = ({ data }) => (
     zIndex="1"
   >
     <Container maxW="container.xl" position="relative">
-      <Box position="absolute" width="130vw">
-        {/* <Heading
-          as="h3"
-          marginTop="-5%"
-          marginLeft="-5%"
-          opacity="0.1"
-          fontSize={{
-            base: '120',
-            sm: '120',
-            md: '140',
-            lg: '180',
-          }}
-        >
-          Plan | Design | Develope | Optimize | Iterate
-        </Heading> */}
-      </Box>
-
       <Box
         display={{ base: 'none', md: 'block' }}
         position="absolute"
@@ -302,7 +285,7 @@ const SectionOne = ({ data }) => (
               </Box>
               We are a one stop shop for frugal and competitive:
             </Heading>
-            <Box ml={-4}>
+            <Box ml={-4} maxWidth="600px" mx={{ base: 'auto' }}>
               <Box mb={10}>
                 <LinkThree to="/services/#branding">
                   Branding
