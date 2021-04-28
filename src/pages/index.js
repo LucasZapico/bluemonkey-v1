@@ -72,6 +72,8 @@ const Hero = ({ data }) => (
       <Heading
         as="h1"
         maxWidth="800px"
+        bgGradient="linear(to-r, brand.three, brand.five)"
+        bgClip="text"
         fontFamily="montas-semibold"
         fontSize={{
           base: '80',
@@ -94,7 +96,12 @@ const Hero = ({ data }) => (
       />
       {/* </a.div> */}
     </Container>
-    <Flex justifyContent="space-between" flexWrap="wrap" bg="brand.five">
+    <Flex
+      justifyContent="space-between"
+      flexWrap="wrap"
+      // bgGradient="linear(to-b, brand.two 5%, brand.three 20%, brand.five 25%)"
+      bg="brand.five"
+    >
       <Container maxW="container.xl">
         <ScrollAniFadeIn>
           <Box py={{ base: 0, sm: 20 }} flexBasis={{ base: '100%', md: '60%' }}>
@@ -156,14 +163,14 @@ const Hero = ({ data }) => (
 const SectionOne = ({ data }) => (
   <Box minH="500px" zIndex="1">
     <Flex
-      // backgroundColor="brand.one"
       flexDirection="row"
       flexWrap="wrap"
       justifyContent="space-between"
       position="relative"
     >
       <Box
-        backgroundColor="brand.five"
+        bgGradient="radial( brand.three 20%, brand.five )"
+        // backgroundColor="brand.five"
         p={{ base: 0, sm: 10 }}
         height="auto"
         flexBasis={{ base: '100%', md: '100%', lg: '50%', xl: '40%' }}
