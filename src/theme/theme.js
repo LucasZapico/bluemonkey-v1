@@ -90,8 +90,7 @@ const theme = extendTheme({
     brand: {
       one: '#FAF3E0', // tan
       two: '#FAF8F2', // tan - 1
-
-      three: '#1C4766', // blue dark
+      three: '#1E212D', //'#1C4766', // blue dark
       four: '#A3BCCF', // blue light
       five: '#1E212D', // dark
       six: '#2C3142', // dark + 1
