@@ -87,12 +87,7 @@ const AddEmail = ({ onSubmit, store, handleNext }) => {
                       {...register('email', { required: true, maxLength: 30 })}
                       onChange={(e) => validateEmail(e.target.value)}
                     />
-                    {errors.email && errors.email.type === 'required' && (
-                      <span>This is required</span>
-                    )}
-                    {errors.email && errors.email.type === 'maxLength' && (
-                      <span>Max length exceeded</span>
-                    )}
+
                     <Alert
                       opacity="0.7"
                       backgroundColor="transparent"

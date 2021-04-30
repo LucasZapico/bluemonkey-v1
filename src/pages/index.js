@@ -81,9 +81,12 @@ const Hero = ({ data }) => (
           md: '140',
           lg: '175',
         }}
-        mb={20}
       >
         Blue Monkey Makes....
+      </Heading>
+      <Heading as="h3" size="xl" lineHeight="base" mb={20} maxWidth="600px">
+        ...custom digital presences that are engaging, performant, and
+        SEO&nbsp;optimized.
       </Heading>
       <Box
         zIndex="-1"
@@ -108,54 +111,38 @@ const Hero = ({ data }) => (
             <Box maxWidth="650px">
               <Heading
                 as="h3"
-                size="3xl"
+                fontSize={{
+                  base: '80',
+                  sm: '90',
+                  md: '100',
+                  lg: '80',
+                  xl: '110',
+                }}
+                fontFamily="montas-semibold"
                 lineHeight="base"
-                mb={10}
+                zIndex="1"
                 color="brand.one"
+                pb={10}
               >
-                ...custom digital presences that are engaging, performant, and
-                SEO optimized.
+                Our Work
               </Heading>
             </Box>
           </Box>
         </ScrollAniFadeIn>
       </Container>
-
-      {/* <Box
-        p={{ base: 0, sm: 10 }}
-        bg="brand.five"
-        minH="500px"
-        flexBasis={{ base: '100%', md: '40%' }}
-      >
-        <Container maxW="container.xl">
-          <Box maxWidth={{ base: '100%', md: '650px' }}>
-            <Heading as="h3" size="xl" lineHeight="base" color="brand.one">
-              Blue Monkey is a{' '}
-              <ChLink to="the-launch" color="brand.one">
-                launch pad for entrepreneurs and small business
-              </ChLink>
-              . We specialize in getting you coverage across{' '}
-              <ChLink to="why-branding" color="brand.one">
-                {' '}
-                branding
-              </ChLink>
-              ,{' '}
-              <ChLink to="why-branding" color="brand.one">
-                web presence
-              </ChLink>
-              ,{' '}
-              <ChLink color="brand.one" to="why-branding">
-                development
-              </ChLink>{' '}
-              and{' '}
-              <ChLink to="why-branding" color="brand.one">
-                business integrations
-              </ChLink>
-              .
-            </Heading>
-          </Box>
+      {data.cases.edges.map((c) => (
+        <Container>
+          <ScrollAniFadeIn>
+            <Box height="400px" width="600px">
+              <Img
+                fluid={c.node.frontmatter.featuredImg.childImageSharp.fluid}
+                alt="A dinosaur"
+              />
+            </Box>
+            <Link to={c.node.frontmatter.path}>{c.node.frontmatter.title}</Link>
+          </ScrollAniFadeIn>
         </Container>
-      </Box> */}
+      ))}
     </Flex>
   </Flex>
 );
@@ -468,9 +455,8 @@ export const IndexPage = ({ data }) => {
   const ref = useRef();
 
   return (
-    <Layout>
-      <div ref={ref}>
-        {/* <Box
+    <div ref={ref}>
+      {/* <Box
           position="fixed"
           // opacity="0.3"
           top="0px"
@@ -485,13 +471,13 @@ export const IndexPage = ({ data }) => {
             fluid={data.bgImage.childImageSharp.fluid}
           />
         </Box> */}
-        <Box minH="700px" pt={28}>
-          <Hero data={data} />
-          <SectionOne data={data} />
-          {/* <ProfileSection data={data} /> */}
-          {/* <FAQSection data={data} /> */}
-          {/* <PricingSection data={data} /> */}
-          {/* <Flex
+      <Box minH="700px" pt={28}>
+        <Hero data={data} />
+        <SectionOne data={data} />
+        {/* <ProfileSection data={data} /> */}
+        {/* <FAQSection data={data} /> */}
+        {/* <PricingSection data={data} /> */}
+        {/* <Flex
             width="100%"
             zIndex="0"
             background="brand.six"
@@ -514,14 +500,36 @@ export const IndexPage = ({ data }) => {
               </Flex>
             </Container>
           </Flex> */}
-        </Box>
-      </div>
-    </Layout>
+      </Box>
+    </div>
   );
 };
 
 export const query = graphql`
   query {
+    cases: allMdx(
+      filter: { fileAbsolutePath: { regex: "/cases/" } }
+      limit: 3
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            date_created
+            last_modified
+            path
+            featuredImg {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            title
+          }
+        }
+      }
+    }
     profileImage: file(relativePath: { eq: "claire-profile.png" }) {
       childImageSharp {
         fluid(maxWidth: 500) {

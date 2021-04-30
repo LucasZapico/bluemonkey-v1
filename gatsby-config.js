@@ -16,6 +16,22 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-image',
     {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/layout.js`),
+      },
+    },
+    {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: 'G-WY6PSQNVTY',
@@ -59,11 +75,12 @@ module.exports = {
     'gatsby-transformer-remark',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: './src/images/',
+        path: `${__dirname}/src/images/`,
       },
       __key: 'images',
     },
@@ -71,7 +88,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'pages',
-        path: './src/pages/',
+        path: `${__dirname}/src/pages/`,
       },
       __key: 'pages',
     },

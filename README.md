@@ -25,11 +25,14 @@
 - [ ] add cases 
 - [ ] add more hover ui showcase images 
 - [ ] enhance monkey's 
+- [ ] enhance showcase ui
 
 
 __form__
-- [ ] enhance lead capture
-- [ ] add shift + enter to form 
+- [x] enhance lead capture pass one
+- [ ] add next on enter to form 
+  - [ ] look into shift + enter ? back? 
+  - [ ] on switch to next form auto focus
 - [x] show steps
   - [ ] enhance step indicator
 - [ ] accessibility pass on form
