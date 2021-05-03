@@ -26,6 +26,11 @@
 - [ ] add more hover ui showcase images 
 - [ ] enhance monkey's 
 - [ ] enhance showcase ui
+- [ ] enhance cursor on link tags
+
+__Cases__ 
+
+- [ ] enhance web design ui  showcase image
 
 
 __form__

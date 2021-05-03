@@ -51,7 +51,7 @@ const AddEnthusiasm = ({ onSubmit, store, handleSubmitAll, handleBack }) => {
             <a.div style={{ ...styles, height: '100%' }}>
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="input-container add-enthusiasm">
-                  <label>Enthusiasm Level</label>
+                  <label>Enthusiasm</label>
                   <label htmlFor="excited" className="radio">
                     <div className="radio-input">
                       <input

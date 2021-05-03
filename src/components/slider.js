@@ -6,11 +6,11 @@ import { Box, Flex, Heading, Button } from '@chakra-ui/react';
 import { ArrowRightIcon, ArrowLeftIcon } from '@chakra-ui/icons';
 
 const SliderOne = ({ slides }) => {
-  const slideContainer = useRef(null);
-  const sliderContainer = useRef(null);
+  const [current, setCurrent] = useState(1);
   const [slidesLen, setSlidesLen] = useState(0);
   const [slideWidth, setSlideWidth] = useState(0);
-  const [current, setCurrent] = useState(1);
+  const slideContainer = useRef(null);
+  const sliderContainer = useRef(null);
   const [props, set] = useSpring(() => ({
     transform: 'translateX(0px)',
   }));
@@ -23,6 +23,9 @@ const SliderOne = ({ slides }) => {
       period: 1000,
     },
   };
+  useEffect(() => {
+    console.log('slides', slides);
+  }, [slides]);
 
   useEffect(() => {
     if (slideContainer.current) {
@@ -82,37 +85,39 @@ const SliderOne = ({ slides }) => {
   };
 
   return (
-    <Box ref={sliderContainer} overflow="hidden">
-      <a.div
-        style={{
-          ...props,
-          display: 'flex',
-          flexDirection: 'row',
-          flexWrap: 'nowrap',
-          position: 'relative',
-        }}
-        ref={slideContainer}
-      >
-        {slideWidth &&
-          slides.map((slide, i) => (
-            <div
-              style={{
-                height: '400px',
-                minWidth: slideWidth,
-                flexBasis: slideWidth,
-              }}
-              key={slide.node.id}
-            >
-              <Img
-                fit="cover"
-                width={slideWidth}
-                fluid={slide.node.childImageSharp.fluid}
-              />
-            </div>
-          ))}
-      </a.div>
+    <Box>
+      <Box ref={sliderContainer} overflow="hidden">
+        <a.div
+          style={{
+            ...props,
+            display: 'flex',
+            flexDirection: 'row',
+            flexWrap: 'nowrap',
+            position: 'relative',
+          }}
+          ref={slideContainer}
+        >
+          {slideWidth !== 0 &&
+            slides.map((slide, i) => (
+              <div
+                style={{
+                  height: 'auto',
+                  minWidth: slideWidth,
+                  flexBasis: slideWidth,
+                }}
+                key={slide.node.id}
+              >
+                <Img
+                  fit="cover"
+                  width={slideWidth}
+                  fluid={slide.node.childImageSharp.fluid}
+                />
+              </div>
+            ))}
+        </a.div>
+      </Box>
       {config.button && slideContainer.current ? (
-        <Flex align="flex-end" position="relative">
+        <Flex align="flex-end" position="relative" mt={4}>
           <Heading
             as="h6"
             opacity=".6"

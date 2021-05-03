@@ -42,7 +42,7 @@ const AddNotes = ({ onSubmit, store, handleNext, handleBack }) => {
     if (!value) {
       setAlertMessage({
         type: 'warning',
-        message: 'A project notes required',
+        message: 'A project note is required',
       });
     } else if (value.length > 10) {
       setAlertMessage({
@@ -77,7 +77,7 @@ const AddNotes = ({ onSubmit, store, handleNext, handleBack }) => {
           item && (
             <a.div style={styles}>
               <Box width={{ base: '100%', md: '60%' }}>
-                <Box width={{ base: '100%', md: '60%' }}>
+                <Box>
                   <form onSubmit={handleSubmit(submitAndNext)}>
                     <div className="input-container add-notes">
                       <label htmlFor="notes">Project Notes</label>

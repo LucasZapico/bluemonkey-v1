@@ -34,14 +34,16 @@ const Hero = ({ data }) => (
     justifyContent="space-between"
     minH="700px"
     zIndex="1"
+    bgGradient="linear(to-tr, brand.one , brand.two )"
   >
     <Container maxW="container.xl" position="relative">
       <Box
         display={{ base: 'none', md: 'block' }}
         position="absolute"
-        right="-20%"
+        left="-20%"
         bottom="0"
-        transform="scaleX(-1)"
+        opacity=".5"
+        transform="scaleX(1)"
       >
         <ScrollAniMonkey inOn="-300" outOn="-100">
           <MonkeyOne />
@@ -50,9 +52,10 @@ const Hero = ({ data }) => (
       <Box
         display={{ base: 'none', md: 'block' }}
         position="absolute"
-        right="10%"
+        left="10%"
         bottom="0"
-        transform="scaleX(-1)"
+        transform="scaleX(1)"
+        opacity=".5"
       >
         <ScrollAniMonkey inOn="-300" outOn="0">
           <MonkeyOneTwo />
@@ -61,9 +64,10 @@ const Hero = ({ data }) => (
       <Box
         display={{ base: 'none', md: 'block' }}
         position="absolute"
-        right="50%"
+        left="50%"
         bottom="0"
-        transform="scaleX(-1)"
+        transform="scaleX(1)"
+        opacity=".5"
       >
         <ScrollAniMonkey inOn="0" outOn="400">
           <MonkeyOneThree />
@@ -99,6 +103,16 @@ const Hero = ({ data }) => (
       />
       {/* </a.div> */}
     </Container>
+  </Flex>
+);
+
+const OurWorkSection = ({ data }) => (
+  <Box
+    minH="500px"
+    py={20}
+    zIndex="1"
+    bgGradient="linear(to-r, brand.three, brand.five)"
+  >
     <Flex
       justifyContent="space-between"
       flexWrap="wrap"
@@ -130,24 +144,52 @@ const Hero = ({ data }) => (
           </Box>
         </ScrollAniFadeIn>
       </Container>
-      {data.cases.edges.map((c) => (
-        <Container>
+      {/* {data.cases.edges.map((c) => (
+        <Container mb={10}>
           <ScrollAniFadeIn>
-            <Box height="400px" width="600px">
-              <Img
-                fluid={c.node.frontmatter.featuredImg.childImageSharp.fluid}
-                alt="A dinosaur"
-              />
+            <Heading
+              as="h3"
+              size="xl"
+              fontFamily="montas-semibold"
+              lineHeight="base"
+              zIndex="1"
+              color="brand.one"
+              pb={6}
+            >
+              {c.node.frontmatter.title}
+            </Heading>
+            <Box maxWidth="400px" mb={4}>
+              <Heading size="md" color="brand.one">
+                Services
+              </Heading>
+              {c.node.frontmatter.services.map((s) => (
+                <Text
+                  size="md"
+                  display="inline"
+                  lineHeight="base"
+                  color="brand.one"
+                >
+                  {s},
+                </Text>
+              ))}
             </Box>
-            <Link to={c.node.frontmatter.path}>{c.node.frontmatter.title}</Link>
+
+            <Link to={c.node.frontmatter.path}>
+              <Box height="auto" overflow="hidden" mb={10}>
+                <Img
+                  fluid={c.node.frontmatter.featuredImg.childImageSharp.fluid}
+                  alt=""
+                />
+              </Box>
+            </Link>
           </ScrollAniFadeIn>
         </Container>
-      ))}
+      ))} */}
     </Flex>
-  </Flex>
+  </Box>
 );
 
-const SectionOne = ({ data }) => (
+const ServicesSection = ({ data }) => (
   <Box minH="500px" zIndex="1">
     <Flex
       flexDirection="row"
@@ -256,6 +298,7 @@ const SectionOne = ({ data }) => (
       <Box
         pb={20}
         flexBasis={{ base: '100%', md: '100%', lg: '50%', xl: '60%' }}
+        bgGradient="linear(to-b, brand.one , brand.two )"
       >
         <Container maxW="container.xl">
           <ScrollAniFadeIn>
@@ -312,194 +355,15 @@ const SectionOne = ({ data }) => (
   </Box>
 );
 
-const FAQSection = ({ data }) => (
-  <Container maxW="container.xl">
-    <ScrollAniFadeIn>
-      <Flex flexWrap="wrap" minH="700px" py={40} flexGrow="1">
-        <Box
-          minHeight="400px"
-          height="auto"
-          border="2px"
-          borderColor="brand.three"
-          flexBasis={{ base: '100%', md: '50%' }}
-          p={6}
-        >
-          <Heading as="h3" lineHeight="base" mb={6} minHeight="150px">
-            <a id="what-is-hynotherapy">What Is Hypnotherapy?</a>
-          </Heading>
-          <Text lineHeight="base" fontSize="xl">
-            Hypnotherapy is a natural state of mind with the extraordinary
-            quality of mental and physical relaxation with numerous benefits.
-          </Text>
-        </Box>
-        <Box
-          minHeight="400px"
-          height="auto"
-          border="2px"
-          borderColor="brand.three"
-          flexBasis={{ base: '100%', md: '50%' }}
-          p={6}
-        >
-          <Heading as="h3" lineHeight="base" mb={6} minHeight="150px">
-            <a id="is-hynotherapy-right-for-you">
-              Is Hypnotherapy Right For You?
-            </a>
-          </Heading>
-          <Text lineHeight="base" fontSize="xl">
-            If you're suffering from anxiousness, emotions related to pain or
-            ready to achieve higher personal or professional goals? Hypnotherapy
-            may be a great fit for you.
-          </Text>
-        </Box>
-        <Box
-          minHeight="400px"
-          height="auto"
-          border="2px"
-          borderColor="brand.three"
-          flexBasis={{ base: '100%', md: '50%' }}
-          p={6}
-        >
-          <Heading as="h3" lineHeight="base" mb={6} minHeight="150px">
-            <a id="what-you-can-expect"> What You Can Expect?</a>
-          </Heading>
-          <Text lineHeight="base" fontSize="xl">
-            Clients experience transformative results ranging from, relief from
-            stress and anxiousness to personal growth and development.
-          </Text>
-        </Box>
-        <Box
-          minHeight="400px"
-          height="auto"
-          border="2px"
-          borderColor="brand.three"
-          flexBasis={{ base: '100%', md: '50%' }}
-          p={6}
-        >
-          <Heading as="h3" lineHeight="base" mb={6} minHeight="150px">
-            <a id="what-hypnotherapy-can-do">What Hypnotherapy Can Do?</a>
-          </Heading>
-          <Box lineHeight="base" fontSize="xl">
-            <UnorderedList>
-              <ListItem>Enthusiasm for Life</ListItem>
-              <ListItem>Build Confidence and Purpose</ListItem>
-              <ListItem>Achieve Business Goals</ListItem>
-              <ListItem>Increase Quality of Sleep</ListItem>
-            </UnorderedList>
-          </Box>
-        </Box>
-      </Flex>
-    </ScrollAniFadeIn>
-  </Container>
-);
-
-const PricingSection = ({ data }) => (
-  <Box minH="700px" py={20} bg="brand.one">
-    <Container maxW="container.xl">
-      <Heading as="h3" size="2xl" lineHeight="base" mb={6}>
-        Session Pricing
-      </Heading>
-
-      <Grid
-        templateColumns={{ base: 'repeat(4,1fr)' }}
-        templateRows={{ base: '1fr', md: 'repeat(2, 1fr)' }}
-      >
-        {sessions.map((s, i) => (
-          <GridItem
-            rowSpan={{ base: '1' }}
-            colSpan={{ base: '4', md: '2', lg: '1' }}
-            key={i}
-            border="2px"
-            borderColor="brand.three"
-            p={6}
-            minW="200px"
-          >
-            <Heading as="h4" lineHeight="base">
-              {s.name}
-            </Heading>
-            <Heading as="h4" size="2xl" lineHeight="base" mb={0}>
-              {s.price}
-            </Heading>
-            {s.discount ? (
-              <Heading as="h6" size="sm" lineHeight="base">
-                (Save, {s.discount})
-              </Heading>
-            ) : undefined}
-          </GridItem>
-        ))}
-      </Grid>
-
-      <Flex
-        justifyContent={{ base: 'center', md: 'space-between' }}
-        alignItems="center"
-        flexWrap="wrap"
-        flexDirection={{ base: 'column', md: 'row' }}
-      >
-        <Link to="/schedule">
-          <Button size="lg" px={8} my={6} variant="btnTwo">
-            Schedule a Free 20 min Consultation
-          </Button>
-        </Link>
-        <Box maxWidth="400px" my={6}>
-          <Text lineHeight="base">
-            If you're a veteran, first responder, senior citizen or person under
-            the age of 17 in Edmonds, WA, ask about special discounts on your
-            hypnotherapy service.
-          </Text>
-        </Box>
-      </Flex>
-    </Container>
-  </Box>
-);
-
 export const IndexPage = ({ data }) => {
   const ref = useRef();
 
   return (
     <div ref={ref}>
-      {/* <Box
-          position="fixed"
-          // opacity="0.3"
-          top="0px"
-          width="100vw"
-          height="auto"
-          minHeight="100vh"
-          zIndex="-1"
-        >
-          <Img
-            style={{ height: '100vh' }}
-            fit="cover"
-            fluid={data.bgImage.childImageSharp.fluid}
-          />
-        </Box> */}
       <Box minH="700px" pt={28}>
         <Hero data={data} />
-        <SectionOne data={data} />
-        {/* <ProfileSection data={data} /> */}
-        {/* <FAQSection data={data} /> */}
-        {/* <PricingSection data={data} /> */}
-        {/* <Flex
-            width="100%"
-            zIndex="0"
-            background="brand.six"
-            p={4}
-            justifyContent="space-between"
-          >
-            <Container maxWidth="container.xl">
-              <Flex
-                justifyContent="space-between"
-                alignItems="center"
-                width="100%"
-                flexDirection={{ base: 'column', md: 'row' }}
-              >
-                <Box m={4}>
-                  <Heading as="h5" size="md">
-                    $50 off all sessions and packages for the month
-                    of&nbsp;April
-                  </Heading>
-                </Box>
-              </Flex>
-            </Container>
-          </Flex> */}
+        <OurWorkSection data={data} />
+        <ServicesSection data={data} />
       </Box>
     </div>
   );
@@ -507,36 +371,6 @@ export const IndexPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    cases: allMdx(
-      filter: { fileAbsolutePath: { regex: "/cases/" } }
-      limit: 3
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            date_created
-            last_modified
-            path
-            featuredImg {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            title
-          }
-        }
-      }
-    }
-    profileImage: file(relativePath: { eq: "claire-profile.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 500) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
     bgImage: file(relativePath: { eq: "clouds-bg.png" }) {
       childImageSharp {
         fluid(maxWidth: 1400) {

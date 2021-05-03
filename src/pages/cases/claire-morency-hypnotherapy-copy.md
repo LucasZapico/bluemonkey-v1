@@ -1,9 +1,15 @@
 ---
 title: Claire Morency Hypnotherapy
-path: /claire-morency-hypnotherapy
+path: /cases/claire-morency-hypnotherapy
 date-created: 2021/04/28 11:54:01
-last-modified: 2021/04/30 14:53:10
+last-modified: 2021/05/02 19:25:05
 featuredImg: '../../images/showcase/work/projects/cmh-branding-showcase.png'
+services: 
+  - Branding 
+  - B2C Website
+  - Design Direction
+  - SEO optimization and Strategy 
+  - Business integrations 
 ---
 
 <h1>{props.pageContext.frontmatter.title}</h1>
@@ -31,6 +37,10 @@ Launching in March, they needed a full digital presence suite. We created brandi
   - scheduling 
 
 
-# Branding 
+### Branding 
 
-[]
+### Design 
+
+### Development 
+
+### Business Integration and SEO 

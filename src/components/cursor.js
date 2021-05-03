@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { useSpring, animated as a } from 'react-spring';
+import { AiOutlineArrowRight } from 'react-icons/ai';
 
 const Cursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -56,7 +57,7 @@ const Cursor = () => {
     'cursor--hidden': hidden,
   });
 
-  return <a.div className={cursorClasses} style={props} />;
+  return <a.div className={cursorClasses} style={props}></a.div>;
 };
 
 export default Cursor;
