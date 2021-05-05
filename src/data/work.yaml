@@ -1,0 +1,192 @@
+- title: Chancellor Consulting
+  path: /cases/chancellor-consulting-group/
+  link: 'https://chancellorconsultinggroupd.com/'
+  subheader: Chancellor Consulting Group
+  data-created: 05/03/2021
+  last-modified: 05/03/2021
+  categories:
+    - case
+    - web-site
+  tags:
+    - gatsby
+    - user-experience
+    - development
+    - ui-design
+  isdraft: false
+  isComingSoon: false
+  technology-stack:
+    - figma
+    - gatsby
+    - react
+    - netlify
+    - netlify-cms
+    - hubspot
+    - calendarly
+  images:
+      featured:
+        - alt: ''
+          src: >- 
+            ../images/showcase/work/chancellor-consulting/chancellor-consutling-webdesign-showcase.png
+      branding:
+        - alt: Image of brand style guide
+          src: >-
+            ../images/showcase/work/chancellor-consulting/brand-showcase-chancellor-consulting.png
+      design:
+        - alt: showcase image of webdesign
+          src: >-
+             ../images/showcase/work/chancellor-consulting/chancellor-consutling-webdesign-showcase.png
+        - alt: 2 showcase image of webdesign
+          src: >-
+            ../images/showcase/work/chancellor-consulting/chancellor-consutling-webdesign-showcase-2.png
+      other:
+        - alt: showcase image of webdesign
+          src: >-
+            ../images/showcase/work/claire-morency-hypno/3-chh-webdesign-showcase-2.png
+  content:
+    title: >-
+      Chancellor Consulting Group is a well established healthcare management consutling group with over 35 years in the industry.
+    summary: >-
+      They needed to give their web presence a modern facelift while maintaining a clean professional tone. This included holding onto some original photography from the '90s.
+    deliverables:
+      - branding
+      - website design
+      - development
+      - hosting
+    branding: >-
+      We modernized the brand by leveraging the well-established personality of their mature business. We used a deep navy for trust consistency touching on the depth of experience and expertise. We use a warmer tope to offset the navy, symbolizing confidence and professionalism.
+    design: >-
+      After establishing a clear tone we create an experience for a modern audience. An emphasis on mobile and scalable content and ease of access to points of contact and proof of value.
+    development: >-
+      We used the fastest build framework on the web, Gatsbyjs. Resulting in blazing fast experience for customers and higher ranking in search results.  
+    business_integrations: >- 
+      We set them up with Google Analytics and Netlify CMS to easily update content. 
+- title: Claire Morency Hypnotherapy
+  path: /cases/claire-morency-hypnotherapy/
+  link: 'https://clairemorencyhypnotherapy.com/'
+  subheader: Claire Morency Hypnotherapy
+  data-created: 05/03/2021
+  last-modified: 05/03/2021
+  categories:
+    - case
+    - web-site
+  tags:
+    - gatsby
+    - user-experience
+    - development
+    - ui-design
+  isdraft: false
+  isComingSoon: false
+  technology-stack:
+    - figma
+    - gatsby
+    - react
+    - netlify
+    - netlify-cms
+    - hubspot
+    - calendarly
+  images:
+      featured:
+        - alt: ''
+          src: >- 
+            ../images/showcase/work/claire-morency-hypno/1-cmh-branding-showcase.png
+      branding:
+        - alt: Image of brand style guide
+          src: >-
+            ../images/showcase/work/claire-morency-hypno/1-cmh-branding-showcase.png
+      design:
+        - alt: showcase image of webdesign
+          src: >-
+             ../images/showcase/work/claire-morency-hypno/2-cmh-webdesign-showcase.png
+        - alt: 2 showcase image of webdesign
+          src: >-
+            ../images/showcase/work/claire-morency-hypno/2-cmh-webdesign-showcase.png
+      other:
+        - alt: showcase image of webdesign
+          src: >-
+            ../images/showcase/work/claire-morency-hypno/3-chh-webdesign-showcase-2.png
+  content:
+    title: >-
+      Claire Morency Hypnotherapy provides health solutions to the greater
+      Seattle area.
+    summary: >-
+      Launching in March, they needed a full digital presence suite. We created branding, web design, development, and search engine optimized content strategy. Finally, we set up and integrations into business tools.
+    deliverables:
+      - website
+      - branding
+      - design direction
+      - user experience design
+      - web design
+      - development
+      - email design and automation
+    branding: >-
+      We aimed to create a tone of growth, trust, opportunity, and
+      professionalism. We drew from the symbolism of "clouds" and "sky" for openness. Tones of green hinting of growth and new beginnings.
+    design: >-
+      Once we had clear look and feel we focused on addressing the priority list for the business. Facilitating conversions by answering know pain points of the customer. Clear points of contact and simple scheduling. 
+    development: >-
+      We used the fastest build framework on the web, Gatsbyjs. Resulting in blazing fast experience for customers and higher ranking in search results.   
+    business_integrations: >- 
+      We set up custom emails, lead management Hubspot CRM. Bulk email and new letter with Mailchimp integrated with Hubspot. Content creation with Netlify CMS. Finally, scheduling with Calendarly. 
+- title: Yoga Of Words
+  subheader: Yoga of Words is an uplifting poetry and prose experience
+  path: /cases/yoga-of-words/
+  link: 'https://yogaofwords.com/'
+  data-created: 05/22/2020
+  last-modified: 06/15/2020
+  isdraft: false
+  isComingSoon: false
+  images:
+      featured:
+        - alt: ''
+          src: >-
+              ../images/showcase/work/yoga-of-words/brand-showcase-yoga-of-words.png
+      branding:
+        - alt: Image of brand style guide
+          src: >-
+            ../images/showcase/work/yoga-of-words/brand-showcase-yoga-of-words.png
+      design:
+         - alt: showcase image of webdesign
+           src: >-
+              ../images/showcase/work/yoga-of-words/yoga-of-words-webdesign-showcase.png
+         - alt: 2 showcase image of webdesign
+           src: >-
+              ../images/showcase/work/yoga-of-words/yoga-of-word-design-ui-2.png
+      other:
+        - alt: showcase image of webdesign
+          src: >-
+            ../images/showcase/work/yoga-of-words/brand-showcase-yoga-of-words.png
+  content:
+    technology-stack:
+      - figma
+      - gatsby
+      - react
+      - netlify
+      - netlify-cms
+    categories:
+      - case
+      - web-site
+    tags:
+      - gatsby
+      - user-experience
+      - development
+      - ui-design
+    title: Yoga of Words is an uplifting poetry and prose experience
+    summary: >-
+       We knew if we wanted to create an experience that complemented our prose. We created a refined digital presence that feels welcoming and keeps the prose at the center.
+    deliverables:
+      - website
+      - branding
+      - design direction
+      - user experience design
+      - web design
+      - development
+      - email design and automation
+    branding: >-
+      We looked into various options for art and illustrations.  We needed something that complimented without either being ostentatious or overly opinionated. We settled on fine art illustrations of flowers. Flowers have enough symbolism for any prose theme while supporting the reading experience. 
+    design: >-
+      We created a minimalist reading experience where each piece is accompanied by a floral illustration. This allows the reader to focus on their relationship with the words. 
+    development: >-
+      We used the fastest build framework on the web, Gatsbyjs. Resulting in blazing fast experience for customers and higher ranking in search results.   
+    business_integrations: >- 
+      We set up Netlify CMS for simple content management.  We build out automated  MailChimp weekly emails fired when new content is added.
+      

@@ -19,11 +19,11 @@ import { HamburgerIcon } from '@chakra-ui/icons';
 import Logo from '../assets/blue-monkey-hanging.svg';
 
 const ROUTES = [
-  // {
-  //   name: 'Home',
-  //   to: '/',
-  //   id: 'KEN131',
-  // },
+  {
+    name: 'Home',
+    to: '/',
+    id: 'KEN131',
+  },
   {
     name: 'Services',
     to: '/services',
@@ -51,7 +51,7 @@ const Header = () => {
         width="100vw"
         position="fixed"
         background="brand.two"
-        zIndex="1"
+        zIndex="10"
         justifyContent="space-between"
         alignItems="center"
         p={4}

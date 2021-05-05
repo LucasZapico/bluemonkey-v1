@@ -15,16 +15,19 @@ module.exports = {
     'gatsby-plugin-netlify-cms',
     'gatsby-plugin-sass',
     'gatsby-plugin-image',
+    `gatsby-transformer-yaml`,
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-transition-link',
+    'gatsby-plugin-sitemap',
+
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
-      resolve: `gatsby-plugin-mdx`,
+      resolve: 'gatsby-transformer-remark',
       options: {
-        defaultLayouts: {
-          default: require.resolve(`./src/components/layout-cases.js`),
-        },
-        gatsbyRemarkPlugins: [
-          {
-            resolve: `gatsby-remark-images`,
-          },
+        plugins: [
+          // without options
+          'gatsby-remark-normalize-paths',
         ],
       },
     },
@@ -40,15 +43,25 @@ module.exports = {
         trackingId: 'G-WY6PSQNVTY',
       },
     },
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-transition-link',
-    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'http://bluemonkeymakes.com',
         sitemap: 'http://bluemonkeymakes.com/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          default: require.resolve(`./src/components/layout-cases.js`),
+        },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+          },
+        ],
       },
     },
     {
@@ -75,10 +88,6 @@ module.exports = {
         icon: 'src/images/icon.png',
       },
     },
-    'gatsby-transformer-remark',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
-
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -86,6 +95,12 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       },
       __key: 'images',
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/data/`,
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',

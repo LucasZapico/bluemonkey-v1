@@ -1,0 +1,130 @@
+[
+  
+  {
+    "title": "Pretty Password",
+    "path": "/projects/pretty-password/",
+    "subheader": "Pretty Password is a chrome extension to quickly generate secure passwords",
+    "link": "https://pretty-password.lucaszapico.space/",
+    "repo": "https://github.com/LucasZapico/chrome-2020-password-generator",
+    "data-created": "10/1/2020",
+    "last-modified": "10/4/2020",
+    "categories": [
+      "project",
+      "chrome-extension"
+    ],
+    "tags": [
+      "chrome",
+      "gatsby",
+      "react",
+      "user-experience",
+      "development",
+      "ui-design"
+    ],
+    "featured": {
+      "src": "../assets/images/projects/featured/pretty-password.png"
+    },
+    "isdraft": false,
+    "isComingSoon": false,
+    "technology-stack": [
+      "figma",
+      "webpack",
+      "javascript",
+      "codepen",
+      "gastby"
+    ],
+    "audio": "/audio/pretty-password-I.mp3",
+    "content": {
+      "images": {
+        "imgOne": "../assets/images/projects/pretty-password-showcase-1.png"
+      },
+      "summary": {
+        "challenge": "Create a simple secure password generator for Chrome that creates a secure password at a click.",
+        "outcome": "Designed and built Pretty Password Chrome extension and product site. It was interesting configuring Webpack and SASS to work with the Chrome extension framework.",
+        "deliverables": [
+          "development",
+          "product page",
+          "chrome extension",
+          "design direction",
+          "web design"
+        ]
+      },
+      "main": {
+        "overview": "",
+        "features": "",
+        "challenge": "",
+        "solution": "",
+        "result": "",
+        "deliverables": [],
+        "takeaways": ""
+      },
+      "role": "developer"
+    }
+  },
+  {
+    "title": "Mark'ie",
+    "path": "/projects/mark-ie",
+    "subheader": "Mark'ie is an opinionated markdown journal prototype",
+    "link": "https://journal-app-2020.firebaseapp.com/",
+    "repo": "https://github.com/LucasZapico/journal-app-2020",
+    "data-created": "05/23/2020",
+    "last-modified": "07/03/2020",
+    "categories": [
+      "project",
+      "web-app"
+    ],
+    "tags": [
+      "react",
+      "user-experience",
+      "development",
+      "ui-design"
+    ],
+    "featured": {
+      "src": "../assets/images/projects/featured/markie.png"
+    },
+    "isdraft": false,
+    "isComingSoon": false,
+    "technology-stack": [
+      "figma",
+      "react-hooks",
+      "context-api",
+      "firebase"
+    ],
+    "audio": "/audio/markie-II.mp3",
+    "content": {
+      "images": {
+        "imgOne": "../assets/images/projects/markie-experience.png"
+      },
+      "summary": {
+        "challenge": "Prototype a markdown journal application, proof of concept for extending markdown syntax into to enable tags and categories.",
+        "outcome": "Successful production of markdown journal hosted on Firebase with inline categories definitions",
+        "deliverables": [
+          "branding",
+          "illurstration",
+          "design direction",
+          "user experience design",
+          "web design",
+          "development"
+        ]
+      },
+      "main": {
+        "overview": "",
+        "objective": "",
+        "features": "",
+        "challenge": "",
+        "solution": "",
+        "result": "",
+        "deliverables": [
+          "branding",
+          "design direction",
+          "user experience design",
+          "web design",
+          "development",
+          "email design and automation"
+        ],
+        "takeaways": ""
+      },
+      "role": "developer"
+    }
+  }
+  
+]

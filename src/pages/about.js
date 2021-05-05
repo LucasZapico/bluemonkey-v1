@@ -39,7 +39,7 @@ const AboutPage = () => {
           </Box>
         </a.div>
       </Box>
-      <Box py={40} zIndex="3">
+      <Box bgGradient="linear(to-b, brand.one , brand.two )" py={40} zIndex="3">
         <Container>
           <Heading
             as="h1"

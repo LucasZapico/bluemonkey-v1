@@ -9,11 +9,12 @@ import Img from 'gatsby-image';
 
 const cases = [1, 2, 3, 4, 5];
 
-const CasesPage = ({ data }) => {
-  console.log('da', data);
+const CasesPage = (props) => {
+  console.log('da', props);
+  const { data } = props;
 
   return (
-    <Box py={40} zIndex="3">
+    <Box zIndex="3">
       {/* <Container>
         <Heading
           as="h1"
@@ -34,14 +35,14 @@ const CasesPage = ({ data }) => {
       </Container> */}
       <Box
         minH="500px"
-        py={20}
         zIndex="1"
         bgGradient="linear(to-r, brand.three, brand.five)"
       >
         <Flex
           justifyContent="space-between"
           flexWrap="wrap"
-          // bgGradient="linear(to-b, brand.two 5%, brand.three 20%, brand.five 25%)"
+          py={40}
+          bgGradient="linear(to-b, brand.two 5%, brand.three 20%, brand.five 25%)"
           bg="brand.five"
         >
           <Container maxW="container.xl">
@@ -72,7 +73,7 @@ const CasesPage = ({ data }) => {
               </Box>
             </ScrollAniFadeIn>
           </Container>
-          {/* {data.cases.edges.map((c) => (
+          {data.cases.nodes.map((c) => (
             <Container mb={10}>
               <ScrollAniFadeIn>
                 <Heading
@@ -84,68 +85,73 @@ const CasesPage = ({ data }) => {
                   color="brand.one"
                   pb={6}
                 >
-                  {c.node.frontmatter.title}
+                  {c.title}
                 </Heading>
                 <Box maxWidth="400px" mb={4}>
                   <Heading size="md" color="brand.one">
                     Services
                   </Heading>
-                  {c.node.frontmatter.services.map((s) => (
+                  {c.content.deliverables.map((s) => (
                     <Text
                       size="md"
                       display="inline"
                       lineHeight="base"
                       color="brand.one"
                     >
-                      {s},
+                      {s},{' '}
                     </Text>
                   ))}
                 </Box>
 
-                <Link to={c.node.frontmatter.path}>
+                <Link to={c.path}>
                   <Box height="auto" overflow="hidden" mb={10}>
                     <Img
-                      fluid={
-                        c.node.frontmatter.featuredImg.childImageSharp.fluid
-                      }
-                      alt=""
+                      fluid={c.images.featured[0].src.childImageSharp.fluid}
+                      alt={c.images.featured[0].alt}
                     />
                   </Box>
                 </Link>
               </ScrollAniFadeIn>
             </Container>
-          ))} */}
+          ))}
         </Flex>
       </Box>
     </Box>
   );
 };
 
-// export const query = graphql`
-//   query {
-//     cases: allMdx(filter: { fileAbsolutePath: { regex: "/cases/" } }) {
-//       edges {
-//         node {
-//           id
-//           frontmatter {
-//             date_created
-//             last_modified
-//             path
-//             title
-//             services
-//             featuredImg {
-//               childImageSharp {
-//                 fluid {
-//                   ...GatsbyImageSharpFluid
-//                 }
-//               }
-//             }
-//             title
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
+export const query = graphql`
+  query {
+    cases: allWorkYaml {
+      nodes {
+        images {
+          featured {
+            alt
+            src {
+              childImageSharp {
+                fluid(maxWidth: 1020) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+        data_created
+        id
+        isdraft
+        link
+        path
+        subheader
+        title
+        isComingSoon
+        last_modified
+        content {
+          categories
+          deliverables
+        }
+      }
+    }
+  }
+`;
 
 export default CasesPage;

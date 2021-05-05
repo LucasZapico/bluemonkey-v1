@@ -39,7 +39,11 @@ Launching in March, they needed a full digital presence suite. We created brandi
 
 ### Branding 
 
+We aimed to create a tone of growth, trust, opportunity and professionalism. Drawing from the deep symbolism of clouds and sky for openness, green tones hinting of growth and new beginning. We felt this composition embodied the genuine desire of Claire to bring forward ones healthily and happy life. 
+
 ### Design 
+
+
 
 ### Development 
 

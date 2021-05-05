@@ -51,7 +51,7 @@ const AddEnthusiasm = ({ onSubmit, store, handleSubmitAll, handleBack }) => {
             <a.div style={{ ...styles, height: '100%' }}>
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="input-container add-enthusiasm">
-                  <label>Enthusiasm</label>
+                  <label>What is your Enthusiasm</label>
                   <label htmlFor="excited" className="radio">
                     <div className="radio-input">
                       <input
@@ -65,7 +65,8 @@ const AddEnthusiasm = ({ onSubmit, store, handleSubmitAll, handleBack }) => {
                     </div>
                     <div className="radio-label">
                       {' '}
-                      You look like a great fit for our project. Let's Go! 🥳
+                      Blue Monkey looks like a great fit for our project. Let's
+                      Go! 🥳
                     </div>
                   </label>
                   <label htmlFor="interested" className="radio">
@@ -80,7 +81,8 @@ const AddEnthusiasm = ({ onSubmit, store, handleSubmitAll, handleBack }) => {
                     </div>
                     <div className="radio-label">
                       {' '}
-                      We're interested, let's chat and see if we align. 🤔
+                      I'm interested Blue Monkey, let's chat and see if we
+                      align. 🤔
                     </div>
                   </label>
                   <label htmlFor="imatroll" className="radio">

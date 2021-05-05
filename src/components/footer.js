@@ -37,13 +37,14 @@ const Footer = ({ title, description }) => {
           <Flex minHeight="100%" flexDirection="column">
             <Box flexGrow="1">
               <Flex alignItems="center" mb={4} p={{ base: 0, sm: 6 }}>
+                <a id="start-a-conversation"></a>
                 <StartAConversation />
               </Flex>
               <Box
                 bg="brand.five"
                 color="brand.one"
-                p={{ base: 2, sm: 6 }}
-                py={10}
+                px={{ base: 2, sm: 6 }}
+                py={20}
               >
                 <Heading as="h4" size="sm" mb={3}>
                   <LinkEmail color="brand.one">{`Connect@${baseUrl}`}</LinkEmail>
@@ -53,11 +54,12 @@ const Footer = ({ title, description }) => {
                   as="h4"
                   size="sm"
                   mb={3}
+                  lineHeight="base"
                   color="brand.one"
                   maxWidth="600px"
                 >
                   We are fully remote on Earth 🌎 but we are almost always
-                  available via slack.
+                  available via slack. English is our first language.
                 </Heading>
                 <Heading as="h4" size="sm" mb={3} color="brand.one" />
                 <LinkOne

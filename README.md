@@ -18,8 +18,6 @@
 - [ ] set up mailchimp email with trigger
 - [ ] btn hover state
 - [ ] page transitions
-- [ ] start a conversation 
-- [ ] FAQ
 - [ ] enhance links
 - [x] add join slack channel 
 - [ ] add cases 
@@ -28,20 +26,30 @@
 - [ ] enhance showcase ui
 - [ ] enhance cursor on link tags
 
+__Header__
+
+- add hover state and other states to links in header
+
 __Cases__ 
 
 - [ ] enhance web design ui  showcase image
-
+- [ ] add next and back links
 
 __form__
+- [x] start a conversation 
 - [x] enhance lead capture pass one
-- [ ] add next on enter to form 
+- [x] add next on enter to form 
   - [ ] look into shift + enter ? back? 
   - [ ] on switch to next form auto focus
 - [x] show steps
   - [ ] enhance step indicator
 - [ ] accessibility pass on form
 - [ ] 
+
+__Articles & FAQ__
+
+- [ ] FAQ
+- [ ] set up articles
 
 ### Issues 
 

@@ -1,0 +1,127 @@
+[
+  {
+    "title": "Claire Morency Hypnotherapy",
+    "path": "/cases/claire-morency-hypnotherapy/",
+    "link": "https://clairemorencyhypnotherapy.com/",
+    "subheader": "Claire Morency Hypnotherapy",
+    "data-created": "05/03/2021",
+    "last-modified": "05/03/2021",
+    "categories": [
+      "case",
+      "web-site"
+    ],
+    "tags": [
+      "gatsby",
+      "user-experience",
+      "development",
+      "ui-design"
+    ],
+    
+    "isdraft": false,
+    "isComingSoon": false,
+    "technology-stack": [
+      "figma",
+      "gatsby",
+      "react",
+      "netlify",
+      "netlify-cms",
+      "hubspot",
+      "calendarly"
+    ],
+    "images": {
+      "featured": {
+        "alt": "",
+        "src": "../images/showcase/work/claire-morency-hypno/1-cmh-branding-showcase.png"
+      },
+      "branding": [{
+        "alt": "Image of brand style guide",
+        "src": "../images/showcase/work/claire-morency-hypno/1-cmh-branding-showcase.png"
+      }], 
+      "design": [{
+        "alt": "showcase image of webdesign",
+        "src": "../images/showcase/work/claire-morency-hypno/2-cmh-webdesign-showcase.png"
+      }],
+      "other": [{
+        "alt": "showcase image of webdesign",
+        "src": "../images/showcase/work/claire-morency-hypno/3-chh-webdesign-showcase-2.png"
+      }]
+    },
+    "content": {
+      "title": "Claire Morency Hypnotherapy provides health solutions to the greater Seattle area.",
+      "summary": "Launching in March, they needed a full digital presence suite. We created branding, web design, development, SEO optimization and strategy, setup and integration into business tools.",
+      "deliverables": [
+        "website",
+        "branding",
+        "design direction",
+        "user experience design",
+        "web design",
+        "development",
+        "email design and automation"
+      ],
+      "branding": "We aimed to create a tone of growth, trust, opportunity and professionalism. Drawing from the deep symbolism of clouds and sky for openness, green tones hinting of growth and new beginning.",
+      "design": "Once we had the established tone we create an experience for a modern audience with an emphasize on mobile and scalable content and ease of access to points of contact.",
+      "development": "We used Gatsbyjs as our build framework, thus ensuring one of the fastest serving content. "
+    }
+  },
+  {
+    "title": "Yoga Of Words",
+    "path": "/cases/yoga-of-words/",
+    "link": "https://yogaofwords.com/",
+    "subheader": "Yoga of Words is an uplifting poetry and prose experience",
+    "data-created": "05/22/2020",
+    "last-modified": "06/15/2020",
+    "categories": [
+      "case",
+      "web-site"
+    ],
+    "tags": [
+      "gatsby",
+      "user-experience",
+      "development",
+      "ui-design"
+    ],
+    
+    "isdraft": false,
+    "isComingSoon": false,
+    "technology-stack": [
+      "figma",
+      "gatsby",
+      "react",
+      "netlify",
+      "netlify-cms"
+    ],
+    "images": {
+      "featured": {
+        "alt": "",
+        "src": "../assets/images/projects/featured/yoga-of-word-showcase.png"
+      },
+      "branding": [{
+        "alt": "",
+        "src": "../assets/images/projects/featured/yoga-of-word-showcase.png"
+      }], 
+      "design": [{
+        "alt": "",
+        "src": "../assets/images/projects/featured/yoga-of-word-showcase.png"
+      }],
+      "other": [{
+        "alt": "",
+        "src": "../assets/images/projects/featured/yoga-of-word-showcase.png"
+      }]
+    },
+    "content": {
+      "title": "Yoga of Words is an uplifting poetry and prose experience",
+      "summary": "We started by exploring the idea behind Yoga of Words, what was the impact they wanted to share with the audience. We knew if we wanted to create something engaging, we needed to think on and compliment what a prose reading experience is. With this in mind, we created a refined digital presence that feels welcoming and keeps the prose at the center.",
+      "deliverables": [
+        "website",
+        "branding",
+        "design direction",
+        "user experience design",
+        "web design",
+        "development",
+        "email design and automation"
+      ],
+      "branding": "We looked into various art and illustrations that could compliment prose without either being ostentatious or overly opinionated symbolically thereby taking away from the prose. We settled on fine art illustrations of flowers as flowers have enough breathed of symbolism to match any prose theme while staying as a compliment not a distraction.",
+      "design": "We culminated in a minimalist reading experience where each prose is accompanied by a floral illustration allowing the reader to have a singular and completely curated relationship with the words. We enhanced the experience through email engagement with Mailchimp creating an automated branded welcoming email and automated weekly prose post updated.",
+      "development": "We used Gatsbyjs as our build framework, thus ensuring one of the fastest serving content."
+  }  }
+]

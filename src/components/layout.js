@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
       <SEO />
       <Cursor />
       <Box minHeight="100vh" overflow="hidden">
-        <Header />
+        <Header zIndex={10} />
         <Box background="brand.two">{children}</Box>
         {/* <Banner /> */}
       </Box>

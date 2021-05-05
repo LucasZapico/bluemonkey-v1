@@ -89,9 +89,15 @@ const Hero = ({ data }) => (
         Blue Monkey Makes....
       </Heading>
       <Heading as="h3" size="xl" lineHeight="base" mb={20} maxWidth="600px">
-        ...custom digital presences that are engaging, performant, and
-        SEO&nbsp;optimized.
+        ...custom digital presences that are engaging, performant, and search
+        engine&nbsp;optimized.
       </Heading>
+      <Box mb={10} width="400px">
+        <LinkThree to="/#start-a-conversation">
+          Start A Conversation
+          <ArrowForwardIcon />
+        </LinkThree>
+      </Box>
       <Box
         zIndex="-1"
         height={{ base: '0%', md: '70%' }}
@@ -144,7 +150,7 @@ const OurWorkSection = ({ data }) => (
           </Box>
         </ScrollAniFadeIn>
       </Container>
-      {/* {data.cases.edges.map((c) => (
+      {data.cases.nodes.map((c) => (
         <Container mb={10}>
           <ScrollAniFadeIn>
             <Heading
@@ -156,35 +162,35 @@ const OurWorkSection = ({ data }) => (
               color="brand.one"
               pb={6}
             >
-              {c.node.frontmatter.title}
+              {c.title}
             </Heading>
             <Box maxWidth="400px" mb={4}>
               <Heading size="md" color="brand.one">
                 Services
               </Heading>
-              {c.node.frontmatter.services.map((s) => (
+              {c.content.deliverables.map((s) => (
                 <Text
                   size="md"
                   display="inline"
                   lineHeight="base"
                   color="brand.one"
                 >
-                  {s},
+                  {s},{' '}
                 </Text>
               ))}
             </Box>
 
-            <Link to={c.node.frontmatter.path}>
+            <Link to={c.path}>
               <Box height="auto" overflow="hidden" mb={10}>
                 <Img
-                  fluid={c.node.frontmatter.featuredImg.childImageSharp.fluid}
+                  fluid={c.images.featured[0].src.childImageSharp.fluid}
                   alt=""
                 />
               </Box>
             </Link>
           </ScrollAniFadeIn>
         </Container>
-      ))} */}
+      ))}
     </Flex>
   </Box>
 );
@@ -202,7 +208,8 @@ const ServicesSection = ({ data }) => (
         // backgroundColor="brand.five"
         p={{ base: 0, sm: 10 }}
         height="auto"
-        flexBasis={{ base: '100%', md: '100%', lg: '50%', xl: '40%' }}
+        flexGrow={1}
+        flexBasis={{ base: '100%', md: '100%', lg: '40%', xl: '40%' }}
         pb={20}
       >
         <Container maxWidth="container.xl" centerContent="true">
@@ -244,6 +251,21 @@ const ServicesSection = ({ data }) => (
                 >
                   Hover Around Here
                 </Heading>
+                <Box
+                  position="absolute"
+                  top="-20%"
+                  left="40%"
+                  width="100%"
+                  height="auto"
+                  className="clip-show-effect"
+                >
+                  <Link to="/services/#branding">
+                    <Img
+                      fit="cover"
+                      fluid={data.showcaseBrandImageTwo.childImageSharp.fluid}
+                    />
+                  </Link>
+                </Box>
                 <Box
                   position="absolute"
                   top="20%"
@@ -297,6 +319,7 @@ const ServicesSection = ({ data }) => (
       </Box>
       <Box
         pb={20}
+        flexGrow={1}
         flexBasis={{ base: '100%', md: '100%', lg: '50%', xl: '60%' }}
         bgGradient="linear(to-b, brand.one , brand.two )"
       >
@@ -382,7 +405,18 @@ export const query = graphql`
       relativePath: { eq: "showcase/brand/brand-showcase-luv-coffee.png" }
     ) {
       childImageSharp {
-        fluid(maxWidth: 1020) {
+        fluid(maxWidth: 720) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    showcaseBrandImageTwo: file(
+      relativePath: {
+        eq: "showcase/work/claire-morency-hypno/3-cmh-webdesign-showcase-2.png"
+      }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 720) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -391,7 +425,7 @@ export const query = graphql`
       relativePath: { eq: "showcase/design/web-ui-luv-coffee.png" }
     ) {
       childImageSharp {
-        fluid(maxWidth: 1020) {
+        fluid(maxWidth: 720) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -400,9 +434,38 @@ export const query = graphql`
       relativePath: { eq: "showcase/design/web-ui-yoga-of-words.png" }
     ) {
       childImageSharp {
-        fluid(maxWidth: 1020) {
+        fluid(maxWidth: 720) {
           ...GatsbyImageSharpFluid
         }
+      }
+    }
+    cases: allWorkYaml {
+      nodes {
+        images {
+          featured {
+            alt
+            src {
+              childImageSharp {
+                fluid(maxWidth: 1020) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+        content {
+          categories
+          deliverables
+        }
+        data_created
+        id
+        isdraft
+        link
+        path
+        subheader
+        title
+        isComingSoon
+        last_modified
       }
     }
   }
