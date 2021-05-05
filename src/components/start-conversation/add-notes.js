@@ -65,7 +65,6 @@ const AddNotes = ({ onSubmit, store, handleNext, handleBack }) => {
   }, []);
 
   const submitAndNext = (data) => {
-    console.log('sub and next');
     handleNext();
     onSubmit(data);
   };

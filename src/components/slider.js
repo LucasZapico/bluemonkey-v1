@@ -24,7 +24,7 @@ const SliderOne = ({ slides }) => {
     },
   };
   useEffect(() => {
-    console.log('slides', slides);
+    // console.log('slides', slides);
   }, [slides]);
 
   useEffect(() => {
@@ -32,35 +32,33 @@ const SliderOne = ({ slides }) => {
       setSlidesLen(slideContainer.current.children.length);
       setSlideWidth(sliderContainer.current.clientWidth);
     }
-    console.log(`
-    INIT
-    slide leng: ${slidesLen}
-    currnet: ${current}
-    moveby: ${current * slideWidth}
-    sliderWidth: ${slideWidth}
-  `);
+    //   console.log(`
+    //   INIT
+    //   slide leng: ${slidesLen}
+    //   currnet: ${current}
+    //   moveby: ${current * slideWidth}
+    //   sliderWidth: ${slideWidth}
+    // `);
   }, [slideWidth, slidesLen]);
 
   useEffect(() => {
-    console.log(`
-    From transform
-    slide leng: ${slidesLen}
-    currnet: ${current}
-    moveby: ${current * slideWidth}
-    sliderWidth: ${slideWidth}
-  `);
+    //   console.log(`
+    //   From transform
+    //   slide leng: ${slidesLen}
+    //   currnet: ${current}
+    //   moveby: ${current * slideWidth}
+    //   sliderWidth: ${slideWidth}
+    // `);
   }, [current, setCurrent]);
 
   const handleBack = () => {
-    console.log('current in back', current);
     if (current === 1) {
       set({ transform: `translateX(-${slideWidth * (slidesLen - 1)}px)` });
-      console.log('slides Len', slidesLen);
+
       setCurrent((prev) => {
         return slidesLen;
       });
     } else {
-      console.log('back by one ', current - 1);
       set({ transform: `translateX(-${slideWidth * (current - 2)}px)` });
 
       setCurrent((prev) => {
@@ -69,14 +67,12 @@ const SliderOne = ({ slides }) => {
     }
   };
   const handleForward = () => {
-    console.log('current in forward', current);
     if (current > slidesLen - 1) {
       set({ transform: `translateX(0px)` });
       setCurrent((prev) => {
         return 1;
       });
     } else {
-      console.log('forward', slideWidth * current);
       set({ transform: `translateX(-${slideWidth * current}px)` });
       setCurrent((prev) => {
         return prev + 1;

@@ -24,49 +24,7 @@ import {
   SliderOne,
 } from '../components/index';
 
-// const servicesCopy = [{ Branding: [] }];
-
-// const Carousel = ({ images }) => {
-//   const ref = useRef(null);
-//   const [currentSlide, setCurrentSlide] = useState(0);
-//   const nextSlide = () => {
-//     if (currentSlide < images.length - 1) {
-//       console.log(`ran time out + +,
-//       ${currentSlide}
-//       ${images.length}
-//     `);
-//       setCurrentSlide((prev) => {
-//         console.log(prev + 1);
-//         return prev + 1;
-//       });
-//     } else if (currentSlide === images.length - 1) {
-//       console.log('update on lenght');
-//       setCurrentSlide(0);
-//     }
-//   };
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       nextSlide();
-//     }, 2000);
-
-//     return () => clearInterval(interval);
-//   }, []);
-
-//   useEffect(() => {}, [currentSlide]);
-//   return (
-//     <Flex flexBasis={{ base: '100%', md: '50%' }} overflow="hidden">
-//       <Box minWidth="100%" height="auto" key={images[currentSlide].node.id}>
-//         <Img
-//           fit="cover"
-//           fluid={images[currentSlide].node.childImageSharp.fluid}
-//         />
-//       </Box>
-//     </Flex>
-//   );
-// };
-
 const services = ({ data }) => {
-  console.log('data', data);
   return (
     <Box py={40}>
       <Box pt={20}>

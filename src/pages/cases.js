@@ -10,7 +10,6 @@ import Img from 'gatsby-image';
 const cases = [1, 2, 3, 4, 5];
 
 const CasesPage = (props) => {
-  console.log('da', props);
   const { data } = props;
 
   return (

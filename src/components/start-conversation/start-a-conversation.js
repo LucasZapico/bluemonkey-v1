@@ -14,7 +14,6 @@ const StartAConversation = () => {
   const [current, setCurrent] = useState([0, steps[0]]);
   const [store, setStore] = useState({});
   const handleNext = () => {
-    console.log('next');
     if (current[0] !== steps.length - 1) {
       setCurrent((prev) => {
         return [prev[0] + 1, steps[prev[0] + 1]];
@@ -22,7 +21,6 @@ const StartAConversation = () => {
     }
   };
   const handleBack = () => {
-    console.log('back');
     if (current[0] !== 0) {
       setCurrent((prev) => {
         return [prev[0] - 1, steps[prev[0] - 1]];
@@ -30,12 +28,7 @@ const StartAConversation = () => {
     }
   };
 
-  useEffect(() => {
-    console.log(`
-    current: ${current}, 
-    `);
-    console.log('store:', store);
-  });
+  useEffect(() => {});
 
   const onSubmit = (data) => {
     console.log('on submit ran', data);

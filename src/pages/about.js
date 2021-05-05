@@ -13,7 +13,7 @@ const AboutPage = () => {
   const handleScroll = () => {
     const posY = ref.current.getBoundingClientRect().top;
     const offset = window.pageYOffset - posY;
-    console.log(offset);
+
     set({ offset });
   };
 

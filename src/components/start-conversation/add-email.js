@@ -27,7 +27,6 @@ const AddEmail = ({ onSubmit, store, handleNext }) => {
 
   const watchAll = watch();
   const validateEmail = (value) => {
-    console.log('valid email');
     if (!value) {
       setAlertMessage({
         type: 'warning',
@@ -65,7 +64,6 @@ const AddEmail = ({ onSubmit, store, handleNext }) => {
   }, [alertMessage]);
 
   const submitAndNext = (data) => {
-    console.log('sub and next');
     handleNext();
     onSubmit(data);
   };
