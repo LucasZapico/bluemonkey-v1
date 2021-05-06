@@ -119,261 +119,263 @@ const OurWorkSection = ({ data }) => (
     zIndex="1"
     bgGradient="linear(to-r, brand.three, brand.five)"
   >
-    <Flex
-      justifyContent="space-between"
-      flexWrap="wrap"
-      // bgGradient="linear(to-b, brand.two 5%, brand.three 20%, brand.five 25%)"
-      bg="brand.five"
-    >
-      <Container maxW="container.xl">
-        <ScrollAniFadeIn>
-          <Box py={{ base: 0, sm: 20 }} flexBasis={{ base: '100%', md: '60%' }}>
-            <Box maxWidth="650px">
-              <Heading
-                as="h3"
-                fontSize={{
-                  base: '80',
-                  sm: '90',
-                  md: '100',
-                  lg: '80',
-                  xl: '110',
-                }}
-                fontFamily="montas-semibold"
-                lineHeight="base"
-                zIndex="1"
-                color="brand.one"
-                pb={10}
-              >
-                Our Work
-              </Heading>
-            </Box>
-          </Box>
-        </ScrollAniFadeIn>
-      </Container>
-      {data.cases.nodes.map((c) => (
-        <Container mb={10}>
-          <ScrollAniFadeIn>
+    <Container maxW="container.xl">
+      <ScrollAniFadeIn>
+        <Box py={{ base: 0, sm: 20 }} flexBasis={{ base: '100%', md: '60%' }}>
+          <Box maxWidth="650px">
             <Heading
               as="h3"
-              size="xl"
+              fontSize={{
+                base: '80',
+                sm: '90',
+                md: '100',
+                lg: '80',
+                xl: '110',
+              }}
               fontFamily="montas-semibold"
               lineHeight="base"
               zIndex="1"
               color="brand.one"
-              pb={6}
+              pb={10}
             >
-              {c.title}
+              Our Work
             </Heading>
-            <Box maxWidth="400px" mb={4}>
-              <Heading size="md" color="brand.one">
-                Services
+          </Box>
+        </Box>
+      </ScrollAniFadeIn>
+    </Container>
+    <Container maxW="container.xl">
+      <Flex justifyContent="space-between" flexWrap="wrap">
+        {data.cases.nodes.map((c) => (
+          <Container mb={10}>
+            <ScrollAniFadeIn>
+              <Heading
+                as="h3"
+                size="xl"
+                fontFamily="montas-semibold"
+                lineHeight="base"
+                zIndex="1"
+                color="brand.one"
+                pb={6}
+              >
+                {c.title}
               </Heading>
-              {c.content.deliverables.map((s) => (
-                <Text
-                  size="md"
-                  display="inline"
-                  lineHeight="base"
-                  color="brand.one"
-                >
-                  {s},{' '}
-                </Text>
-              ))}
-            </Box>
-
-            <Link to={c.path}>
-              <Box height="auto" overflow="hidden" mb={10}>
-                <Img
-                  fluid={c.images.featured[0].src.childImageSharp.fluid}
-                  alt=""
-                />
+              <Box maxWidth="400px" mb={4}>
+                <Heading size="md" color="brand.one">
+                  Services
+                </Heading>
+                {c.content.deliverables.map((s) => (
+                  <Text
+                    size="md"
+                    display="inline"
+                    lineHeight="base"
+                    color="brand.one"
+                  >
+                    {s},{' '}
+                  </Text>
+                ))}
               </Box>
-            </Link>
-          </ScrollAniFadeIn>
-        </Container>
-      ))}
-    </Flex>
+
+              <Link to={c.path}>
+                <Box height="auto" overflow="hidden" mb={10}>
+                  <Img
+                    fluid={c.images.featured[0].src.childImageSharp.fluid}
+                    alt=""
+                  />
+                </Box>
+              </Link>
+            </ScrollAniFadeIn>
+          </Container>
+        ))}
+      </Flex>
+    </Container>
+    <Box
+      bgGradient="radial( brand.three 20%, brand.five )"
+      // backgroundColor="brand.five"
+      p={{ base: 0, sm: 10 }}
+      height="auto"
+      flexGrow={1}
+      flexBasis={{ base: '100%', md: '100%', lg: '40%', xl: '40%' }}
+      pb={20}
+    >
+      {/* <Container maxWidth="container.xl" centerContent="true">
+        <ScrollAniFadeIn>
+          <Box mb={10} mr={10} position="relative">
+            
+            <Box
+              display={{ base: 'none', md: 'block' }}
+              height="500px"
+              position="relative"
+            >
+              <Heading
+                as="h3"
+                fontSize="lg"
+                lineHeight="base"
+                zIndex="1"
+                color="brand.one"
+                pb={10}
+                className="movy-text"
+              >
+                Hover Around Here
+              </Heading>
+              <Box
+                position="absolute"
+                top="-20%"
+                left="40%"
+                width="100%"
+                height="auto"
+                className="clip-show-effect"
+              >
+                <Link to="/services/#branding">
+                  <Img
+                    fit="cover"
+                    fluid={data.showcaseBrandImageTwo.childImageSharp.fluid}
+                  />
+                </Link>
+              </Box>
+              <Box
+                position="absolute"
+                top="20%"
+                left="20%"
+                width="100%"
+                height="auto"
+                className="clip-show-effect"
+              >
+                <Link to="/services/#branding">
+                  <Img
+                    fit="cover"
+                    fluid={data.showcaseBrandImage.childImageSharp.fluid}
+                  />
+                </Link>
+              </Box>
+              <Box
+                left="-10%"
+                top="60%"
+                width="100%"
+                position="absolute"
+                height="auto"
+                className="clip-show-effect"
+              >
+                <Link to="/services/#design">
+                  <Img
+                    fit="cover"
+                    fluid={data.showcaseDesignImageOne.childImageSharp.fluid}
+                  />
+                </Link>
+              </Box>
+
+              <Box
+                left="-10%"
+                top="40%"
+                width="100%"
+                position="absolute"
+                height="auto"
+                className="clip-show-effect"
+              >
+                <Link to="/services/#design">
+                  <Img
+                    fit="cover"
+                    fluid={data.showcaseDesignImageTwo.childImageSharp.fluid}
+                  />
+                </Link>
+              </Box>
+            </Box>
+          </Box>
+        </ScrollAniFadeIn>
+      </Container> */}
+    </Box>
   </Box>
 );
 
 const ServicesSection = ({ data }) => (
-  <Box minH="500px" zIndex="1">
+  <Box
+    minH="500px"
+    zIndex="1"
+    py={20}
+    bgGradient="linear(to-br, brand.one , brand.two )"
+  >
     <Flex
       flexDirection="row"
       flexWrap="wrap"
       justifyContent="space-between"
       position="relative"
     >
-      <Box
-        bgGradient="radial( brand.three 20%, brand.five )"
-        // backgroundColor="brand.five"
-        p={{ base: 0, sm: 10 }}
-        height="auto"
-        flexGrow={1}
-        flexBasis={{ base: '100%', md: '100%', lg: '40%', xl: '40%' }}
-        pb={20}
-      >
-        <Container maxWidth="container.xl" centerContent="true">
-          <ScrollAniFadeIn>
-            <Box mb={10} mr={10} position="relative">
+      <Container maxW="container.xl">
+        <Heading
+          as="h3"
+          fontSize={{
+            base: '80',
+            sm: '90',
+            md: '100',
+            lg: '80',
+            xl: '110',
+          }}
+          fontFamily="montas-semibold"
+          lineHeight="base"
+          zIndex="1"
+          pb={10}
+        >
+          Services
+        </Heading>
+        <Flex flexWrap="wrap">
+          <Box
+            py={{ base: 0, md: 20 }}
+            flexBasis={{ base: '100%', md: '50%' }}
+            flexGrow="1"
+          >
+            <ScrollAniFadeIn>
               <Heading
-                as="h3"
-                fontSize={{
-                  base: '80',
-                  sm: '90',
-                  md: '100',
-                  lg: '80',
-                  xl: '110',
-                }}
-                fontFamily="montas-semibold"
+                size="3xl"
+                m="auto"
+                mb={{ base: 10, md: 'auto' }}
+                mt={{ base: 10, md: 'auto' }}
                 lineHeight="base"
-                zIndex="1"
-                color="brand.one"
-                pb={10}
+                maxWidth="700px"
               >
-                Services
+                <Box
+                  position="absolute"
+                  right="-10%"
+                  bottom="0"
+                  transform="scaleX(1)"
+                >
+                  {/* <MonkeyThree /> */}
+                </Box>
+                We are a one stop shop for frugal and competitive:
               </Heading>
-              {/* <Heading color="brand.one">
-                We do it all so you don't have&nbsp;to.
-              </Heading> */}
-              <Box
-                display={{ base: 'none', md: 'block' }}
-                height="500px"
-                position="relative"
-              >
-                <Heading
-                  as="h3"
-                  fontSize="lg"
-                  lineHeight="base"
-                  zIndex="1"
-                  color="brand.one"
-                  pb={10}
-                  className="movy-text"
-                >
-                  Hover Around Here
-                </Heading>
-                <Box
-                  position="absolute"
-                  top="-20%"
-                  left="40%"
-                  width="100%"
-                  height="auto"
-                  className="clip-show-effect"
-                >
-                  <Link to="/services/#branding">
-                    <Img
-                      fit="cover"
-                      fluid={data.showcaseBrandImageTwo.childImageSharp.fluid}
-                    />
-                  </Link>
+            </ScrollAniFadeIn>
+          </Box>
+          <Box flexBasis={{ base: '100%', md: '50%' }} flexGrow="1">
+            <ScrollAniFadeIn>
+              <Box ml={-4} maxWidth="600px" mx={{ base: 'auto' }}>
+                <Box mb={10}>
+                  <LinkThree to="/services/#branding">
+                    Branding
+                    <ArrowForwardIcon />
+                  </LinkThree>
                 </Box>
-                <Box
-                  position="absolute"
-                  top="20%"
-                  left="20%"
-                  width="100%"
-                  height="auto"
-                  className="clip-show-effect"
-                >
-                  <Link to="/services/#branding">
-                    <Img
-                      fit="cover"
-                      fluid={data.showcaseBrandImage.childImageSharp.fluid}
-                    />
-                  </Link>
+                <Box mb={10}>
+                  <LinkThree to="/services/#design">
+                    Design
+                    <ArrowForwardIcon />
+                  </LinkThree>
                 </Box>
-                <Box
-                  left="-10%"
-                  top="60%"
-                  width="100%"
-                  position="absolute"
-                  height="auto"
-                  className="clip-show-effect"
-                >
-                  <Link to="/services/#design">
-                    <Img
-                      fit="cover"
-                      fluid={data.showcaseDesignImageOne.childImageSharp.fluid}
-                    />
-                  </Link>
+                <Box mb={10}>
+                  <LinkThree to="/services/#development">
+                    Development
+                    <ArrowForwardIcon />
+                  </LinkThree>
                 </Box>
-
-                <Box
-                  left="-10%"
-                  top="40%"
-                  width="100%"
-                  position="absolute"
-                  height="auto"
-                  className="clip-show-effect"
-                >
-                  <Link to="/services/#design">
-                    <Img
-                      fit="cover"
-                      fluid={data.showcaseDesignImageTwo.childImageSharp.fluid}
-                    />
-                  </Link>
+                <Box mb={10}>
+                  <LinkThree to="/services/#seo-and-business-integrations">
+                    SEO and Business Integrations
+                    <ArrowForwardIcon />
+                  </LinkThree>
                 </Box>
               </Box>
-            </Box>
-          </ScrollAniFadeIn>
-        </Container>
-      </Box>
-      <Box
-        pb={20}
-        flexGrow={1}
-        flexBasis={{ base: '100%', md: '100%', lg: '50%', xl: '60%' }}
-        bgGradient="linear(to-b, brand.one , brand.two )"
-      >
-        <Container maxW="container.xl">
-          <ScrollAniFadeIn>
-            <Heading
-              py={{ base: 0, md: 20 }}
-              px={{ base: 0, md: 10, lg: 10, xl: 20 }}
-              size="3xl"
-              m="auto"
-              mb={{ base: 10, md: 'auto' }}
-              mt={{ base: 10, md: 'auto' }}
-              lineHeight="base"
-              maxWidth="700px"
-            >
-              <Box
-                position="absolute"
-                right="-10%"
-                bottom="0"
-                transform="scaleX(1)"
-              >
-                {/* <MonkeyThree /> */}
-              </Box>
-              We are a one stop shop for frugal and competitive:
-            </Heading>
-            <Box ml={-4} maxWidth="600px" mx={{ base: 'auto' }}>
-              <Box mb={10}>
-                <LinkThree to="/services/#branding">
-                  Branding
-                  <ArrowForwardIcon />
-                </LinkThree>
-              </Box>
-              <Box mb={10}>
-                <LinkThree to="/services/#design">
-                  Design
-                  <ArrowForwardIcon />
-                </LinkThree>
-              </Box>
-              <Box mb={10}>
-                <LinkThree to="/services/#development">
-                  Development
-                  <ArrowForwardIcon />
-                </LinkThree>
-              </Box>
-              <Box mb={10}>
-                <LinkThree to="/services/#seo-and-business-integrations">
-                  SEO and Business Integrations
-                  <ArrowForwardIcon />
-                </LinkThree>
-              </Box>
-            </Box>
-          </ScrollAniFadeIn>
-        </Container>
-      </Box>
+            </ScrollAniFadeIn>
+          </Box>
+        </Flex>
+      </Container>
     </Flex>
   </Box>
 );
