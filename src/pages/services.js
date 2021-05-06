@@ -17,6 +17,7 @@ import {
 import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { ArrowForwardIcon } from '@chakra-ui/icons';
+import MonkeyOne from '../assets/monkey_1.svg';
 import {
   Layout,
   ScrollAnimation,
@@ -48,20 +49,22 @@ const services = ({ data }) => {
           minHeight="400px"
           height="auto"
           color="brand.one"
-          py={20}
           backgroundColor="brand.five"
         >
           <Container maxW="container.xl">
-            <Heading
-              as="h3"
-              lineHeight="base"
-              mb={6}
-              size="2xl"
-              color="brand.one"
-              fontFamily="montas-semibold"
-            >
-              <a id="branding">Branding</a>
-            </Heading>
+            <a id="branding">
+              <Heading
+                as="h3"
+                lineHeight="base"
+                mb={6}
+                pt={40}
+                size="2xl"
+                color="brand.one"
+                fontFamily="montas-semibold"
+              >
+                Branding
+              </Heading>
+            </a>
             <Flex flexDirection="row" flexWrap="wrap" mb={20}>
               <Box mb={20}>
                 <Box
@@ -128,7 +131,7 @@ const services = ({ data }) => {
                   What we do
                 </Heading>
                 <Text maxWidth="500px" lineHeight="base" fontSize="xl">
-                  Market competitiveness through unique brand differentiation
+                  Custom web design tailored to business objectvies
                 </Text>
                 <UnorderedList>
                   <ListItem>Custom content driven design</ListItem>
@@ -182,17 +185,16 @@ const services = ({ data }) => {
                   What we do
                 </Heading>
                 <Text maxWidth="500px" lineHeight="base" fontSize="xl">
-                  Market competitiveness through unique brand differentiation
+                  Performant development with Reactjs, Gatsbyjs, Nextjs, Nodejs
+                  and Python
                 </Text>
                 <UnorderedList>
-                  <ListItem>Custom content driven design</ListItem>
                   <ListItem>
-                    Custom experiences around your unique audience
+                    Modern development frameworks, patterns and practices
                   </ListItem>
-                  <ListItem>Unique design that is not overly trendy</ListItem>
-                  <ListItem>
-                    Experiences driven by tested user experience research
-                  </ListItem>
+                  <ListItem>Blazing fast performance</ListItem>
+                  <ListItem>Secure</ListItem>
+                  <ListItem>Custom API integrations</ListItem>
                 </UnorderedList>
               </Box>
             </Flex>
@@ -208,9 +210,7 @@ const services = ({ data }) => {
               pt={28}
               fontFamily="montas-semibold"
             >
-              <a id="seo-and-business-integrations">
-                SEO and Business Integrations
-              </a>
+              <a id="search-engine-optimized">Search Engine Optimized</a>
             </Heading>
             <Flex flexDirection="row" flexWrap="wrap">
               <Box
@@ -225,17 +225,10 @@ const services = ({ data }) => {
                   We ensure your web presence is discoverable
                 </Text>
                 <UnorderedList>
-                  <ListItem>
-                    Technical SEO optimized for all major search engines
-                  </ListItem>
+                  <ListItem>Technical SEO for Bing and Google</ListItem>
                   <ListItem>Google and Bing analytics integrations</ListItem>
-                  Intergrations with CMS(content management system),
-                  CRM(customer relationship management), email marketing
-                  platforms, bookings and more.
-                  <ListItem />
-                  <ListItem>
-                    Experiences driven by tested user experience research
-                  </ListItem>
+                  <ListItem>On page seo</ListItem>
+                  <ListItem>Content strategy and Copywriting</ListItem>
                 </UnorderedList>
               </Box>
               <Box
@@ -243,6 +236,70 @@ const services = ({ data }) => {
                 flexGrow="1"
                 flexBasis={{ base: '100%', md: '50%' }}
               ></Box>
+            </Flex>
+          </Container>
+        </Box>
+        <Box minHeight="400px" height="auto">
+          <Container maxW="container.xl">
+            <Flex display="flex" justifyContent="flex-end">
+              <Box flexGrow="1" flexBasis={{ base: '100%', md: '50%' }}>
+                <Heading
+                  as="h3"
+                  lineHeight="base"
+                  size="2xl"
+                  mb={6}
+                  pt={28}
+                  fontFamily="montas-semibold"
+                >
+                  <a id="business-integrations">Business Integrations</a>
+                </Heading>
+                <Flex flexDirection="row" flexWrap="wrap">
+                  <Box
+                    pr={{ base: 0, md: 6 }}
+                    flexGrow="1"
+                    flexBasis={{ base: '100%', md: '50%' }}
+                  >
+                    <Heading as="h5" mb={6}>
+                      What we do
+                    </Heading>
+                    <Text maxWidth="500px" lineHeight="base" fontSize="xl">
+                      We set up your business to succeed
+                    </Text>
+                    <UnorderedList>
+                      <ListItem>
+                        Integrations with CMS(content management system)
+                      </ListItem>
+                      <ListItem>
+                        Lead management CRM(customer relationship management),
+                      </ListItem>
+                      <ListItem>
+                        Integrations and automation's with email marketing
+                        platforms
+                      </ListItem>
+                      <ListItem>
+                        ECommerce inventory and fulfillment management
+                      </ListItem>
+                      <ListItem>Booking Management services</ListItem>
+                    </UnorderedList>
+                  </Box>
+                </Flex>
+              </Box>
+              <Box
+                pl={{ base: 0, md: 6 }}
+                flexGrow="1"
+                flexBasis={{ base: '100%', md: '50%' }}
+                position="relative"
+              >
+                <Box
+                  // width="40%"
+                  position="absolute"
+                  right="0px"
+                  opacity=".5"
+                  transform="scaleX(-1)"
+                >
+                  <MonkeyOne />
+                </Box>
+              </Box>
             </Flex>
           </Container>
         </Box>
