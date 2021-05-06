@@ -1,18 +1,45 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Heading, Flex, Container } from '@chakra-ui/react';
+import {
+  Box,
+  Heading,
+  Flex,
+  Container,
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
+} from '@chakra-ui/react';
 import { BtnOne } from '../links';
 import { useForm } from 'react-hook-form';
-import { ArrowForwardIcon, ArrowBackIcon } from '@chakra-ui/icons';
+import { ArrowForwardIcon, ArrowBackIcon, CloseIcon } from '@chakra-ui/icons';
 import AddEmail from './add-email';
 import AddName from './add-name';
 import AddNotes from './add-notes';
 import AddEnthusiasm from './add-enthusiasm';
+import axios from 'axios';
 
 const steps = ['email', 'name', 'notes', 'enthusiasm'];
 
 const StartAConversation = () => {
   const [current, setCurrent] = useState([0, steps[0]]);
   const [store, setStore] = useState({});
+  const [alertMessage, setAlertMessage] = useState({
+    type: 'warning',
+    message: '',
+  });
+  const AlertMessage = ({ message }) => (
+    <Alert status={message.type}>
+      <Flex justifyContent="space-between">
+        <AlertIcon />
+        <AlertTitle mr={2} />
+        <AlertDescription>{message.message}</AlertDescription>
+        <CloseIcon
+          onClick={() => setAlertMessage({ type: 'warning', message: '' })}
+          ml={4}
+        />
+      </Flex>
+    </Alert>
+  );
   const handleNext = () => {
     if (current[0] !== steps.length - 1) {
       setCurrent((prev) => {
@@ -41,8 +68,45 @@ const StartAConversation = () => {
     }
   };
 
-  const onSubmitAll = () => {
+  const onSubmitAll = async () => {
     console.log('submit all', store);
+    const results = await axios
+      .post('/leads', store, {
+        baseURL: 'https://odwwt9.deta.dev',
+        headers: {
+          Accept: '*/*',
+          'X-Forwarded-Host': 'odwwt9.deta.dev',
+          'X-Forwarded-Proto': 'https',
+          'X-Forwarded-Port': '443',
+          'Content-Type': 'application/json',
+          'X-Scheme': 'https',
+          'Access-Control-Allow-Origin': '*',
+        },
+      })
+      .then((res) => {
+        if (res.data.status === 200) {
+          setAlertMessage({
+            type: 'success',
+            message: 'Thank you, we will be in touch you shortly.',
+          });
+          return 200;
+        } else if (res.data.status === 401) {
+          setAlertMessage({
+            type: 'warning',
+            message:
+              'We already have your info. If you think we missed you, ping us on slack',
+          });
+          return 401;
+        }
+      })
+      .catch((err) => {
+        setAlertMessage({
+          type: 'error',
+          message:
+            "Something went wrong. Please try again and if that doesn't work ping us on slack",
+        });
+      });
+    return results;
   };
 
   useEffect(() => {
@@ -102,27 +166,11 @@ const StartAConversation = () => {
               <div></div>
             )}
           </Box>
-
-          <Flex>
-            {/* {current[0] !== steps.length - 1 ? (
-                <BtnOne
-                  colortype="dark"
-                  mt={6}
-                  width="200px"
-                  onKeyPress={(e) => {
-                    if (e.keyCode === 13) {
-                      handleNext();
-                    }
-                  }}
-                  onClick={() => handleNext()}
-                >
-                  Next
-                  <ArrowForwardIcon />
-                </BtnOne>
-              ) : (
-                <div></div>
-              )} */}
-          </Flex>
+        </Box>
+        <Box height="50px">
+          {alertMessage.message !== '' ? (
+            <AlertMessage message={alertMessage} />
+          ) : undefined}
         </Box>
       </Container>
     </Box>

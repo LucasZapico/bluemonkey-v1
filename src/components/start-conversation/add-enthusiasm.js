@@ -57,7 +57,7 @@ const AddEnthusiasm = ({ onSubmit, store, handleSubmitAll, handleBack }) => {
                       <input
                         type="radio"
                         id="excited"
-                        name="enthusiasm"
+                        value="excited"
                         checked
                         {...register('enthusiasm')}
                       />
@@ -74,7 +74,7 @@ const AddEnthusiasm = ({ onSubmit, store, handleSubmitAll, handleBack }) => {
                       <input
                         type="radio"
                         id="interested"
-                        name="enthusiasm"
+                        value="interested"
                         {...register('enthusiasm')}
                       />
                       <div className="radio-control"></div>
@@ -90,7 +90,7 @@ const AddEnthusiasm = ({ onSubmit, store, handleSubmitAll, handleBack }) => {
                       <input
                         type="radio"
                         id="imatroll"
-                        name="enthusiasm"
+                        value="imatroll"
                         {...register('enthusiasm')}
                       />
                       <div className="radio-control"></div>
