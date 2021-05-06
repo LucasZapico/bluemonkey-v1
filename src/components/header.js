@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import {
   Flex,
   Box,
@@ -11,10 +11,12 @@ import {
   DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
+  Icon,
   DrawerContent,
   DrawerCloseButton,
 } from '@chakra-ui/react';
 import { Link } from 'gatsby';
+import { useSpring, animated as a } from 'react-spring';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import Logo from '../assets/blue-monkey-hanging.svg';
 
@@ -42,6 +44,11 @@ const ROUTES = [
 ];
 
 const Header = () => {
+  const [show, setShow] = useState(false);
+  const styles = useSpring({
+    opacity: show ? 1 : 0,
+    height: show ? '100vh' : '0vh',
+  });
   return (
     <>
       <Flex
@@ -67,27 +74,55 @@ const Header = () => {
           </Link>
         </Box>
 
-        <Flex alignItems="center">
+        <Flex
+          alignItems="center"
+          overflow="hidden"
+          width={{ base: '0px', md: 'auto' }}
+        >
           {ROUTES.map((r) => (
             <Box pr={4} key={`route${r.id}`}>
               <Link to={`${r.to}`}>{r.name}</Link>
             </Box>
           ))}
-
-          <Box>
-            {/* <Heading as="h5" size="lg">
-              111.111.111
-            </Heading> */}
-
-            {/* <Link to="/schedule">
-
-          <Button size="lg" px={8} variant="btnOne">
-            Schedule a Free 20 min Consultation
-          </Button>
-        </Link> */}
-          </Box>
         </Flex>
+
+        <Box
+          onClick={() => setShow(!show)}
+          width={{ base: 'auto', md: '0px' }}
+          overflow="hidden"
+          mr={4}
+        >
+          <Icon as={HamburgerIcon} w={6} h={6} />
+        </Box>
       </Flex>
+      <a.div
+        style={{
+          ...styles,
+          position: 'absolute',
+          top: '0px',
+          zIndex: '100',
+          width: '100%',
+          overflow: 'hidden',
+        }}
+      >
+        <Flex
+          height="100%"
+          flexDirection="column"
+          alignItems="center"
+          overflow="hidden"
+          bgGradient="linear(to-br, brand.one , brand.two )"
+          pt={40}
+          mt={20}
+        >
+          {ROUTES.map((r) => (
+            <Box pr={4} key={`route${r.id}`}>
+              <Heading mb={10} size="2xl" onClick={() => setShow(!show)}>
+                <Link to={`${r.to}`}>{r.name}</Link>
+              </Heading>
+            </Box>
+          ))}
+        </Flex>
+      </a.div>
     </>
   );
 };
