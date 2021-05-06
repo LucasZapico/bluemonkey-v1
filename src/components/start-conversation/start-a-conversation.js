@@ -84,13 +84,13 @@ const StartAConversation = () => {
         },
       })
       .then((res) => {
-        if (res.data.status === 200) {
+        if (res.status === 200) {
           setAlertMessage({
             type: 'success',
             message: 'Thank you, we will be in touch you shortly.',
           });
           return 200;
-        } else if (res.data.status === 401) {
+        } else if (res.status === 401) {
           setAlertMessage({
             type: 'warning',
             message:
