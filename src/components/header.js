@@ -89,6 +89,7 @@ const Header = () => {
         <Box
           onClick={() => setShow(!show)}
           width={{ base: 'auto', md: '0px' }}
+          display={{ base: 'block', md: 'none' }}
           overflow="hidden"
           mr={4}
         >
@@ -98,7 +99,7 @@ const Header = () => {
       <a.div
         style={{
           ...styles,
-          position: 'absolute',
+          position: 'fixed',
           top: '0px',
           zIndex: '100',
           width: '100%',
