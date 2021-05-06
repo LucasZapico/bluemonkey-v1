@@ -23,6 +23,7 @@ const steps = ['email', 'name', 'notes', 'enthusiasm'];
 const StartAConversation = () => {
   const [current, setCurrent] = useState([0, steps[0]]);
   const [store, setStore] = useState({});
+  const [waiting, setWaiting] = useState(false);
   const [alertMessage, setAlertMessage] = useState({
     type: 'warning',
     message: '',
@@ -69,6 +70,7 @@ const StartAConversation = () => {
   };
 
   const onSubmitAll = async () => {
+    setWaiting(true);
     console.log('submit all', store);
     const results = await axios
       .post('/leads', store, {
@@ -84,6 +86,8 @@ const StartAConversation = () => {
         },
       })
       .then((res) => {
+        console.log(res);
+        setWaiting(false);
         if (res.status === 200) {
           setAlertMessage({
             type: 'success',
@@ -100,6 +104,7 @@ const StartAConversation = () => {
         }
       })
       .catch((err) => {
+        setWaiting(false);
         setAlertMessage({
           type: 'error',
           message:
@@ -114,66 +119,65 @@ const StartAConversation = () => {
   }, [store]);
 
   return (
-    <Box width="100%" py={20}>
-      <Container maxW="container.xl">
+    <>
+      <Box>
+        <Heading size="3xl" fontFamily="montas-semibold" mb={6}>
+          Start A Conversation
+        </Heading>
+      </Box>
+      <Box className="start-conversation">
         <Box>
-          <Heading size="3xl" fontFamily="montas-semibold" mb={6}>
-            Start A Conversation
-          </Heading>
+          Step {current[0] + 1} of {steps.length}
         </Box>
-        <Box className="start-conversation">
-          <Box>
-            Step {current[0] + 1} of {steps.length}
-          </Box>
-          <Box height="100%">
-            {current[1] === 'email' ? (
-              <AddEmail
-                onSubmit={onSubmit}
-                store={store}
-                handleNext={handleNext}
-              />
-            ) : (
-              <div></div>
-            )}
-            {current[1] === 'name' ? (
-              <AddName
-                onSubmit={onSubmit}
-                store={store}
-                handleNext={handleNext}
-                handleBack={handleBack}
-              />
-            ) : (
-              <div></div>
-            )}
-            {current[1] === 'notes' ? (
-              <AddNotes
-                onSubmit={onSubmit}
-                store={store}
-                handleNext={handleNext}
-                handleBack={handleBack}
-              />
-            ) : (
-              <div></div>
-            )}
-            {current[1] === 'enthusiasm' ? (
-              <AddEnthusiasm
-                onSubmit={onSubmit}
-                store={store}
-                handleBack={handleBack}
-                handleSubmitAll={onSubmitAll}
-              />
-            ) : (
-              <div></div>
-            )}
-          </Box>
+        <Box height="100%">
+          {current[1] === 'email' ? (
+            <AddEmail
+              onSubmit={onSubmit}
+              store={store}
+              handleNext={handleNext}
+            />
+          ) : (
+            <div></div>
+          )}
+          {current[1] === 'name' ? (
+            <AddName
+              onSubmit={onSubmit}
+              store={store}
+              handleNext={handleNext}
+              handleBack={handleBack}
+            />
+          ) : (
+            <div></div>
+          )}
+          {current[1] === 'notes' ? (
+            <AddNotes
+              onSubmit={onSubmit}
+              store={store}
+              handleNext={handleNext}
+              handleBack={handleBack}
+            />
+          ) : (
+            <div></div>
+          )}
+          {current[1] === 'enthusiasm' ? (
+            <AddEnthusiasm
+              onSubmit={onSubmit}
+              store={store}
+              handleBack={handleBack}
+              handleSubmitAll={onSubmitAll}
+              handleWait={waiting}
+            />
+          ) : (
+            <div></div>
+          )}
         </Box>
-        <Box height="50px">
-          {alertMessage.message !== '' ? (
-            <AlertMessage message={alertMessage} />
-          ) : undefined}
-        </Box>
-      </Container>
-    </Box>
+      </Box>
+      <Box minheight="50px">
+        {alertMessage.message !== '' ? (
+          <AlertMessage backgroundColor="transparent" message={alertMessage} />
+        ) : undefined}
+      </Box>
+    </>
   );
 };
 

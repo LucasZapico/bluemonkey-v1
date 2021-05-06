@@ -2,13 +2,16 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  height: 350px;
+  min-height: 350px;
+  width: 100%;
+
   // background-color: lightcoral;
   form {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     height: 100%;
+    width: 100%;
   
     
   }

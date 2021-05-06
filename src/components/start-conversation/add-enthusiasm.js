@@ -10,6 +10,7 @@ import {
   FormErrorMessage,
   FormErrorIcon,
   Flex,
+  Spinner,
   RadioGroup,
   Radio,
   Stack,
@@ -19,7 +20,13 @@ import { ArrowForwardIcon, ArrowBackIcon } from '@chakra-ui/icons';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useTransition, animated as a } from 'react-spring';
 
-const AddEnthusiasm = ({ onSubmit, store, handleSubmitAll, handleBack }) => {
+const AddEnthusiasm = ({
+  onSubmit,
+  store,
+  handleSubmitAll,
+  handleBack,
+  handleWait,
+}) => {
   const [show, setShow] = useState(true);
   const [isDisabled, setIsDisabled] = useState(true);
   const [alertMessage, setAlertMessage] = useState({
@@ -102,7 +109,7 @@ const AddEnthusiasm = ({ onSubmit, store, handleSubmitAll, handleBack }) => {
                   </label>
                 </div>
                 <Flex flexDirection={{ base: 'column-reverse', sm: 'row' }}>
-                  <Box mt={4} mr={4}>
+                  <Box mt={4} mr={{ base: 0, sm: 4 }}>
                     <button
                       className="dark btn-one"
                       onClick={() => handleBack()}
@@ -111,12 +118,19 @@ const AddEnthusiasm = ({ onSubmit, store, handleSubmitAll, handleBack }) => {
                     </button>
                   </Box>
                   <Box mt={4}>
-                    <input
-                      className="dark btn-one"
-                      type="submit"
-                      value="Submit"
-                    />
-                    <ArrowForwardIcon />
+                    {handleWait ? (
+                      <div className="dark btn-one">
+                        <Spinner size="sm" />
+                      </div>
+                    ) : (
+                      <input
+                        className="dark btn-one"
+                        type="submit"
+                        value="Submit"
+                      />
+                    )}
+
+                    {/* <ArrowForwardIcon /> */}
                   </Box>
                 </Flex>
               </form>
