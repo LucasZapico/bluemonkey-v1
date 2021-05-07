@@ -21,9 +21,9 @@ import { formatePhone, formatePhoneBot } from '../helpers/index';
 import LongArrow from '../assets/long-arrow.svg';
 
 export const LinkOne = (props) => {
-  const { color, children, to = '', href = '', icon } = props;
+  const { color, children, to = '', href = '', icon, className } = props;
   return (
-    <Box color={color}>
+    <Box color={color} className={className}>
       {href !== '' ? (
         <ChLink color={color} href={href}>
           {children}
