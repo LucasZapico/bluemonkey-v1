@@ -35,7 +35,13 @@ exports.createPages = async ({ actions, graphql }) => {
               design {
                 src {
                   childImageSharp {
-                    id
+                    fluid {
+                      base64
+                      aspectRatio
+                      src
+                      srcSet
+                      sizes
+                    }
                   }
                 }
                 alt
@@ -43,7 +49,13 @@ exports.createPages = async ({ actions, graphql }) => {
               branding {
                 src {
                   childImageSharp {
-                    id
+                    fluid {
+                      base64
+                      aspectRatio
+                      src
+                      srcSet
+                      sizes
+                    }
                   }
                 }
                 alt
@@ -51,7 +63,13 @@ exports.createPages = async ({ actions, graphql }) => {
               featured {
                 src {
                   childImageSharp {
-                    id
+                    fluid {
+                      base64
+                      aspectRatio
+                      src
+                      srcSet
+                      sizes
+                    }
                   }
                 }
                 alt
