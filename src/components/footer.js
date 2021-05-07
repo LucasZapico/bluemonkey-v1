@@ -31,7 +31,7 @@ const Footer = ({ title, description }) => {
     url: `${siteUrl}${pathname}`,
   };
   return (
-    <>
+    <footer>
       <Box background="brand.two" pt={10}>
         <Box minHeight="500px">
           <Flex minHeight="100%" flexDirection="column">
@@ -96,7 +96,7 @@ const Footer = ({ title, description }) => {
         </Box>
       </Box>
       {/* <ConnectModal item={connect} /> */}
-    </>
+    </footer>
   );
 };
 

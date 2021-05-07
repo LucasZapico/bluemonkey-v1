@@ -50,7 +50,7 @@ const Header = () => {
     height: show ? '100vh' : '0vh',
   });
   return (
-    <>
+    <header>
       <Flex
         style={{ mixBlendMode: 'exclusion' }}
         display={{ base: 'flex', md: 'flex' }}
@@ -80,7 +80,7 @@ const Header = () => {
           width={{ base: '0px', md: 'auto' }}
         >
           {ROUTES.map((r) => (
-            <Box pr={4} key={`route${r.id}`}>
+            <Box className="link-one dark" pr={4} key={`route${r.id}`}>
               <Link to={`${r.to}`}>{r.name}</Link>
             </Box>
           ))}
@@ -117,14 +117,19 @@ const Header = () => {
         >
           {ROUTES.map((r) => (
             <Box pr={4} key={`route${r.id}`}>
-              <Heading mb={10} size="2xl" onClick={() => setShow(!show)}>
+              <Heading
+                as="h4"
+                mb={10}
+                size="2xl"
+                onClick={() => setShow(!show)}
+              >
                 <Link to={`${r.to}`}>{r.name}</Link>
               </Heading>
             </Box>
           ))}
         </Flex>
       </a.div>
-    </>
+    </header>
   );
 };
 

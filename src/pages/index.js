@@ -88,7 +88,7 @@ const Hero = ({ data }) => (
       >
         Blue Monkey Makes....
       </Heading>
-      <Heading as="h3" size="xl" lineHeight="base" mb={20} maxWidth="600px">
+      <Heading as="h2" size="xl" lineHeight="base" mb={20} maxWidth="600px">
         ...custom digital presences that are engaging, performant, and search
         engine&nbsp;optimized.
       </Heading>
@@ -150,7 +150,7 @@ const OurWorkSection = ({ data }) => (
           <Container mb={10}>
             <ScrollAniFadeIn>
               <Heading
-                as="h3"
+                as="h4"
                 size="xl"
                 fontFamily="montas-semibold"
                 lineHeight="base"
@@ -161,7 +161,7 @@ const OurWorkSection = ({ data }) => (
                 {c.title}
               </Heading>
               <Box maxWidth="400px" mb={4}>
-                <Heading size="md" color="brand.one">
+                <Heading as="h5" size="md" color="brand.one">
                   Services
                 </Heading>
                 {c.content.deliverables.map((s) => (
@@ -327,6 +327,7 @@ const ServicesSection = ({ data }) => (
               <Heading
                 size="3xl"
                 m="auto"
+                as="h4"
                 mb={{ base: 10, md: 'auto' }}
                 mt={{ base: 10, md: 'auto' }}
                 lineHeight="base"
@@ -387,8 +388,10 @@ export const IndexPage = ({ data }) => {
     <div ref={ref}>
       <Box minH="700px" pt={28}>
         <Hero data={data} />
-        <OurWorkSection data={data} />
-        <ServicesSection data={data} />
+        <main>
+          <OurWorkSection data={data} />
+          <ServicesSection data={data} />
+        </main>
       </Box>
     </div>
   );
