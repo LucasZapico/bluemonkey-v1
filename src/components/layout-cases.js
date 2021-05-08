@@ -9,8 +9,12 @@ const Layout = ({ children }) => {
     <>
       <SEO />
 
-      <Box minHeight="100vh" overflow="hidden">
-        <Box background="brand.two" className="our-work" margin="auto" py={40}>
+      <Box
+        bgGradient="linear(to-b, brand.one , brand.two )"
+        minHeight="100vh"
+        overflow="hidden"
+      >
+        <Box className="our-work" margin="auto" py={40}>
           <Container maxW="container.xl">{children}</Container>
         </Box>
         {/* <Banner /> */}

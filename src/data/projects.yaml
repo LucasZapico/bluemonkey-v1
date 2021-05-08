@@ -17,11 +17,9 @@
   technology-stack:
     - figma
     - gatsby
+    - chrome-extension
     - react
     - netlify
-    - netlify-cms
-    - hubspot
-    - calendarly
   images:
       featured:
         - alt: ''
@@ -44,94 +42,21 @@
             ../images/showcase/work/claire-morency-hypno/3-chh-webdesign-showcase-2.png
   content:
     title: >-
-      Chancellor Consulting Group is a well established healthcare management consutling group with over 35 years in the industry.
+      Pretty Password is a secure password generator that looks good
     summary: >-
-      They needed to give their web presense a modern face lift, while maintianing a clean professional tone. This included holding onto some original photography from the 90's.
+      A Little project to build a better looking password generator
     deliverables:
       - branding
       - website design
+      - chrome extension
       - design direction
-      - user experience design
       - development
-      - hosting
     branding: >-
-      We modernized the brand by leveraged the personality of a mature business pulling from depth of experience and refined tones.  Conveying established confidence and professionalism.
+      We modernized the brand by leveraged the personality of a
     design: >-
-      Once we had the established tone we create an experience for a modern audience with an emphasize on mobile and scalable content and ease of access to points of contact. 
+      Once we had the established tone we create an experience for a 
     development: >-
-      We used Gatsbyjs as our build framework, thus ensuring one of the fastest
-      serving content. 
-- title: Modalero Store Demo
-  path: /demo/modalero-store/
-  link: 'https://modalero-store-prototype.netlify.app/'
-  subheader: Modalero Store
-  data-created: 05/03/2021
-  last-modified: 05/03/2021
-  categories:
-    - case
-    - web-site
-  tags:
-    - gatsby
-    - user-experience
-    - development
-    - ui-design
-  isdraft: false
-  isComingSoon: false
-  technology-stack:
-    - figma
-    - gatsby
-    - react
-    - netlify
-    - netlify-cms
-    - hubspot
-    - calendarly
-  images:
-      featured:
-        - alt: ''
-          src: >- 
-            ../images/showcase/work/claire-morency-hypno/1-cmh-branding-showcase.png
-      branding:
-        - alt: Image of brand style guide
-          src: >-
-            ../images/showcase/work/claire-morency-hypno/1-cmh-branding-showcase.png
-      design:
-        - alt: showcase image of webdesign
-          src: >-
-             ../images/showcase/work/claire-morency-hypno/2-cmh-webdesign-showcase.png
-        - alt: 2 showcase image of webdesign
-          src: >-
-            ../images/showcase/work/claire-morency-hypno/2-cmh-webdesign-showcase.png
-      other:
-        - alt: showcase image of webdesign
-          src: >-
-            ../images/showcase/work/claire-morency-hypno/3-chh-webdesign-showcase-2.png
-  content:
-    title: >-
-      Claire Morency Hypnotherapy provides health solutions to the greater
-      Seattle area.
-    summary: >-
-      Launching in March, they needed a full digital presence suite. We created
-      branding, web design, development, SEO optimization and strategy, setup
-      and integration into business tools.
-    deliverables:
-      - website
-      - branding
-      - design direction
-      - user experience design
-      - web design
-      - development
-      - email design and automation
-    branding: >-
-      We aimed to create a tone of growth, trust, opportunity and
-      professionalism. Drawing from the deep symbolism of clouds and sky for
-      openness, green tones hinting of growth and new beginning.
-    design: >-
-      Once we had the established tone we create an experience for a modern
-      audience with an emphasize on mobile and scalable content and ease of
-      access to points of contact.
-    development: >-
-      We used Gatsbyjs as our build framework, thus ensuring one of the fastest
-      serving content. 
+      We used Gatsbyjs as our build framework, thus ensuring one of
 - title: Brandish Ipusm
   subheader: Brandish Ipsum
   path: /project/brandish-ipsum/
@@ -178,10 +103,6 @@
     title: Yoga of Words is an uplifting poetry and prose experience
     summary: >-
       We started by exploring the idea behind Yoga of Words, what was the impact
-      they wanted to share with the audience. We knew if we wanted to create
-      something engaging, we needed to think on and compliment what a prose
-      reading experience is. With this in mind, we created a refined digital
-      presence that feels welcoming and keeps the prose at the center.
     deliverables:
       - website
       - branding
@@ -192,16 +113,8 @@
       - email design and automation
     branding: >-
       We looked into various art and illustrations that could compliment prose
-      without either being ostentatious or overly opinionated symbolically
-      thereby taking away from the prose. We settled on fine art illustrations
-      of flowers as flowers have enough breathed of symbolism to match any prose
-      theme while staying as a compliment not a distraction.
     design: >-
       We culminated in a minimalist reading experience where each prose is
-      accompanied by a floral illustration allowing the reader to have a
-      singular and completely curated relationship with the words. We enhanced
-      the experience through email engagement with Mailchimp creating an
-      automated branded welcoming email and automated weekly prose post updated.
     development: >-
       We used Gatsbyjs as our build framework, thus ensuring one of the fastest
       serving content.

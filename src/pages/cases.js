@@ -11,6 +11,7 @@ const cases = [1, 2, 3, 4, 5];
 
 const CasesPage = (props) => {
   const { data } = props;
+  console.log('cases', data);
 
   return (
     <main>
@@ -115,6 +116,74 @@ const CasesPage = (props) => {
               </Container>
             ))}
           </Flex>
+          <Flex
+            justifyContent="space-between"
+            flexWrap="wrap"
+            py={40}
+            bgGradient="linear(to-b, brand.two 5%, brand.three 20%, brand.five 25%)"
+            bg="brand.five"
+          >
+            <Container maxW="container.xl">
+              <ScrollAniFadeIn>
+                <Box
+                  py={{ base: 0, sm: 20 }}
+                  flexBasis={{ base: '100%', md: '60%' }}
+                >
+                  <Box maxWidth="650px">
+                    <Heading
+                      as="h3"
+                      size="3xl"
+                      fontFamily="montas-semibold"
+                      lineHeight="base"
+                      zIndex="1"
+                      color="brand.one"
+                      pb={10}
+                    >
+                      Side Projects
+                    </Heading>
+                  </Box>
+                </Box>
+              </ScrollAniFadeIn>
+            </Container>
+            <Container maxW="container.xl">
+              <Flex flexWrap="wrap" justifyContent="space-between">
+                {data.projects.edges.map((c) => (
+                  <Box width="400px" mb={10}>
+                    <ScrollAniFadeIn>
+                      <Heading
+                        as="h2"
+                        size="xl"
+                        fontFamily="montas-semibold"
+                        lineHeight="base"
+                        zIndex="1"
+                        color="brand.one"
+                        pb={6}
+                      >
+                        {c.node.frontmatter.title}
+                      </Heading>
+                      <Box maxWidth="400px" mb={4}>
+                        <Text color="brand.one" fontSize="md" lineHeight="base">
+                          {c.node.frontmatter.subheader}
+                        </Text>
+                      </Box>
+
+                      {/* <Link to={c.node.frontmatter.path}> */}
+                      <Box height="auto" overflow="hidden" mb={10}>
+                        <Img
+                          fluid={
+                            c.node.frontmatter.featuredImg[0].src
+                              .childImageSharp.fluid
+                          }
+                          alt={c.node.frontmatter.featuredImg[0].alt}
+                        />
+                      </Box>
+                      {/* </Link> */}
+                    </ScrollAniFadeIn>
+                  </Box>
+                ))}
+              </Flex>
+            </Container>
+          </Flex>
         </Box>
       </Box>
     </main>
@@ -123,6 +192,32 @@ const CasesPage = (props) => {
 
 export const query = graphql`
   query {
+    projects: allMdx(
+      filter: { fileAbsolutePath: { regex: "/pages/projects/" } }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            featuredImg {
+              alt
+              src {
+                childImageSharp {
+                  fluid(maxWidth: 1020) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+            }
+            date_created
+            path
+            subheader
+            title
+            last_modified
+          }
+        }
+      }
+    }
     cases: allWorkYaml {
       nodes {
         images {
