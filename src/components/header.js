@@ -58,7 +58,7 @@ const Header = () => {
         width="100vw"
         position="fixed"
         background="brand.two"
-        zIndex="10"
+        zIndex="100"
         justifyContent="space-between"
         alignItems="center"
         p={4}
@@ -91,6 +91,7 @@ const Header = () => {
           width={{ base: 'auto', md: '0px' }}
           display={{ base: 'block', md: 'none' }}
           overflow="hidden"
+          zIndex="100"
           mr={4}
         >
           <Icon as={HamburgerIcon} w={6} h={6} />
@@ -101,7 +102,7 @@ const Header = () => {
           ...styles,
           position: 'fixed',
           top: '0px',
-          zIndex: '100',
+          zIndex: '50',
           width: '100%',
           overflow: 'hidden',
         }}
