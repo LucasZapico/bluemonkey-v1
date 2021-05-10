@@ -29,11 +29,13 @@
    
 __Header__
 
-- add hover state and other states to links in header
+- [x] add hover state and other states to links in header
+- [ ] add indication in links of where on site one is in header  
 
 __Cases__ 
 
 - [ ] enhance web design ui showcase image
+- [ ] hero image? 
 - [x] add next and back links
 - [ ] add demos and side projects 
 - [ ] enhance side project about pages
@@ -54,10 +56,14 @@ __form__
 __Analytics__
 - [ ] add yandex analytics 
 
-__Articles & FAQ__
+__Articles__
+
+- [ ] set up articles
+
+__FAQ__
 
 - [ ] FAQ
-- [ ] set up articles
+- [ ] FAQ submission ux
 
 ### Issues 
 
