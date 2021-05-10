@@ -21,6 +21,7 @@ import {
   ScrollAniFadeIn,
   ScrollAniMonkey,
   LinkThree,
+  LinkOne,
 } from '../components/index';
 import MonkeyOne from '../assets/monkey_1.svg';
 import MonkeyOneTwo from '../assets/monkey_1_2.svg';
@@ -113,12 +114,7 @@ const Hero = ({ data }) => (
 );
 
 const OurWorkSection = ({ data }) => (
-  <Box
-    minH="500px"
-    py={20}
-    zIndex="1"
-    bgGradient="linear(to-r, brand.three, brand.five)"
-  >
+  <Box minH="500px" py={20} zIndex="1" className="aurora dark">
     <Container maxW="container.xl">
       <ScrollAniFadeIn>
         <Box py={{ base: 0, sm: 20 }} flexBasis={{ base: '100%', md: '60%' }}>
@@ -140,6 +136,9 @@ const OurWorkSection = ({ data }) => (
             >
               Our Work
             </Heading>
+            <Box className="link-one dark" w="120px">
+              <LinkOne to="/cases">See More Work</LinkOne>
+            </Box>
           </Box>
         </Box>
       </ScrollAniFadeIn>
@@ -164,14 +163,15 @@ const OurWorkSection = ({ data }) => (
                 <Heading as="h5" size="md" color="brand.one">
                   Services
                 </Heading>
-                {c.content.deliverables.map((s) => (
+                {c.content.deliverables.map((s, i) => (
                   <Text
                     size="md"
                     display="inline"
                     lineHeight="base"
                     color="brand.one"
                   >
-                    {s},{' '}
+                    {s}
+                    {c.content.deliverables.length - 1 === i ? '' : ', '}
                   </Text>
                 ))}
               </Box>
@@ -190,7 +190,6 @@ const OurWorkSection = ({ data }) => (
       </Flex>
     </Container>
     <Box
-      bgGradient="radial( brand.three 20%, brand.five )"
       // backgroundColor="brand.five"
       p={{ base: 0, sm: 10 }}
       height="auto"
@@ -367,8 +366,14 @@ const ServicesSection = ({ data }) => (
                   </LinkThree>
                 </Box>
                 <Box mb={10}>
-                  <LinkThree to="/services/#seo-and-business-integrations">
-                    SEO and Business Integrations
+                  <LinkThree to="/services/#search-engine-optimized">
+                    Search Engine Optimized
+                    <ArrowForwardIcon />
+                  </LinkThree>
+                </Box>
+                <Box mb={10}>
+                  <LinkThree to="/services/#search-engine-optimized">
+                    Business Integrations
                     <ArrowForwardIcon />
                   </LinkThree>
                 </Box>
