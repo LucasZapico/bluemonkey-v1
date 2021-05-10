@@ -44,22 +44,22 @@
             ../images/showcase/work/claire-morency-hypno/3-chh-webdesign-showcase-2.png
   content:
     title: >-
-      Chancellor Consulting Group is a well established healthcare management consutling group with over 35 years in the industry.
+      Chancellor Consulting Group is a well established healthcare management consulting group with over 35 years in the industry.
     summary: >-
-      They needed to give their web presence a modern facelift while maintaining a clean professional tone. This included holding onto some original photography from the '90s.
+      They needed to give their web presence a modern facelift while maintaining a clean, professional tone. This included holding onto some original photography from the '90s.
     deliverables:
       - branding
       - website design
       - development
       - hosting
     branding: >-
-      We modernized the brand by leveraging the well-established personality of their mature business. We used a deep navy for trust consistency touching on the depth of experience and expertise. We use a warmer tope to offset the navy, symbolizing confidence and professionalism.
+      We modernized the brand by leveraging the well-established personality of their business. We used a deep navy to invoke feeling of trust and consistency pulling from their depth of experience and expertise. We used a warmer tope to offset the navy, symbolizing confidence and professionalism.
     design: >-
-      After establishing a clear tone we create an experience for a modern audience. An emphasis on mobile and scalable content and ease of access to points of contact and proof of value.
+      After establishing a clear tone, we created an experience for a modern audience. We emphasized mobile, scalable content and ease of access to points of contact and proof of value.
     development: >-
-      We used the fastest build framework on the web, Gatsbyjs. Resulting in blazing fast experience for customers and higher ranking in search results.  
+      We used the fastest build framework on the web, Gatsby.js, to give a blazing fast experience for customers and higher ranking in search results.  
     business_integrations: >- 
-      We set them up with Google Analytics and Netlify CMS to easily update content. 
+      We set up Google Analytics and Netlify CMS to easily update content. 
 - title: Claire Morency Hypnotherapy
   path: /cases/claire-morency-hypnotherapy/
   link: 'https://clairemorencyhypnotherapy.com/'
@@ -109,7 +109,7 @@
       Claire Morency Hypnotherapy provides health solutions to the greater
       Seattle area.
     summary: >-
-      Launching in March, they needed a full digital presence suite. We created branding, web design, development, and search engine optimized content strategy. Finally, we set up and integrations into business tools.
+      Launching in March, they needed a full digital presence suite. We created branding, web design, development, and a search engine optimized content strategy. Finally, we set up and integrated business tools such as CMS, CRM, and Scheduling.
     deliverables:
       - website
       - branding
@@ -119,14 +119,14 @@
       - development
       - email design and automation
     branding: >-
-      We aimed to create a tone of growth, trust, opportunity, and
-      professionalism. We drew from the symbolism of "clouds" and "sky" for openness. Tones of green hinting of growth and new beginnings.
+      We created a tone of growth, trust, opportunity, and
+      professionalism. We drew from the symbolism of clouds and sky for openness. We used tones of green hinting of growth and new beginnings.
     design: >-
-      Once we had clear look and feel we focused on addressing the priority list for the business. Facilitating conversions by answering know pain points of the customer. Clear points of contact and simple scheduling. 
+      Once we had clear look and feel, we focused on facilitating conversions by answering know customer pain points. Clear points of contact and simple scheduling. 
     development: >-
-      We used the fastest build framework on the web, Gatsbyjs. Resulting in blazing fast experience for customers and higher ranking in search results.   
+      We used the fastest build framework on the web, Gatsby.js, to give a blazing fast experience for customers and higher ranking in search results.  
     business_integrations: >- 
-      We set up custom emails, lead management Hubspot CRM. Bulk email and new letter with Mailchimp integrated with Hubspot. Content creation with Netlify CMS. Finally, scheduling with Calendarly. 
+      We set up lead management with Hubspot CRM, bulk email and news letter with Mailchimp and Content creation with Netlify CMS. Finally, scheduling with Calendly. 
 - title: Yoga Of Words
   subheader: Yoga of Words is an uplifting poetry and prose experience
   path: /cases/yoga-of-words/
@@ -170,9 +170,9 @@
       - user-experience
       - development
       - ui-design
-    title: Yoga of Words is an uplifting poetry and prose experience
+    title: Yoga of Words is an uplifting poetry and prose experience.
     summary: >-
-       We knew if we wanted to create an experience that complemented our prose. We created a refined digital presence that feels welcoming and keeps the prose at the center.
+       We created an experience that complemented our prose. Using warm minimalist design that feels welcoming but keeps the prose at the center of the experience.
     deliverables:
       - website
       - branding
