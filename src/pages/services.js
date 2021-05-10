@@ -24,6 +24,9 @@ import {
   LinkThree,
   SliderOne,
 } from '../components/index';
+import GatsbyLogo from '../assets/Gatsby-Logo.svg';
+import ReactLogo from '../assets/react-logo.svg';
+import NextLogo from '../assets/next-logo.svg';
 
 const services = ({ data }) => {
   return (
@@ -66,7 +69,7 @@ const services = ({ data }) => {
                   Branding
                 </Heading>
               </a>
-              <Flex flexDirection="row" flexWrap="wrap" mb={20}>
+              <Flex flexDirection="row" flexWrap="wrap" pb={20}>
                 <Box mb={20}>
                   <Box
                     pr={{ base: 0, md: 6 }}
@@ -168,39 +171,60 @@ const services = ({ data }) => {
             backgroundColor="brand.five"
           >
             <Container maxW="container.xl">
-              <Heading
-                as="h3"
-                lineHeight="base"
-                size="2xl"
-                mb={6}
-                color="brand.one"
-                pt={28}
-                fontFamily="montas-semibold"
-              >
-                <a id="development">Development</a>
-              </Heading>
-              <Flex flexDirection="row" flexWrap="wrap" mb={20}>
-                <Box
-                  pr={{ base: 0, md: 6 }}
-                  flexGrow="1"
-                  flexBasis={{ base: '100%', md: '50%' }}
-                >
-                  <Heading as="h5" mb={6} color="brand.one">
-                    What we do
+              <Flex>
+                <Box>
+                  <Heading
+                    as="h3"
+                    lineHeight="base"
+                    size="2xl"
+                    mb={6}
+                    color="brand.one"
+                    pt={28}
+                    fontFamily="montas-semibold"
+                  >
+                    <a id="development">Development</a>
                   </Heading>
-                  <Text maxWidth="500px" lineHeight="base" fontSize="xl">
-                    Performant development with Reactjs, Gatsbyjs, Nextjs,
-                    Nodejs and Python
-                  </Text>
-                  <UnorderedList>
-                    <ListItem>
-                      Modern development frameworks, patterns and practices
-                    </ListItem>
-                    <ListItem>Blazing fast performance</ListItem>
-                    <ListItem>Secure</ListItem>
-                    <ListItem>Custom API integrations</ListItem>
-                  </UnorderedList>
+                  <Flex flexDirection="row" flexWrap="wrap" mb={20}>
+                    <Box
+                      pr={{ base: 0, md: 6 }}
+                      flexGrow="1"
+                      flexBasis={{ base: '100%', md: '50%' }}
+                    >
+                      <Heading as="h5" mb={6} color="brand.one">
+                        What we do
+                      </Heading>
+                      <Text maxWidth="500px" lineHeight="base" fontSize="xl">
+                        Performant development with React.js, Gatsby.js,
+                        Next.js, Node.js and Python
+                      </Text>
+                      <UnorderedList>
+                        <ListItem>
+                          Modern development frameworks, patterns and practices
+                        </ListItem>
+                        <ListItem>Blazing fast performance</ListItem>
+                        <ListItem>Secure</ListItem>
+                        <ListItem>Custom API integrations</ListItem>
+                      </UnorderedList>
+                    </Box>
+                  </Flex>
                 </Box>
+                {/* <Box
+                  p={20}
+                  display="flex"
+                  flexDirection="column"
+                  justifyContent="space-between"
+                  flexWrap="wrap"
+                >
+                  <Box width="300px" my={6}>
+                    <GatsbyLogo />
+                  </Box>
+                  <Box width="200px" my={6}>
+                    <ReactLogo />
+                  </Box>
+                  <Box width="300px" my={6}>
+                    <NextLogo />
+                  </Box>
+                </Box> */}
               </Flex>
             </Container>
           </Box>
@@ -216,7 +240,7 @@ const services = ({ data }) => {
               >
                 <a id="search-engine-optimized">Search Engine Optimized</a>
               </Heading>
-              <Flex flexDirection="row" flexWrap="wrap">
+              <Flex flexDirection="row" flexWrap="wrap" pb={20}>
                 <Box
                   pr={{ base: 0, md: 6 }}
                   flexGrow="1"
@@ -229,10 +253,10 @@ const services = ({ data }) => {
                     We ensure your web presence is discoverable
                   </Text>
                   <UnorderedList>
-                    <ListItem>Technical SEO for Bing and Google</ListItem>
+                    <ListItem>Technical SEO for Google and Bing</ListItem>
                     <ListItem>Google and Bing analytics integrations</ListItem>
-                    <ListItem>On page seo</ListItem>
-                    <ListItem>Content strategy and Copywriting</ListItem>
+                    <ListItem>On page SEO</ListItem>
+                    <ListItem>Content strategy and copywriting</ListItem>
                   </UnorderedList>
                 </Box>
                 <Box
@@ -243,7 +267,12 @@ const services = ({ data }) => {
               </Flex>
             </Container>
           </Box>
-          <Box minHeight="400px" height="auto">
+          <Box
+            minHeight="400px"
+            height="auto"
+            color="brand.one"
+            backgroundColor="brand.five"
+          >
             <Container maxW="container.xl">
               <Flex display="flex" justifyContent="flex-end">
                 <Box flexGrow="1" flexBasis={{ base: '100%', md: '50%' }}>
@@ -252,18 +281,19 @@ const services = ({ data }) => {
                     lineHeight="base"
                     size="2xl"
                     mb={6}
+                    color="brand.one"
                     pt={28}
                     fontFamily="montas-semibold"
                   >
                     <a id="business-integrations">Business Integrations</a>
                   </Heading>
-                  <Flex flexDirection="row" flexWrap="wrap">
+                  <Flex flexDirection="row" flexWrap="wrap" pb={20}>
                     <Box
                       pr={{ base: 0, md: 6 }}
                       flexGrow="1"
                       flexBasis={{ base: '100%', md: '50%' }}
                     >
-                      <Heading as="h5" mb={6}>
+                      <Heading as="h5" mb={6} color="brand.one">
                         What we do
                       </Heading>
                       <Text maxWidth="500px" lineHeight="base" fontSize="xl">
@@ -271,19 +301,19 @@ const services = ({ data }) => {
                       </Text>
                       <UnorderedList>
                         <ListItem>
-                          Integrations with CMS(content management system)
+                          Integrations with CMS (content management system)
                         </ListItem>
                         <ListItem>
-                          Lead management CRM(customer relationship management),
+                          Lead management CRM (customer relationship management)
                         </ListItem>
                         <ListItem>
-                          Integrations and automation's with email marketing
+                          Integrations and automatons with email marketing
                           platforms
                         </ListItem>
                         <ListItem>
-                          ECommerce inventory and fulfillment management
+                          Ecommerce inventory and fulfillment management
                         </ListItem>
-                        <ListItem>Booking Management services</ListItem>
+                        <ListItem>Booking management services</ListItem>
                       </UnorderedList>
                     </Box>
                   </Flex>

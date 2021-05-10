@@ -42,7 +42,7 @@ const CasesPage = (props) => {
           <Flex
             justifyContent="space-between"
             flexWrap="wrap"
-            py={40}
+            pt={40}
             bgGradient="linear(to-b, brand.two 5%, brand.three 20%, brand.five 25%)"
             bg="brand.five"
           >
@@ -74,7 +74,7 @@ const CasesPage = (props) => {
                 </Box>
               </ScrollAniFadeIn>
             </Container>
-            {data.cases.nodes.map((c) => (
+            {data.cases.nodes.map((c, i) => (
               <Container mb={10}>
                 <ScrollAniFadeIn>
                   <Heading
@@ -92,14 +92,15 @@ const CasesPage = (props) => {
                     <Heading as="h3" size="md" color="brand.one">
                       Services
                     </Heading>
-                    {c.content.deliverables.map((s) => (
+                    {c.content.deliverables.map((s, i) => (
                       <Text
                         size="md"
                         display="inline"
                         lineHeight="base"
                         color="brand.one"
                       >
-                        {s},{' '}
+                        {s}
+                        {c.content.deliverables.length - 1 === i ? '' : `, `}
                       </Text>
                     ))}
                   </Box>
@@ -146,9 +147,13 @@ const CasesPage = (props) => {
               </ScrollAniFadeIn>
             </Container>
             <Container maxW="container.xl">
-              <Flex flexWrap="wrap" justifyContent="space-between">
+              <Flex
+                flexWrap="wrap"
+                justifyContent="flex-start
+              "
+              >
                 {data.projects.edges.map((c) => (
-                  <Box width="400px" mb={10}>
+                  <Box width="400px" mb={10} mr={10}>
                     <ScrollAniFadeIn>
                       <Heading
                         as="h2"

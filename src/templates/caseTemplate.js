@@ -48,11 +48,15 @@ const caseTemplate = (props, location) => {
                 {node.content.summary}
               </Text>
             </Box>
-            <Box flexBasis={{ base: '100%', md: '30%' }}>
+            <Box flexBasis={{ base: '40%', md: '30%' }}>
               <Heading fontFamily="montas-semibold" mb={6} mt={16} as="h4">
                 Services
               </Heading>
-              {node.content.deliverables.map((s, i) => `${s}, `)}
+              {node.content.deliverables.map((s, i) => {
+                return node.content.deliverables.length - 1 === i
+                  ? s
+                  : `${s}, `;
+              })}
             </Box>
           </Flex>
           <Box>
