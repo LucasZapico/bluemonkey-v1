@@ -157,7 +157,7 @@ const OurWorkSection = ({ data }) => (
                 color="brand.one"
                 pb={6}
               >
-                {c.title}
+                {!c.isComingSoon ? c.title : `${c.title} - Coming Soon`}
               </Heading>
               <Box maxWidth="400px" mb={4}>
                 <Heading as="h5" size="md" color="brand.one">
@@ -175,15 +175,28 @@ const OurWorkSection = ({ data }) => (
                   </Text>
                 ))}
               </Box>
-
-              <Link to={c.path}>
-                <Box height="auto" overflow="hidden" mb={10}>
+              {!c.isComingSoon ? (
+                <Link to={c.path}>
+                  <Box height="auto" overflow="hidden" mb={10}>
+                    <Img
+                      fluid={c.images.featured[0].src.childImageSharp.fluid}
+                      alt=""
+                    />
+                  </Box>
+                </Link>
+              ) : (
+                <Box
+                  height="auto"
+                  overflow="hidden"
+                  mb={10}
+                  filter={c.isComingSoon ? 'blur(60px)' : 'blur(0px)'}
+                >
                   <Img
                     fluid={c.images.featured[0].src.childImageSharp.fluid}
                     alt=""
                   />
                 </Box>
-              </Link>
+              )}
             </ScrollAniFadeIn>
           </Container>
         ))}

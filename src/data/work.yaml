@@ -189,4 +189,64 @@
       We used the fastest build framework on the web, Gatsbyjs. Resulting in blazing fast experience for customers and higher ranking in search results.   
     business_integrations: >- 
       We set up Netlify CMS for simple content management.  We build out automated  MailChimp weekly emails fired when new content is added.
+- title: Zapico Glass
+  subheader: Zapico Glass is an Ecommerce store for hand blown glass from Detroit Michigan 
+  path: /cases/zapico-glass/
+  link: 'https://zapicoglass.netlify.app/'
+  data-created: 2021/05/09
+  last-modified: 2021/05/09
+  isdraft: false
+  isComingSoon: true
+  images:
+      featured:
+        - alt: ''
+          src: >-
+              ../images/showcase/work/zapico-glass/zapicoglass-webdesign-showcase.png
+      branding:
+        - alt: Image of brand style guide
+          src: >-
+            ../images/showcase/work/yoga-of-words/brand-showcase-yoga-of-words.png
+      design:
+         - alt: showcase image of webdesign
+           src: >-
+              ../images/showcase/work/yoga-of-words/yoga-of-words-webdesign-showcase.png
+         - alt: 2 showcase image of webdesign
+           src: >-
+              ../images/showcase/work/yoga-of-words/yoga-of-word-design-ui-2.png
+      other:
+        - alt: showcase image of webdesign
+          src: >-
+            ../images/showcase/work/yoga-of-words/brand-showcase-yoga-of-words.png
+  content:
+    technology-stack:
+      - figma
+      - gatsby
+      - react
+      - netlify
+      - netlify-cms
+    categories:
+      - case
+      - web-site
+    tags:
+      - gatsby
+      - user-experience
+      - development
+      - ui-design
+    title: Yoga of Words is an uplifting poetry and prose experience.
+    summary: >-
+       We created an experience that complemented our prose. Using warm minimalist design that feels welcoming but keeps the prose at the center of the experience.
+    deliverables:
+      - e-commerce
+      - branding
+      - design direction
+      - user experience design
+      - development
+    branding: >-
+      We looked into various options for art and illustrations.  We needed something that complimented without either being ostentatious or overly opinionated. We settled on fine art illustrations of flowers. Flowers have enough symbolism for any prose theme while supporting the reading experience. 
+    design: >-
+      We created a minimalist reading experience where each piece is accompanied by a floral illustration. This allows the reader to focus on their relationship with the words. 
+    development: >-
+      We used the fastest build framework on the web, Gatsbyjs. Resulting in blazing fast experience for customers and higher ranking in search results.   
+    business_integrations: >- 
+      We set up Netlify CMS for simple content management.  We build out automated  MailChimp weekly emails fired when new content is added.
       

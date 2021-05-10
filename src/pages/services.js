@@ -274,7 +274,7 @@ const services = ({ data }) => {
             backgroundColor="brand.five"
           >
             <Container maxW="container.xl">
-              <Flex display="flex" justifyContent="flex-end">
+              <Flex display="flex" justifyContent="flex-end" flexWrap="wrap">
                 <Box flexGrow="1" flexBasis={{ base: '100%', md: '50%' }}>
                   <Heading
                     as="h3"
@@ -288,11 +288,7 @@ const services = ({ data }) => {
                     <a id="business-integrations">Business Integrations</a>
                   </Heading>
                   <Flex flexDirection="row" flexWrap="wrap" pb={20}>
-                    <Box
-                      pr={{ base: 0, md: 6 }}
-                      flexGrow="1"
-                      flexBasis={{ base: '100%', md: '50%' }}
-                    >
+                    <Box pr={{ base: 0, md: 6 }} flexGrow="1">
                       <Heading as="h5" mb={6} color="brand.one">
                         What we do
                       </Heading>
@@ -321,14 +317,13 @@ const services = ({ data }) => {
                 <Box
                   pl={{ base: 0, md: 6 }}
                   flexGrow="1"
-                  flexBasis={{ base: '100%', md: '50%' }}
+                  flexBasis={{ base: '0%', md: '50%' }}
                   position="relative"
                 >
                   <Box
-                    // width="40%"
                     position="absolute"
                     right="0px"
-                    opacity=".5"
+                    opacity={{ base: '.2', md: '.5' }}
                     transform="scaleX(-1)"
                   >
                     <MonkeyOne />

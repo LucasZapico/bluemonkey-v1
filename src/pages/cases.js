@@ -86,7 +86,7 @@ const CasesPage = (props) => {
                     color="brand.one"
                     pb={6}
                   >
-                    {c.title}
+                    {!c.isComingSoon ? c.title : `${c.title} - Coming Soon`}
                   </Heading>
                   <Box maxWidth="400px" mb={4}>
                     <Heading as="h3" size="md" color="brand.one">
@@ -105,14 +105,28 @@ const CasesPage = (props) => {
                     ))}
                   </Box>
 
-                  <Link to={c.path}>
-                    <Box height="auto" overflow="hidden" mb={10}>
+                  {!c.isComingSoon ? (
+                    <Link to={c.path}>
+                      <Box height="auto" overflow="hidden" mb={10}>
+                        <Img
+                          fluid={c.images.featured[0].src.childImageSharp.fluid}
+                          alt=""
+                        />
+                      </Box>
+                    </Link>
+                  ) : (
+                    <Box
+                      height="auto"
+                      overflow="hidden"
+                      mb={10}
+                      filter={c.isComingSoon ? 'blur(60px)' : 'blur(0px)'}
+                    >
                       <Img
                         fluid={c.images.featured[0].src.childImageSharp.fluid}
-                        alt={c.images.featured[0].alt}
+                        alt=""
                       />
                     </Box>
-                  </Link>
+                  )}
                 </ScrollAniFadeIn>
               </Container>
             ))}
