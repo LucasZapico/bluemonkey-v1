@@ -180,7 +180,24 @@
 
 
 .light.btn-one {
-		
+	width: 200px;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	background-color: $color-six;
+  border-width: 2px;
+	text-align: center;
+  border-color: $color-one;
+	cursor: pointer;
+	position: relative;
+		& + svg {
+			position: absolute;
+			display: none;
+			z-index: 2;
+			top: 50%;
+			left: 70%;
+			transform: translateX(-50%) translateY(-50%);
+		}
+	
 	&:hover {
 
 	}

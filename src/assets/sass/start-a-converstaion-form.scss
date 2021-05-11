@@ -1,3 +1,7 @@
+.contact {
+
+}
+
 .start-conversation {
   display: flex;
   justify-content: space-between;
@@ -30,7 +34,7 @@
       margin-top: .5rem;
       width: 100%;
       height: 40px;
-      font-size: 30px;
+      font-size: 2rem;
       padding-top: 2rem;
       padding-left: .5rem;
       padding-bottom: 2rem;
@@ -147,7 +151,59 @@
         transform: scale(1);
       }
     }
+  }
+}
+.contact.start-conversation {
+  input {
+    margin-bottom: 3rem;
+    border-bottom: 2px solid $color-one;
+  }
+  input[type='email'] {
+    margin-top: .5rem;
+    width: 100%;
+    height: 2rem;
+    font-size: 2rem;
+    padding-top: 2rem;
+    padding-left: .5rem;
+    padding-bottom: 2rem;
+    background-color: $color-six;
+    border-width: 0px;
+    border-color: $color-one;
+    border-bottom: 2px solid $color-one;
+    &:hover {
 
+    }
+    &:focus {
 
+    }
+  }
+  .add-name {  
+    display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    .input-name {
+      
+    }
+    input {
+    width: 100%;
+    font-size: 2rem;
+    height: 4rem;
+    border-color: $color-one;
+    background-color: $color-six;
+    border: solid 2px transparent;
+    border-bottom: 2px solid $color-one;
+    }
+    
+  }
+  .add-notes {
+    
+    label {
+      margin-bottom: .5rem;
+    }
+    textarea {
+    background-color: $color-six;
+    border: solid 2px transparent;
+    border-bottom: 2px solid $color-one;
+    }
   }
 }
