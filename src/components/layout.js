@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box } from '@chakra-ui/react';
 import { Helmet } from 'react-helmet';
 import { Header, Footer, SEO, Banner, Cursor } from './index';
 // import { Favicon } from '../images/ccg-mark_favicon.ico';
 
-const Layout = ({ children }) => {
+const Layout = ({ location, children }) => {
+  useEffect(() => {
+    console.log('loca', location);
+  }, [location]);
   return (
     <>
       <SEO />
@@ -22,8 +25,7 @@ const Layout = ({ children }) => {
         defer
         src="//js-na1.hs-scripts.com/19886034.js"
       ></script>
-
-      <Footer />
+      <Footer location={location} />
     </>
   );
 };

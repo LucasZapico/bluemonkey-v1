@@ -9,7 +9,7 @@ import moment from 'moment';
 import { LinkPhone, LinkEmail, StartAConversation, LinkOne } from './index';
 // import Logo from '../assets/ccg-mark.svg';
 
-const Footer = ({ title, description }) => {
+const Footer = ({ title, description, location }) => {
   const [connect, setConnect] = useState('');
   const { pathname } = useLocation();
   const { site } = useStaticQuery(query);
@@ -36,19 +36,23 @@ const Footer = ({ title, description }) => {
         <Box minHeight="500px">
           <Flex minHeight="100%" flexDirection="column">
             <Box flexGrow="1">
-              <Container maxW="container.xl">
-                <Flex
-                  flexDirection="column"
-                  alignItems="flex-start"
-                  mb={4}
-                  p={{ base: 0, sm: 6 }}
-                  justifyContent="space-between"
-                  pt={20}
-                >
-                  <a id="start-a-conversation"></a>
-                  <StartAConversation />
-                </Flex>
-              </Container>
+              {location.pathname.includes('contact') ? (
+                <div></div>
+              ) : (
+                <Container maxW="container.xl">
+                  <Flex
+                    flexDirection="column"
+                    alignItems="flex-start"
+                    mb={4}
+                    p={{ base: 0, sm: 6 }}
+                    justifyContent="space-between"
+                    pt={20}
+                  >
+                    <a id="start-a-conversation"></a>
+                    <StartAConversation />
+                  </Flex>
+                </Container>
+              )}
               <Box
                 bg="brand.five"
                 color="brand.one"
