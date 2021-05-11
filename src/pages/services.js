@@ -60,9 +60,9 @@ const services = ({ data }) => {
                 <Heading
                   as="h3"
                   lineHeight="base"
-                  mb={6}
-                  pt={40}
-                  size="2xl"
+                  mb={20}
+                  pt={28}
+                  size="4xl"
                   color="brand.one"
                   fontFamily="montas-semibold"
                 >
@@ -89,7 +89,7 @@ const services = ({ data }) => {
                     flexGrow="1"
                     flexBasis={{ base: '100%', md: '50%' }}
                   >
-                    <UnorderedList>
+                    <UnorderedList mt={4}>
                       <ListItem>Audits</ListItem>
                       <ListItem>Mark and Logo enhancement</ListItem>
                       <ListItem>
@@ -120,9 +120,9 @@ const services = ({ data }) => {
               <Heading
                 as="h3"
                 lineHeight="base"
-                mb={6}
+                mb={20}
                 pt={28}
-                size="2xl"
+                size="4xl"
                 fontFamily="montas-semibold"
               >
                 <a id="design">Design</a>
@@ -140,7 +140,7 @@ const services = ({ data }) => {
                   <Text maxWidth="500px" lineHeight="base" fontSize="xl">
                     Custom web design tailored to business objectives
                   </Text>
-                  <UnorderedList>
+                  <UnorderedList mt={4}>
                     <ListItem>Custom content driven design</ListItem>
                     <ListItem>
                       Custom experiences around your unique audience
@@ -176,10 +176,10 @@ const services = ({ data }) => {
                   <Heading
                     as="h3"
                     lineHeight="base"
-                    size="2xl"
-                    mb={6}
-                    color="brand.one"
+                    size="4xl"
+                    mb={20}
                     pt={28}
+                    color="brand.one"
                     fontFamily="montas-semibold"
                   >
                     <a id="development">Development</a>
@@ -197,7 +197,7 @@ const services = ({ data }) => {
                         Performant development with React.js, Gatsby.js,
                         Next.js, Node.js and Python
                       </Text>
-                      <UnorderedList>
+                      <UnorderedList mt={4}>
                         <ListItem>
                           Modern development frameworks, patterns and practices
                         </ListItem>
@@ -233,8 +233,8 @@ const services = ({ data }) => {
               <Heading
                 as="h3"
                 lineHeight="base"
-                size="2xl"
-                mb={6}
+                size="3xl"
+                mb={20}
                 pt={28}
                 fontFamily="montas-semibold"
               >
@@ -252,7 +252,7 @@ const services = ({ data }) => {
                   <Text maxWidth="500px" lineHeight="base" fontSize="xl">
                     We ensure your web presence is discoverable
                   </Text>
-                  <UnorderedList>
+                  <UnorderedList mt={4}>
                     <ListItem>Technical SEO for Google and Bing</ListItem>
                     <ListItem>Google and Bing analytics integrations</ListItem>
                     <ListItem>On page SEO</ListItem>
@@ -279,10 +279,10 @@ const services = ({ data }) => {
                   <Heading
                     as="h3"
                     lineHeight="base"
-                    size="2xl"
-                    mb={6}
-                    color="brand.one"
+                    size="3xl"
+                    mb={20}
                     pt={28}
+                    color="brand.one"
                     fontFamily="montas-semibold"
                   >
                     <a id="business-integrations">Business Integrations</a>
@@ -295,7 +295,7 @@ const services = ({ data }) => {
                       <Text maxWidth="500px" lineHeight="base" fontSize="xl">
                         We set up your business to succeed
                       </Text>
-                      <UnorderedList>
+                      <UnorderedList mt={4}>
                         <ListItem>
                           Integrations with CMS (content management system)
                         </ListItem>
