@@ -33,7 +33,7 @@ const Footer = ({ title, description, location }) => {
   return (
     <footer>
       <Box background="brand.two" pt={10}>
-        <Box minHeight="500px">
+        <Box>
           <Flex minHeight="100%" flexDirection="column">
             <Box flexGrow="1">
               {location.pathname.includes('contact') ? (
@@ -56,8 +56,11 @@ const Footer = ({ title, description, location }) => {
               <Box
                 bg="brand.five"
                 color="brand.one"
+                display="flex"
+                flexDirection="column"
+                justifyContent="space-between"
                 px={{ base: 2, sm: 6 }}
-                py={20}
+                pt={20}
               >
                 <Heading as="h4" size="sm" mb={3}>
                   <LinkEmail color="brand.one">{`Connect@${baseUrl}`}</LinkEmail>
@@ -71,7 +74,7 @@ const Footer = ({ title, description, location }) => {
                   color="brand.one"
                   maxWidth="600px"
                 >
-                  We are fully remote on Earth 🌎 but we are almost always
+                  We are fully remote on Earth 🌎 and we are almost always
                   available via slack. English is our first language.
                 </Heading>
                 <Heading as="h4" size="sm" mb={3} color="brand.one" />
@@ -81,11 +84,8 @@ const Footer = ({ title, description, location }) => {
                 >
                   Join our slack channel <ExternalLinkIcon />
                 </LinkOne>
-                {/* <Heading as="h4" size="sm" color="brand.one">
-                {phone}
-              </Heading> */}
 
-                <Box pb={4} mt={10}>
+                <Box pb={4} mt={20}>
                   <Text>Last updated: {moment(Date()).format('l')}</Text>
                   <Text>
                     Copyright {baseUrl} {moment(Date()).format('y')}
@@ -99,7 +99,6 @@ const Footer = ({ title, description, location }) => {
           </Flex>
         </Box>
       </Box>
-      {/* <ConnectModal item={connect} /> */}
     </footer>
   );
 };
