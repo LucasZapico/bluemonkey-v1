@@ -114,7 +114,7 @@ const ContactPage = ({ data }) => {
       </Box> */}
       <main>
         <Box
-          bgGradient="linear(to-b, brand.one , brand.two )"
+          bgGradient="linear(to-br, brand.one , brand.two )"
           py={40}
           zIndex="3"
         >
