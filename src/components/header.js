@@ -41,6 +41,11 @@ const ROUTES = [
     to: '/about',
     id: '9PJZH8',
   },
+  {
+    name: 'Contact',
+    to: '/contact',
+    id: '0KJZH8',
+  },
 ];
 
 const Header = () => {
