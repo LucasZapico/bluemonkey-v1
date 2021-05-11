@@ -1,21 +1,32 @@
-import React, { useEffect, useRef } from 'react';
-import { ExternalLinkIcon } from '@chakra-ui/icons';
-import { Box, Container, Heading } from '@chakra-ui/react';
+import React, { useEffect, useRef, useState } from 'react';
+import { ExternalLinkIcon, CloseIcon } from '@chakra-ui/icons';
 import {
-  Layout,
-  ScrollAniFadeIn,
-  LinkOne,
-  LinkEmail,
-  LinkPhone,
-} from '../components';
+  Spinner,
+  Box,
+  Container,
+  Heading,
+  Alert,
+  Flex,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
+} from '@chakra-ui/react';
+import { ScrollAniFadeIn, LinkOne, LinkEmail, LinkPhone } from '../components';
 import { useSpring, animated as a } from 'react-spring';
 import MonkeyThree from '../assets/monkey_3.svg';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { useForm } from 'react-hook-form';
+import axios from 'axios';
 
 const ContactPage = ({ data }) => {
   const ref = useRef();
+  const [waiting, setWaiting] = useState(false);
+  const [alertMessage, setAlertMessage] = useState({
+    type: 'warning',
+    message: '',
+  });
+  // parallax effect
   const [{ offset }, set] = useSpring(() => ({ offset: 0 }));
   const calc = (o) => `translateY(${o * (0.2 * -1)}px)`;
 
@@ -32,6 +43,8 @@ const ContactPage = ({ data }) => {
       window.removeEventListener('scroll', handleScroll);
     };
   });
+
+  // page metadata
   const { site } = data;
   const {
     defaultTitle,
@@ -44,6 +57,7 @@ const ContactPage = ({ data }) => {
     twitterUsername,
   } = site.siteMetadata;
 
+  // form
   const {
     register,
     handleSubmit,
@@ -53,11 +67,26 @@ const ContactPage = ({ data }) => {
     reValidateMode: 'onChange',
   });
 
-  const onSubmit = async () => {
+  const AlertMessage = ({ message }) => (
+    <Alert status={message.type}>
+      <Flex justifyContent="space-between">
+        <AlertIcon />
+        <AlertTitle mr={2} />
+        <AlertDescription color="brand.six">{message.message}</AlertDescription>
+        <CloseIcon
+          color="brand.six"
+          onClick={() => setAlertMessage({ type: 'warning', message: '' })}
+          ml={4}
+        />
+      </Flex>
+    </Alert>
+  );
+
+  const onSubmit = async (leadData) => {
     setWaiting(true);
-    console.log('submit all', store);
+    console.log('submit all', leadData);
     const results = await axios
-      .post('/leads', store, {
+      .post('/leads', leadData, {
         baseURL: 'https://odwwt9.deta.dev',
         headers: {
           Accept: '*/*',
@@ -70,7 +99,7 @@ const ContactPage = ({ data }) => {
         },
       })
       .then((res) => {
-        console.log(res);
+        console.log('status', res.status);
         setWaiting(false);
         if (res.status === 200) {
           setAlertMessage({
@@ -78,22 +107,25 @@ const ContactPage = ({ data }) => {
             message: 'Thank you, we will be in touch you shortly.',
           });
           return 200;
-        } else if (res.status === 401) {
+        }
+      })
+      .catch((err) => {
+        setWaiting(false);
+        console.log('status', err.status);
+        if (err.status === 401) {
           setAlertMessage({
             type: 'warning',
             message:
               'We already have your info. If you think we missed you, ping us on slack',
           });
           return 401;
+        } else {
+          setAlertMessage({
+            type: 'error',
+            message:
+              "Something went wrong. Please try again and if that doesn't work ping us on slack",
+          });
         }
-      })
-      .catch((err) => {
-        setWaiting(false);
-        setAlertMessage({
-          type: 'error',
-          message:
-            "Something went wrong. Please try again and if that doesn't work ping us on slack",
-        });
       });
     return results;
   };
@@ -198,6 +230,8 @@ const ContactPage = ({ data }) => {
                         placeholder="Steve"
                         {...register('firstname', { required: true })}
                       />
+                      {errors.firstname?.type === 'required' &&
+                        'First name is required'}
                     </div>
 
                     <div className="input-name">
@@ -231,7 +265,7 @@ const ContactPage = ({ data }) => {
                           maxLength: 45,
                         })}
                       />
-                      {errors.email && <span>Email is required</span>}
+                      {errors.email?.type === 'required' && 'email is required'}
                     </div>
                   </Box>
                   <Box my={4}>
@@ -254,6 +288,8 @@ const ContactPage = ({ data }) => {
                           maxLength: 200,
                         })}
                       />
+                      {errors.notes?.type === 'required' &&
+                        'A brief project note is required'}
                     </div>
                   </Box>
                   <Box my={6}>
@@ -319,8 +355,26 @@ const ContactPage = ({ data }) => {
                       </label>
                     </div>
                   </Box>
-                  <input className=" btn-one light" type="submit" />
+                  {waiting ? (
+                    <div className="light btn-one">
+                      <Spinner size="sm" />
+                    </div>
+                  ) : (
+                    <input
+                      className="light btn-one"
+                      type="submit"
+                      value="Submit"
+                    />
+                  )}
                 </form>
+                <Box minheight="50px">
+                  {alertMessage.message !== '' ? (
+                    <AlertMessage
+                      backgroundColor="transparent"
+                      message={alertMessage}
+                    />
+                  ) : undefined}
+                </Box>
                 <Heading as="h3" size="xl" mb={10} lineHeight="base"></Heading>
               </ScrollAniFadeIn>
             </Container>
