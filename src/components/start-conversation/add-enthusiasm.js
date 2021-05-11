@@ -1,20 +1,6 @@
 import React, { useState } from 'react';
 
-import {
-  Box,
-  Grid,
-  GridItem,
-  FormControl,
-  FormLabel,
-  Input,
-  FormErrorMessage,
-  FormErrorIcon,
-  Flex,
-  Spinner,
-  RadioGroup,
-  Radio,
-  Stack,
-} from '@chakra-ui/react';
+import { Box, Flex, Spinner } from '@chakra-ui/react';
 import { BtnOne } from '../index';
 import { ArrowForwardIcon, ArrowBackIcon } from '@chakra-ui/icons';
 import { useForm, SubmitHandler } from 'react-hook-form';
