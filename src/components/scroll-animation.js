@@ -12,7 +12,7 @@ export const ScrollAniFadeIn = ({ children, props }) => {
 
   useLayoutEffect(() => {
     const scrollPositionInit = window.scrollY + window.innerHeight;
-    const topPosition = (item) => item.getBoundingClientRect().top;
+    const topPosition = (item) => item?.getBoundingClientRect().top;
     const itemPostion = topPosition(ourRef.current);
 
     if (scrollPositionInit > itemPostion + 100) {
