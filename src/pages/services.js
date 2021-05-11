@@ -85,7 +85,7 @@ const services = ({ data }) => {
                     </Text>
                   </Box>
                   <Box
-                    pl={{ base: 0, md: 6 }}
+                    pr={{ base: 0, md: 6 }}
                     flexGrow="1"
                     flexBasis={{ base: '100%', md: '50%' }}
                   >
@@ -233,7 +233,7 @@ const services = ({ data }) => {
               <Heading
                 as="h3"
                 lineHeight="base"
-                size="3xl"
+                size="4xl"
                 mb={20}
                 pt={28}
                 fontFamily="montas-semibold"
@@ -279,7 +279,7 @@ const services = ({ data }) => {
                   <Heading
                     as="h3"
                     lineHeight="base"
-                    size="3xl"
+                    size="4xl"
                     mb={20}
                     pt={28}
                     color="brand.one"
