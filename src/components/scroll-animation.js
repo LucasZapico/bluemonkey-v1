@@ -54,7 +54,7 @@ export const ScrollAniMonkey = ({ children, props, inOn = 0, outOn = 0 }) => {
   const ourRef = useRef(null);
 
   const onScroll = () => {
-    const topPosition = (item) => item.getBoundingClientRect().top;
+    const topPosition = (item) => item?.getBoundingClientRect().top;
     const itemPosition = topPosition(ourRef.current);
     const offset = window.pageYOffset - itemPosition;
 
