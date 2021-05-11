@@ -34,18 +34,8 @@ const CasesPage = (props) => {
           Our Work
         </Heading>
       </Container> */}
-        <Box
-          minH="500px"
-          zIndex="1"
-          bgGradient="linear(to-r, brand.three, brand.five)"
-        >
-          <Flex
-            justifyContent="space-between"
-            flexWrap="wrap"
-            pt={40}
-            bgGradient="linear(to-b, brand.two 5%, brand.three 20%, brand.five 25%)"
-            bg="brand.five"
-          >
+        <Box className="aurora dark" minH="500px" zIndex="1">
+          <Flex justifyContent="space-between" flexWrap="wrap" pt={40}>
             <Container maxW="container.xl">
               <ScrollAniFadeIn>
                 <Box
@@ -131,13 +121,7 @@ const CasesPage = (props) => {
               </Container>
             ))}
           </Flex>
-          <Flex
-            justifyContent="space-between"
-            flexWrap="wrap"
-            py={40}
-            bgGradient="linear(to-b, brand.two 5%, brand.three 20%, brand.five 25%)"
-            bg="brand.five"
-          >
+          <Flex justifyContent="space-between" flexWrap="wrap" pb={40}>
             <Container maxW="container.xl">
               <ScrollAniFadeIn>
                 <Box
