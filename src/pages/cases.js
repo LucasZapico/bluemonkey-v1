@@ -1,6 +1,14 @@
 import React, { useEffect, useRef } from 'react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
-import { Box, Container, Heading, Flex, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Container,
+  Heading,
+  Flex,
+  Text,
+  Grid,
+  GridItem,
+} from '@chakra-ui/react';
 import { Layout, ScrollAniFadeIn, LinkOne } from '../components';
 import { useSpring, animated as a } from 'react-spring';
 import { graphql, Link } from 'gatsby';
@@ -35,92 +43,99 @@ const CasesPage = (props) => {
         </Heading>
       </Container> */}
         <Box className="aurora dark" minH="500px" zIndex="1">
-          <Flex justifyContent="space-between" flexWrap="wrap" pt={40}>
-            <Container maxW="container.xl">
-              <ScrollAniFadeIn>
-                <Box
-                  py={{ base: 0, sm: 20 }}
-                  flexBasis={{ base: '100%', md: '60%' }}
+          <Container maxW="container.xl">
+            <Grid templateColumns="repeat(5, 1fr)" pt={40} gap={12}>
+              <GridItem colSpan={{ base: 5, md: 3 }} maxW="container.xl">
+                <ScrollAniFadeIn>
+                  <Box
+                    py={{ base: 0, sm: 20 }}
+                    flexBasis={{ base: '100%', md: '60%' }}
+                  >
+                    <Box maxWidth="650px">
+                      <Heading
+                        as="h1"
+                        fontSize={{
+                          base: '80',
+                          sm: '90',
+                          md: '100',
+                          lg: '80',
+                          xl: '110',
+                        }}
+                        fontFamily="montas-semibold"
+                        lineHeight="base"
+                        zIndex="1"
+                        color="brand.one"
+                        pb={10}
+                      >
+                        Our Work
+                      </Heading>
+                    </Box>
+                  </Box>
+                </ScrollAniFadeIn>
+              </GridItem>
+              {data.cases.nodes.map((c, i) => (
+                <GridItem
+                  colSpan={{ base: 5, md: `${i % 3 === 0 ? 3 : 2}` }}
+                  mb={10}
                 >
-                  <Box maxWidth="650px">
+                  <ScrollAniFadeIn>
                     <Heading
-                      as="h1"
-                      fontSize={{
-                        base: '80',
-                        sm: '90',
-                        md: '100',
-                        lg: '80',
-                        xl: '110',
-                      }}
+                      as="h2"
+                      size="xl"
                       fontFamily="montas-semibold"
                       lineHeight="base"
                       zIndex="1"
                       color="brand.one"
-                      pb={10}
+                      pb={6}
                     >
-                      Our Work
+                      {!c.isComingSoon ? c.title : `${c.title} - Coming Soon`}
                     </Heading>
-                  </Box>
-                </Box>
-              </ScrollAniFadeIn>
-            </Container>
-            {data.cases.nodes.map((c, i) => (
-              <Container mb={10}>
-                <ScrollAniFadeIn>
-                  <Heading
-                    as="h2"
-                    size="xl"
-                    fontFamily="montas-semibold"
-                    lineHeight="base"
-                    zIndex="1"
-                    color="brand.one"
-                    pb={6}
-                  >
-                    {!c.isComingSoon ? c.title : `${c.title} - Coming Soon`}
-                  </Heading>
-                  <Box maxWidth="400px" mb={4}>
-                    <Heading as="h3" size="md" color="brand.one">
-                      Services
-                    </Heading>
-                    {c.content.deliverables.map((s, i) => (
-                      <Text
-                        size="md"
-                        display="inline"
-                        lineHeight="base"
-                        color="brand.one"
-                      >
-                        {s}
-                        {c.content.deliverables.length - 1 === i ? '' : `, `}
-                      </Text>
-                    ))}
-                  </Box>
+                    <Box maxWidth="400px" mb={4}>
+                      <Heading as="h3" size="md" color="brand.one">
+                        Services
+                      </Heading>
+                      {c.content.deliverables.map((s, i) => (
+                        <Text
+                          size="md"
+                          display="inline"
+                          lineHeight="base"
+                          color="brand.one"
+                        >
+                          {s}
+                          {c.content.deliverables.length - 1 === i ? '' : `, `}
+                        </Text>
+                      ))}
+                    </Box>
 
-                  {!c.isComingSoon ? (
-                    <Link to={c.path}>
-                      <Box height="auto" overflow="hidden" mb={10}>
+                    {!c.isComingSoon ? (
+                      <Link to={c.path}>
+                        <Box height="auto" overflow="hidden" mb={10}>
+                          <Img
+                            fluid={
+                              c.images.featured[0].src.childImageSharp.fluid
+                            }
+                            alt=""
+                          />
+                        </Box>
+                      </Link>
+                    ) : (
+                      <Box
+                        height="auto"
+                        overflow="hidden"
+                        mb={10}
+                        filter={c.isComingSoon ? 'blur(60px)' : 'blur(0px)'}
+                      >
                         <Img
                           fluid={c.images.featured[0].src.childImageSharp.fluid}
                           alt=""
                         />
                       </Box>
-                    </Link>
-                  ) : (
-                    <Box
-                      height="auto"
-                      overflow="hidden"
-                      mb={10}
-                      filter={c.isComingSoon ? 'blur(60px)' : 'blur(0px)'}
-                    >
-                      <Img
-                        fluid={c.images.featured[0].src.childImageSharp.fluid}
-                        alt=""
-                      />
-                    </Box>
-                  )}
-                </ScrollAniFadeIn>
-              </Container>
-            ))}
-          </Flex>
+                    )}
+                  </ScrollAniFadeIn>
+                </GridItem>
+              ))}
+            </Grid>
+          </Container>
           <Flex justifyContent="space-between" flexWrap="wrap" pb={40}>
             <Container maxW="container.xl">
               <ScrollAniFadeIn>
