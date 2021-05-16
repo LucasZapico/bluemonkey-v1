@@ -66,9 +66,8 @@ const Footer = ({ title, description, location }) => {
                   <LinkEmail color="brand.one">{`Connect@${baseUrl}`}</LinkEmail>
                 </Heading>
                 <LinkPhone color="brand.one">{phone}</LinkPhone>
-                <Heading
-                  as="h4"
-                  size="sm"
+                <Text
+                  fontSize="md"
                   mb={3}
                   lineHeight="base"
                   color="brand.one"
@@ -76,7 +75,7 @@ const Footer = ({ title, description, location }) => {
                 >
                   We are fully remote on Earth 🌎 and we are almost always
                   available via slack. English is our first language.
-                </Heading>
+                </Text>
                 <Heading as="h4" size="sm" mb={3} color="brand.one" />
                 <LinkOne
                   color="brand.one"
