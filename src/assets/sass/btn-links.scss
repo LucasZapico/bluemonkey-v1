@@ -16,7 +16,8 @@
 	text-transform: uppercase;
 	.text {
 		position: relative;
-		display: block;
+
+		display: flex;
 		transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 	}
 	.wall {
@@ -106,8 +107,13 @@
 	text-transform: uppercase;
 	.text {
 		position: relative;
-		display: block;
+		display: flex;
 		transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+		& > svg {
+		  height: 2rem;
+			width: 3rem;
+		}
+
 	}
 	.wall {
 		display: block;
@@ -302,6 +308,18 @@ a {
 				content: '';
 		
 			}	
+		}
+		&.active {
+			&::after {
+				margin: auto;
+				display: block;
+				width: 60%;
+				height: 1px;
+				background-color:  $color-one;
+				color: $color-one;
+				content: '';
+		
+			}	
 		}	
 		
 	}
@@ -339,7 +357,18 @@ a {
 				content: '';
 		
 			}	
-		}		
+		}
+		&.active {
+			&::after {
+				margin: auto;
+				display: block;
+				width: 60%;
+				height: 1px;
+				background-color:  $color-six;
+				color: $color-six;
+				content: '';
+			}	
+		}			
 	}
 	
 	

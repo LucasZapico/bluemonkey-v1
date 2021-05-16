@@ -16,6 +16,7 @@ import {
 import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { ArrowForwardIcon } from '@chakra-ui/icons';
+import { FiArrowUpRight, FiArrowRight, FiArrowDown } from 'react-icons/fi';
 import {
   Layout,
   ScrollAniFadeIn,
@@ -28,6 +29,7 @@ import MonkeyOneTwo from '../assets/monkey_1_2.svg';
 import MonkeyOneThree from '../assets/monkey_1_3.svg';
 import MonkeyTwo from '../assets/monkey_2.svg';
 import MonkeyThree from '../assets/monkey_3.svg';
+import GridPattern from '../assets/grid-patter.svg';
 
 const Hero = ({ data }) => (
   <Flex
@@ -81,7 +83,7 @@ const Hero = ({ data }) => (
         bgClip="text"
         fontFamily="montas-semibold"
         fontSize={{
-          base: '80',
+          base: '70',
           sm: '120',
           md: '140',
           lg: '175',
@@ -93,10 +95,10 @@ const Hero = ({ data }) => (
         ...custom digital presences that are engaging, performant, and search
         engine&nbsp;optimized.
       </Heading>
-      <Box mb={10} width="400px">
+      <Box mb={10} width="450px">
         <LinkThree to="/#start-a-conversation">
           Start A Conversation
-          <ArrowForwardIcon />
+          <FiArrowDown />
         </LinkThree>
       </Box>
       <Box
@@ -122,7 +124,7 @@ const OurWorkSection = ({ data }) => (
             <Heading
               as="h3"
               fontSize={{
-                base: '80',
+                base: '70',
                 sm: '90',
                 md: '100',
                 lg: '80',
@@ -144,9 +146,9 @@ const OurWorkSection = ({ data }) => (
       </ScrollAniFadeIn>
     </Container>
     <Container maxW="container.xl">
-      <Flex justifyContent="space-between" flexWrap="wrap">
-        {data.cases.nodes.map((c) => (
-          <Container mb={10}>
+      <Grid templateColumns="repeat(5, 1fr)" gap={12}>
+        {data.cases.nodes.map((c, i) => (
+          <GridItem colSpan={{ base: 5, md: `${i % 3 === 0 ? 3 : 2}` }} mb={10}>
             <ScrollAniFadeIn>
               <Heading
                 as="h4"
@@ -198,9 +200,9 @@ const OurWorkSection = ({ data }) => (
                 </Box>
               )}
             </ScrollAniFadeIn>
-          </Container>
+          </GridItem>
         ))}
-      </Flex>
+      </Grid>
     </Container>
     <Box
       // backgroundColor="brand.five"
@@ -316,7 +318,7 @@ const ServicesSection = ({ data }) => (
         <Heading
           as="h3"
           fontSize={{
-            base: '80',
+            base: '70',
             sm: '90',
             md: '100',
             lg: '80',
@@ -353,7 +355,16 @@ const ServicesSection = ({ data }) => (
                 >
                   {/* <MonkeyThree /> */}
                 </Box>
-                We are a one stop shop for frugal and competitive:
+                We are a one stop shop for frugal and{' '}
+                <Box display="inline">
+                  competitive:&nbsp;
+                  <Box display={{ base: 'none', md: 'inline' }}>
+                    <FiArrowRight style={{ display: 'inline' }} />
+                  </Box>
+                </Box>
+                <Box display={{ base: 'inline', md: 'none' }}>
+                  <FiArrowDown style={{ display: 'inline' }} />
+                </Box>
               </Heading>
             </ScrollAniFadeIn>
           </Box>
@@ -363,31 +374,31 @@ const ServicesSection = ({ data }) => (
                 <Box mb={10}>
                   <LinkThree to="/services/#branding">
                     Branding
-                    <ArrowForwardIcon />
+                    <FiArrowUpRight />
                   </LinkThree>
                 </Box>
                 <Box mb={10}>
                   <LinkThree to="/services/#design">
                     Design
-                    <ArrowForwardIcon />
+                    <FiArrowUpRight />
                   </LinkThree>
                 </Box>
                 <Box mb={10}>
                   <LinkThree to="/services/#development">
                     Development
-                    <ArrowForwardIcon />
+                    <FiArrowUpRight />
                   </LinkThree>
                 </Box>
                 <Box mb={10}>
                   <LinkThree to="/services/#search-engine-optimized">
                     Search Engine Optimized
-                    <ArrowForwardIcon />
+                    <FiArrowUpRight />
                   </LinkThree>
                 </Box>
                 <Box mb={10}>
                   <LinkThree to="/services/#search-engine-optimized">
                     Business Integrations
-                    <ArrowForwardIcon />
+                    <FiArrowUpRight />
                   </LinkThree>
                 </Box>
               </Box>
