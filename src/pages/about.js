@@ -51,7 +51,7 @@ const AboutPage = () => {
               maxWidth="800px"
               fontFamily="montas-semibold"
               fontSize={{
-                base: '90',
+                base: '70',
                 sm: '90',
                 md: '100',
                 lg: '80',
