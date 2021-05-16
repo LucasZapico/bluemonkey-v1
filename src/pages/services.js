@@ -39,7 +39,7 @@ const services = ({ data }) => {
               as="h1"
               lineHeight="base"
               fontSize={{
-                base: '90',
+                base: '70',
                 sm: '90',
                 md: '100',
                 lg: '80',
