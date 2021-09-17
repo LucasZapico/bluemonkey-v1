@@ -1,10 +1,22 @@
+<p align="center">
+  <a href="https://bluemonkeymakes.netlify.app">
+    <img alt="blue monkey makes - mark" src="./src/assets/blue-monkey-hanging.svg" width="60" />
+  </a>
+</p>
+<h1 align="center">
+   Blue Monkey Makes 
+</h1>
 
+## About this project - Dev.LucasZapico.Space - 2021
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/319ea018-327f-499f-bc12-2b2d3c5863a4/deploy-status)](https://app.netlify.com/sites/bluemonkey-1v/deploys)
 
 --
 
 
 ## Notes 
 
+- [ ] make connect/ contact more accessible  
 
 ### Checklist 
 
@@ -21,7 +33,7 @@
 - [x] enhance links
 - [x] add join slack channel 
 - [x] add cases 
-- [ ] add more hover ui showcase images 
+- [x] add more hover ui showcase images 
 - [ ] enhance monkey's ∑
 - [ ] enhance showcase ui
 - [ ] enhance cursor on link tags
@@ -52,7 +64,8 @@ __form__
 - [ ] accessibility pass on form
 - [ ] add hubspot app integration
   - [ ] hubspot integration with from submission
-
+- [ ] troubleshoot from submissions to hubspot from contact
+  
 __Analytics__
 - [ ] add yandex analytics 
 
