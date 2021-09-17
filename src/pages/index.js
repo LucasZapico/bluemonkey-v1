@@ -506,7 +506,7 @@ export const query = graphql`
         }
       }
     }
-    cases: allWorkYaml {
+    cases: allWorkYaml( sort: {fields: date_created, order: DESC} limit: 4)  {
       nodes {
         images {
           featured {
