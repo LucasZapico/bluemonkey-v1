@@ -1,9 +1,67 @@
-- title: Chancellor Consulting
-  path: /cases/chancellor-consulting-group/
-  link: 'https://chancellorconsultinggroupd.com/'
-  subheader: Chancellor Consulting Group
-  data-created: 05/03/2021
-  last-modified: 05/03/2021
+- title: Top Line Property Solutions
+  path: /cases/topline-property-solutions/
+  link: 'https://toplinepropertysolutions.com/'
+  subheader: Topline Property Solutions
+  date-created: 2021/09/13
+  last-modified: 2021/09/17 08:20:39
+  categories:
+    - case
+    - web-site
+  tags:
+    - gatsby
+    - user-experience
+    - development
+    - ui-design
+  isdraft: false
+  isComingSoon: true
+  technology-stack:
+    - figma
+    - gatsby
+    - react
+    - netlify
+    - netlify-cms
+    - hubspot
+    - calendarly
+  images:
+    featured:
+      - alt: ''
+        src: >-
+          ../images/showcase/work/top-line-property-solutions/tlps-webdesign-showcase.png
+    branding:
+      - alt: Image of brand style guide
+        src: >-
+          ../images/showcase/work/top-line-property-solutions/tlps-branding-showcase.png
+    design:
+      - alt: showcase image of webdesign
+        src: >-
+          ../images/showcase/work/top-line-property-solutions/tlps-webdesign-showcase.png
+      - alt: 2 showcase image of webdesign
+        src: >-
+          ../images/showcase/work//top-line-property-solutions/tlps-webdesign-showcase.png
+  content:
+    title: >-
+      Topline Property Solutions is a nation wide real estate investor.
+    summary: >-
+      They needed to give their web presence a modern facelift while maintaining a clean, professional tone. This included holding onto some original photography from the '90s.
+    deliverables:
+      - branding
+      - website design
+      - development
+      - hosting
+    branding: >-
+      We modernized the brand by leveraging the well-established personality of their business. We used a deep navy to invoke feeling of trust and consistency pulling from their depth of experience and expertise. We used a warmer tope to offset the navy, symbolizing confidence and professionalism.
+    design: >-
+      After establishing a clear tone, we created an experience for a modern audience. We emphasized mobile, scalable content and ease of access to points of contact and proof of value.
+    development: >-
+      We used the fastest build framework on the web, Gatsby.js, to give a blazing fast experience for customers and higher ranking in search results.
+    business_integrations: >-
+      We set up Google Analytics and Netlify CMS to easily update content.
+- title: We Buy Houses in Bay Area
+  path: /cases/we-buy-houses-in-bay-area/
+  link: 'https://webuyhousesinbayarea.com/'
+  subheader: We Buy Houses In Bay Area
+  date-created: 2021/09/13
+  last-modified: 2021/09/13 16:34:21
   categories:
     - case
     - web-site
@@ -23,25 +81,89 @@
     - hubspot
     - calendarly
   images:
-      featured:
-        - alt: ''
-          src: >- 
-            ../images/showcase/work/chancellor-consulting/chancellor-consutling-webdesign-showcase.png
-      branding:
-        - alt: Image of brand style guide
-          src: >-
-            ../images/showcase/work/chancellor-consulting/brand-showcase-chancellor-consulting.png
-      design:
-        - alt: showcase image of webdesign
-          src: >-
-             ../images/showcase/work/chancellor-consulting/chancellor-consutling-webdesign-showcase.png
-        - alt: 2 showcase image of webdesign
-          src: >-
-            ../images/showcase/work/chancellor-consulting/chancellor-consutling-webdesign-showcase-2.png
-      other:
-        - alt: showcase image of webdesign
-          src: >-
-            ../images/showcase/work/claire-morency-hypno/3-chh-webdesign-showcase-2.png
+    featured:
+      - alt: ''
+        src: >-
+          ../images/showcase/work/we-buy-houses-in-bay-area/wbh-webdesign-showcase.png
+    branding:
+      - alt: Image of brand style guide
+        src: >-
+          ../images/showcase/work/we-buy-houses-in-bay-area/wbh-branding-showcase.png
+    design:
+      - alt: showcase image of webdesign
+        src: >-
+          ../images/showcase/work/we-buy-houses-in-bay-area/wbh-webdesign-showcase.png
+      - alt: 2 showcase image of webdesign
+        src: >-
+          ../images/showcase/work/we-buy-houses-in-bay-area/wbh-webdesign-showcase-2.png
+    other:
+      - alt: showcase image of webdesign
+        src: >-
+          ../images/showcase/work/we-buy-houses-in-bay-area/wbh-webdesign-showcase-2.png
+  content:
+    title: >-
+      We Buy House In Bay Area is a quality real estate investor focused on the bay area.
+    summary: >-
+      They needed to enhance their on page experience for a smoother lead capture. 
+    deliverables:
+      - branding
+      - website design
+      - development
+      - business integration
+      - sales funnel optimizations
+      - hosting
+    branding: >-
+      The business had an established color palette of blue and orange.  We extended the tones enabling more varied design. Our main objective was creating a brand identity that felt professional and upfront and we leaned into the blue tone for this reason. We created an organic illustration set to showcase the personality of the business and to break up the reading experience.
+    design: >-
+      After refining the branding, we created an experience centered around clear messaging and exposing the business methods to ease the friction around home selling. We emphasized brevity and large type for a smooth experience for and older audience.
+    development: >-
+      We used the fastest build framework on the web, Gatsby.js, to give a blazing fast experience for customers and higher ranking in search results.
+    business_integrations: >-
+      We set up Google, Yandex analytics as well as custom endpoints for lead capture and Sanity CMS for content management.
+- title: Chancellor Consulting
+  path: /cases/chancellor-consulting-group/
+  link: 'https://chancellorconsultinggroupd.com/'
+  subheader: Chancellor Consulting Group
+  date-created: 2021/05/03
+  last-modified: 2021/09/16 10:24:16
+  categories:
+    - case
+    - web-site
+  tags:
+    - gatsby
+    - user-experience
+    - development
+    - ui-design
+  isdraft: false
+  isComingSoon: false
+  technology-stack:
+    - figma
+    - gatsby
+    - react
+    - netlify
+    - netlify-cms
+    - hubspot
+    - calendarly
+  images:
+    featured:
+      - alt: ''
+        src: >-
+          ../images/showcase/work/chancellor-consulting/chancellor-consutling-webdesign-showcase.png
+    branding:
+      - alt: Image of brand style guide
+        src: >-
+          ../images/showcase/work/chancellor-consulting/brand-showcase-chancellor-consulting.png
+    design:
+      - alt: showcase image of webdesign
+        src: >-
+          ../images/showcase/work/chancellor-consulting/chancellor-consutling-webdesign-showcase.png
+      - alt: 2 showcase image of webdesign
+        src: >-
+          ../images/showcase/work/chancellor-consulting/chancellor-consutling-webdesign-showcase-2.png
+    other:
+      - alt: showcase image of webdesign
+        src: >-
+          ../images/showcase/work/claire-morency-hypno/3-chh-webdesign-showcase-2.png
   content:
     title: >-
       Chancellor Consulting Group is a well established healthcare management consulting group with over 35 years in the industry.
@@ -57,15 +179,16 @@
     design: >-
       After establishing a clear tone, we created an experience for a modern audience. We emphasized mobile, scalable content and ease of access to points of contact and proof of value.
     development: >-
-      We used the fastest build framework on the web, Gatsby.js, to give a blazing fast experience for customers and higher ranking in search results.  
-    business_integrations: >- 
-      We set up Google Analytics and Netlify CMS to easily update content. 
+      We used the fastest build framework on the web, Gatsby.js, to give a blazing fast experience for customers and higher ranking in search results.
+    business_integrations: >-
+      We set up Google Analytics and Netlify CMS to easily update content.
+
 - title: Claire Morency Hypnotherapy
   path: /cases/claire-morency-hypnotherapy/
   link: 'https://clairemorencyhypnotherapy.com/'
   subheader: Claire Morency Hypnotherapy
-  data-created: 05/03/2021
-  last-modified: 05/03/2021
+  date-created: 2021/05/03
+  last-modified: 2021/09/13 16:34:29
   categories:
     - case
     - web-site
@@ -85,25 +208,25 @@
     - hubspot
     - calendarly
   images:
-      featured:
-        - alt: ''
-          src: >- 
-            ../images/showcase/work/claire-morency-hypno/1-cmh-branding-showcase.png
-      branding:
-        - alt: Image of brand style guide
-          src: >-
-            ../images/showcase/work/claire-morency-hypno/1-cmh-branding-showcase.png
-      design:
-        - alt: showcase image of webdesign
-          src: >-
-             ../images/showcase/work/claire-morency-hypno/2-cmh-webdesign-showcase.png
-        - alt: 2 showcase image of webdesign
-          src: >-
-            ../images/showcase/work/claire-morency-hypno/3-cmh-webdesign-showcase-2.png
-      other:
-        - alt: showcase image of webdesign
-          src: >-
-            ../images/showcase/work/claire-morency-hypno/3-chh-webdesign-showcase-2.png
+    featured:
+      - alt: ''
+        src: >-
+          ../images/showcase/work/claire-morency-hypno/1-cmh-webdesign-showcase.png
+    branding:
+      - alt: Image of brand style guide
+        src: >-
+          ../images/showcase/work/claire-morency-hypno/1-cmh-branding-showcase.png
+    design:
+      - alt: showcase image of webdesign
+        src: >-
+          ../images/showcase/work/claire-morency-hypno/1-cmh-webdesign-showcase.png
+      - alt: 2 showcase image of webdesign
+        src: >-
+          ../images/showcase/work/claire-morency-hypno/3-cmh-webdesign-showcase-2.png
+    other:
+      - alt: showcase image of webdesign
+        src: >-
+          ../images/showcase/work/claire-morency-hypno/3-chh-webdesign-showcase-2.png
   content:
     title: >-
       Claire Morency Hypnotherapy provides health solutions to the greater
@@ -122,39 +245,39 @@
       We created a tone of growth, trust, opportunity, and
       professionalism. We drew from the symbolism of clouds and sky for openness. We used tones of green hinting of growth and new beginnings.
     design: >-
-      Once we had clear look and feel, we focused on facilitating conversions by answering know customer pain points. Clear points of contact and simple scheduling. 
+      Once we had clear look and feel, we focused on facilitating conversions by answering know customer pain points. Clear points of contact and simple scheduling.
     development: >-
-      We used the fastest build framework on the web, Gatsby.js, to give a blazing fast experience for customers and higher ranking in search results.  
-    business_integrations: >- 
-      We set up lead management with Hubspot CRM, bulk email and news letter with Mailchimp and Content creation with Netlify CMS. Finally, scheduling with Calendly. 
+      We used the fastest build framework on the web, Gatsby.js, to give a blazing fast experience for customers and higher ranking in search results.
+    business_integrations: >-
+      We set up lead management with Hubspot CRM, bulk email and news letter with Mailchimp and Content creation with Netlify CMS. Finally, scheduling with Calendly.
 - title: Yoga Of Words
   subheader: Yoga of Words is an uplifting poetry and prose experience
   path: /cases/yoga-of-words/
   link: 'https://yogaofwords.com/'
-  data-created: 05/22/2020
-  last-modified: 06/15/2020
+  date-created: 2020/05/22
+  last-modified: 2021/09/13 16:31:27
   isdraft: false
   isComingSoon: false
   images:
-      featured:
-        - alt: ''
-          src: >-
-              ../images/showcase/work/yoga-of-words/brand-showcase-yoga-of-words.png
-      branding:
-        - alt: Image of brand style guide
-          src: >-
-            ../images/showcase/work/yoga-of-words/brand-showcase-yoga-of-words.png
-      design:
-         - alt: showcase image of webdesign
-           src: >-
-              ../images/showcase/work/yoga-of-words/yoga-of-words-webdesign-showcase.png
-         - alt: 2 showcase image of webdesign
-           src: >-
-              ../images/showcase/work/yoga-of-words/yoga-of-word-design-ui-2.png
-      other:
-        - alt: showcase image of webdesign
-          src: >-
-            ../images/showcase/work/yoga-of-words/brand-showcase-yoga-of-words.png
+    featured:
+      - alt: ''
+        src: >-
+          ../images/showcase/work/yoga-of-words/brand-showcase-yoga-of-words.png
+    branding:
+      - alt: Image of brand style guide
+        src: >-
+          ../images/showcase/work/yoga-of-words/brand-showcase-yoga-of-words.png
+    design:
+      - alt: showcase image of webdesign
+        src: >-
+          ../images/showcase/work/yoga-of-words/yoga-of-words-webdesign-showcase.png
+      - alt: 2 showcase image of webdesign
+        src: >-
+          ../images/showcase/work/yoga-of-words/yoga-of-word-design-ui-2.png
+    other:
+      - alt: showcase image of webdesign
+        src: >-
+          ../images/showcase/work/yoga-of-words/brand-showcase-yoga-of-words.png
   content:
     technology-stack:
       - figma
@@ -172,7 +295,7 @@
       - ui-design
     title: Yoga of Words is an uplifting poetry and prose experience.
     summary: >-
-       We created an experience that complemented our prose. Using warm minimalist design that feels welcoming but keeps the prose at the center of the experience.
+      We created an experience that complemented our prose. Using warm minimalist design that feels welcoming but keeps the prose at the center of the experience.
     deliverables:
       - website
       - branding
@@ -182,71 +305,10 @@
       - development
       - email design and automation
     branding: >-
-      We looked into various options for art and illustrations.  We needed something that complimented without either being ostentatious or overly opinionated. We settled on fine art illustrations of flowers. Flowers have enough symbolism for any prose theme while supporting the reading experience. 
+      We looked into various options for art and illustrations.  We needed something that complimented without either being ostentatious or overly opinionated. We settled on fine art illustrations of flowers. Flowers have enough symbolism for any prose theme while supporting the reading experience.
     design: >-
-      We created a minimalist reading experience where each piece is accompanied by a floral illustration. This allows the reader to focus on their relationship with the words. 
+      We created a minimalist reading experience where each piece is accompanied by a floral illustration. This allows the reader to focus on their relationship with the words.
     development: >-
-      We used the fastest build framework on the web, Gatsbyjs. Resulting in blazing fast experience for customers and higher ranking in search results.   
-    business_integrations: >- 
+      We used the fastest build framework on the web, Gatsbyjs. Resulting in blazing fast experience for customers and higher ranking in search results.
+    business_integrations: >-
       We set up Netlify CMS for simple content management.  We build out automated  MailChimp weekly emails fired when new content is added.
-- title: Zapico Glass
-  subheader: Zapico Glass is an Ecommerce store for hand blown glass from Detroit Michigan 
-  path: /cases/zapico-glass/
-  link: 'https://zapicoglass.netlify.app/'
-  data-created: 2021/05/09
-  last-modified: 2021/05/09
-  isdraft: false
-  isComingSoon: true
-  images:
-      featured:
-        - alt: ''
-          src: >-
-              ../images/showcase/work/zapico-glass/zapicoglass-webdesign-showcase.png
-      branding:
-        - alt: Image of brand style guide
-          src: >-
-            ../images/showcase/work/yoga-of-words/brand-showcase-yoga-of-words.png
-      design:
-         - alt: showcase image of webdesign
-           src: >-
-              ../images/showcase/work/yoga-of-words/yoga-of-words-webdesign-showcase.png
-         - alt: 2 showcase image of webdesign
-           src: >-
-              ../images/showcase/work/yoga-of-words/yoga-of-word-design-ui-2.png
-      other:
-        - alt: showcase image of webdesign
-          src: >-
-            ../images/showcase/work/yoga-of-words/brand-showcase-yoga-of-words.png
-  content:
-    technology-stack:
-      - figma
-      - gatsby
-      - react
-      - netlify
-      - netlify-cms
-    categories:
-      - case
-      - web-site
-    tags:
-      - gatsby
-      - user-experience
-      - development
-      - ui-design
-    title: Yoga of Words is an uplifting poetry and prose experience.
-    summary: >-
-       We created an experience that complemented our prose. Using warm minimalist design that feels welcoming but keeps the prose at the center of the experience.
-    deliverables:
-      - e-commerce
-      - branding
-      - design direction
-      - user experience design
-      - development
-    branding: >-
-      We looked into various options for art and illustrations.  We needed something that complimented without either being ostentatious or overly opinionated. We settled on fine art illustrations of flowers. Flowers have enough symbolism for any prose theme while supporting the reading experience. 
-    design: >-
-      We created a minimalist reading experience where each piece is accompanied by a floral illustration. This allows the reader to focus on their relationship with the words. 
-    development: >-
-      We used the fastest build framework on the web, Gatsbyjs. Resulting in blazing fast experience for customers and higher ranking in search results.   
-    business_integrations: >- 
-      We set up Netlify CMS for simple content management.  We build out automated  MailChimp weekly emails fired when new content is added.
-      
