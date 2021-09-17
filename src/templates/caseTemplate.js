@@ -1,15 +1,15 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import { Heading, Flex, Box, Text, Container } from '@chakra-ui/react';
-import Img from 'gatsby-image';
-import { ScrollAniFadeIn, LinkOne } from '../components';
-import GatsbyLogo from '../assets/Gatsby-Logo.svg';
-
+import { Box, Container, Flex, Heading, Text } from '@chakra-ui/react';
 import {
   IoIosArrowRoundBack,
   IoIosArrowRoundForward,
   IoIosOpen,
 } from 'react-icons/io';
+import { LinkOne, ScrollAniFadeIn } from '../components';
+
+import GatsbyLogo from '../assets/Gatsby-Logo.svg';
+import Img from 'gatsby-image';
+import React from 'react';
+import { graphql } from 'gatsby';
 
 const caseTemplate = (props, location) => {
   console.log('props', props);
