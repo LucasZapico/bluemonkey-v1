@@ -10,7 +10,6 @@ import { LinkPhone, LinkEmail, StartAConversation, LinkOne } from './index';
 // import Logo from '../assets/ccg-mark.svg';
 
 const Footer = ({ title, description, location }) => {
-  const [connect, setConnect] = useState('');
   const { pathname } = useLocation();
   const { site } = useStaticQuery(query);
 
