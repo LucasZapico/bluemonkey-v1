@@ -2,8 +2,8 @@
   path: /projects/pretty-password/
   link: 'https://pretty-password.lucaszapico.space/'
   subheader: Luv Coffee
-  data-created: 05/03/2021
-  last-modified: 05/03/2021
+  date-created: 05/03/2021
+  last-modified: 2021/09/16 09:47:23
   categories:
     - case
     - web-site
@@ -61,7 +61,7 @@
   subheader: Brandish Ipsum
   path: /project/brandish-ipsum/
   link: 'https://brandish-ipsum.netlify.app/'
-  data-created: 05/22/2020
+  date-created: 05/22/2020
   last-modified: 06/15/2020
   isdraft: false
   isComingSoon: false

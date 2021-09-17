@@ -2,8 +2,8 @@
   path: /demo/luv-coffee/
   link: 'https://luvcoffee2020.netlify.app/'
   subheader: Luv Coffee
-  data-created: 05/03/2021
-  last-modified: 05/03/2021
+  date-created: 05/03/2021
+  last-modified: 2021/09/16 09:47:23
   categories:
     - case
     - web-site
@@ -65,7 +65,7 @@
   path: /demo/modalero-store/
   link: 'https://modalero-store-prototype.netlify.app/'
   subheader: Modalero Store
-  data-created: 05/03/2021
+  date-created: 05/03/2021
   last-modified: 05/03/2021
   categories:
     - case
@@ -136,7 +136,7 @@
   subheader: Noma 2020
   path: /demo/noma2020/
   link: 'https://noma2020.netlify.app/'
-  data-created: 05/22/2020
+  date-created: 05/22/2020
   last-modified: 06/15/2020
   isdraft: false
   isComingSoon: false

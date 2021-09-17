@@ -4,7 +4,7 @@
     "path": "/cases/claire-morency-hypnotherapy/",
     "link": "https://clairemorencyhypnotherapy.com/",
     "subheader": "Claire Morency Hypnotherapy",
-    "data-created": "05/03/2021",
+    "date-created": "05/03/2021",
     "last-modified": "05/03/2021",
     "categories": [
       "case",
@@ -68,7 +68,7 @@
     "path": "/cases/yoga-of-words/",
     "link": "https://yogaofwords.com/",
     "subheader": "Yoga of Words is an uplifting poetry and prose experience",
-    "data-created": "05/22/2020",
+    "date-created": "05/22/2020",
     "last-modified": "06/15/2020",
     "categories": [
       "case",
@@ -111,6 +111,66 @@
     "content": {
       "title": "Yoga of Words is an uplifting poetry and prose experience",
       "summary": "We started by exploring the idea behind Yoga of Words, what was the impact they wanted to share with the audience. We knew if we wanted to create something engaging, we needed to think on and compliment what a prose reading experience is. With this in mind, we created a refined digital presence that feels welcoming and keeps the prose at the center.",
+      "deliverables": [
+        "website",
+        "branding",
+        "design direction",
+        "user experience design",
+        "web design",
+        "development",
+        "email design and automation"
+      ],
+      "branding": "We looked into various art and illustrations that could compliment prose without either being ostentatious or overly opinionated symbolically thereby taking away from the prose. We settled on fine art illustrations of flowers as flowers have enough breathed of symbolism to match any prose theme while staying as a compliment not a distraction.",
+      "design": "We culminated in a minimalist reading experience where each prose is accompanied by a floral illustration allowing the reader to have a singular and completely curated relationship with the words. We enhanced the experience through email engagement with Mailchimp creating an automated branded welcoming email and automated weekly prose post updated.",
+      "development": "We used Gatsbyjs as our build framework, thus ensuring one of the fastest serving content."
+  }  }, {
+    "title": "Flakes Coaching",
+    "path": "/cases/flakes-coaching/",
+    "link": "https://flakescoaching.com/",
+    "subheader": "Flakes Coaching provides one on one Rocket League coaching by pro gamer Flakes",
+    "date-created": "05/22/2020",
+    "last-modified": "06/15/2020",
+    "categories": [
+      "case",
+      "web-site"
+    ],
+    "tags": [
+      "gatsby",
+      "user-experience",
+      "development",
+      "ui-design"
+    ],
+    
+    "isdraft": false,
+    "isComingSoon": false,
+    "technology-stack": [
+      "figma",
+      "gatsby",
+      "react",
+      "netlify",
+      "netlify-cms"
+    ],
+    "images": {
+      "featured": {
+        "alt": "",
+        "src": "../images/work/flakes-coaching/flakes.png"
+      },
+      "branding": [{
+        "alt": "",
+        "src": ""
+      }], 
+      "design": [{
+        "alt": "",
+        "src": "../images/work/flakes-coaching/flakes.png"
+      }],
+      "other": [{
+        "alt": "",
+        "src": ""
+      }]
+    },
+    "content": {
+      "title": "Flakes is Pro Rocket League gamer offering one on one coaching services ",
+      "summary": "We aimed to create a vibrant experience focusing on the connection to rocket league.",
       "deliverables": [
         "website",
         "branding",
