@@ -18,6 +18,12 @@ import Img from 'gatsby-image';
 import { ArrowForwardIcon } from '@chakra-ui/icons';
 import { FiArrowUpRight, FiArrowRight, FiArrowDown } from 'react-icons/fi';
 import {
+  BlurBlobOne,
+  BlurBlobTwo,
+  BlurBlobThree,
+} from '../components/flare/blur-blobs'
+
+import {
   Layout,
   ScrollAniFadeIn,
   ScrollAniMonkey,
@@ -31,13 +37,39 @@ import MonkeyTwo from '../assets/monkey_2.svg';
 import MonkeyThree from '../assets/monkey_3.svg';
 import GridPattern from '../assets/grid-patter.svg';
 
+const Flare = () => (
+  <Box
+    position="absolute"
+    top="0%"
+    zIndex="-1"
+    left="0%"
+    height="100%"
+    width="100%"
+    overflow="hidden"
+    // bgGradient="linear(to-br, brand.zero, brand.two)"
+  >
+    <Box position="relative" height="100%" width="100%" opacity="0.7">
+      <Box pos="absolute" className="home-blob-one" right="0px" top="0px">
+        <BlurBlobOne />
+      </Box>{' '}
+      {/* <Box pos="absolute" left="0px" top="0px" className="home-blob-two">
+        <BlurBlobTwo />
+      </Box>{' '} */}
+      <Box pos="absolute" left="0px" top="0px" className="home-blob-two">
+        <BlurBlobThree />
+      </Box>
+    </Box>
+  </Box>
+)
+
+
 const Hero = ({ data }) => (
   <Flex
     flexDirection="column"
     justifyContent="space-between"
     minH="700px"
     zIndex="1"
-    bgGradient="linear(to-tr, brand.one , brand.two )"
+    // 
   >
     <Container maxW="container.xl" position="relative">
       <Box
@@ -79,8 +111,7 @@ const Hero = ({ data }) => (
       <Heading
         as="h1"
         maxWidth="800px"
-        bgGradient="linear(to-r, brand.three, brand.five)"
-        bgClip="text"
+        
         fontFamily="montas-semibold"
         fontSize={{
           base: '70',
@@ -104,7 +135,7 @@ const Hero = ({ data }) => (
       <Box
         zIndex="-1"
         height={{ base: '0%', md: '70%' }}
-        bg="brand.one"
+        
         width="600px"
         top="5%"
         left="-20%"
@@ -407,6 +438,7 @@ const ServicesSection = ({ data }) => (
         </Flex>
       </Container>
     </Flex>
+    
   </Box>
 );
 
@@ -415,12 +447,13 @@ export const IndexPage = ({ data }) => {
 
   return (
     <div ref={ref}>
-      <Box minH="700px" pt={28}>
+      <Box minH="700px" position="relative" pt={28} zIndex="0">
         <Hero data={data} />
         <main>
           <OurWorkSection data={data} />
           <ServicesSection data={data} />
         </main>
+        <Flare />
       </Box>
     </div>
   );
@@ -491,7 +524,7 @@ export const query = graphql`
           categories
           deliverables
         }
-        data_created
+        date_created
         id
         isdraft
         link
