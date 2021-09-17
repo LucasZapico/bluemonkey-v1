@@ -7,7 +7,7 @@
    Blue Monkey Makes 
 </h1>
 
-## About this project - Dev.LucasZapico.Space - 2021
+## About this project - Blue Monkey Makes
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/319ea018-327f-499f-bc12-2b2d3c5863a4/deploy-status)](https://app.netlify.com/sites/bluemonkey-1v/deploys)
 
