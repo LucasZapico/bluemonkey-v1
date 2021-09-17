@@ -250,7 +250,7 @@ export const query = graphql`
             }
           }
         }
-        data_created
+        date_created
         id
         isdraft
         link
