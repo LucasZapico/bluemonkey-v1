@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   Flex,
   Box,
@@ -48,12 +48,14 @@ const ROUTES = [
   },
 ];
 
-const Header = () => {
+const Header = ({ location }) => {
   const [show, setShow] = useState(false);
+
   const styles = useSpring({
     opacity: show ? 1 : 0,
     height: show ? '100vh' : '0vh',
   });
+
   return (
     <header>
       <Flex
@@ -85,7 +87,15 @@ const Header = () => {
           width={{ base: '0px', md: 'auto' }}
         >
           {ROUTES.map((r) => (
-            <Box className="link-one light" pr={4} key={`route${r.id}`}>
+            <Box
+              className={`link-one light ${false ? 'active' : ''}`}
+              pr={4}
+              key={`route${r.id}`}
+              onClick={() => {
+                console.log('to');
+                // console.log('test', curPath?.test(r.to));
+              }}
+            >
               <Link to={`${r.to}`}>{r.name}</Link>
             </Box>
           ))}
@@ -118,7 +128,7 @@ const Header = () => {
           alignItems="center"
           overflow="hidden"
           bgGradient="linear(to-br, brand.one , brand.two )"
-          pt={40}
+          pt={20}
           mt={20}
         >
           {ROUTES.map((r) => (

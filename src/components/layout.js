@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { Box } from '@chakra-ui/react';
 import { Helmet } from 'react-helmet';
 import { Header, Footer, SEO, Banner, Cursor } from './index';
-// import { Favicon } from '../images/ccg-mark_favicon.ico';
 
 const Layout = ({ location, children }) => {
   useEffect(() => {
@@ -13,11 +12,11 @@ const Layout = ({ location, children }) => {
       <SEO />
       <Cursor />
       <Box minHeight="100vh" overflow="hidden">
-        <Header zIndex={10} />
+        <Header zIndex={10} location={location} />
         <Box background="brand.two">{children}</Box>
         {/* <Banner /> */}
       </Box>
-
+      <Footer location={location} />
       <script
         type="text/javascript"
         id="hs-script-loader"
@@ -25,7 +24,6 @@ const Layout = ({ location, children }) => {
         defer
         src="//js-na1.hs-scripts.com/19886034.js"
       ></script>
-      <Footer location={location} />
     </>
   );
 };
