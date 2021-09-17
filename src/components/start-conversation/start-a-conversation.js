@@ -75,15 +75,7 @@ const StartAConversation = () => {
     const results = await axios
       .post('/leads', store, {
         baseURL: 'https://odwwt9.deta.dev',
-        headers: {
-          Accept: '*/*',
-          'X-Forwarded-Host': 'odwwt9.deta.dev',
-          'X-Forwarded-Proto': 'https',
-          'X-Forwarded-Port': '443',
-          'Content-Type': 'application/json',
-          'X-Scheme': 'https',
-          'Access-Control-Allow-Origin': '*',
-        },
+        
       })
       .then((res) => {
         console.log(res);

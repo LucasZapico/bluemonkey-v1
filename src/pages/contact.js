@@ -87,16 +87,7 @@ const ContactPage = ({ data }) => {
     console.log('submit all', leadData);
     const results = await axios
       .post('/leads', leadData, {
-        baseURL: 'https://odwwt9.deta.dev',
-        headers: {
-          Accept: '*/*',
-          'X-Forwarded-Host': 'odwwt9.deta.dev',
-          'X-Forwarded-Proto': 'https',
-          'X-Forwarded-Port': '443',
-          'Content-Type': 'application/json',
-          'X-Scheme': 'https',
-          'Access-Control-Allow-Origin': '*',
-        },
+        baseURL: 'https://odwwt9.deta.dev'
       })
       .then((res) => {
         console.log('status', res.status);
