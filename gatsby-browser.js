@@ -1,11 +1,8 @@
-import React from 'react';
-import { ChakraProvider, CSSReset } from '@chakra-ui/react';
-import Fonts from './src/theme/fonts';
-import theme from './src/theme/theme';
 import './src/assets/sass/index.scss';
-// import './src/assets/sass/font.css';
-// import './static/montas-regular-webfont.woff';
-// import './static/montas-regular-webfont.woff2';
+import { CSSReset, ChakraProvider } from '@chakra-ui/react';
+import Fonts from './src/theme/fonts';
+import React from 'react';
+import theme from './src/theme/theme';
 
 export const wrapRootElement = ({ element }) => (
   <ChakraProvider theme={theme}>
