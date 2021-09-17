@@ -5,7 +5,7 @@ module.exports = {
     description:
       'Premium frugal branding, design, development and business integration for small business and brands',
     author: '@bluemonkey',
-    siteUrl: 'http://bluemonkeymakes.com',
+    siteUrl: 'https://bluemonkeymakes.com',
     baseUrl: 'bluemonkeymakes.com',
     image: '/opengraph-gen.png',
     twitterUsername: '@bluemonkey',
@@ -46,8 +46,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'http://bluemonkeymakes.com',
-        sitemap: 'http://bluemonkeymakes.com/sitemap.xml',
+        host: 'https://bluemonkeymakes.com',
+        sitemap: 'https://bluemonkeymakes.com/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
