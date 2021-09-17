@@ -7,7 +7,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
   const casesRes = await graphql(`
     {
-      allWorkYaml {
+      allWorkYaml(filter: {isComingSoon: {eq: false}}  sort: {fields: date_created, order: DESC}) {
         edges {
           next {
             title
@@ -75,7 +75,7 @@ exports.createPages = async ({ actions, graphql }) => {
                 alt
               }
             }
-            data_created
+            date_created
             isComingSoon
             isdraft
             last_modified
