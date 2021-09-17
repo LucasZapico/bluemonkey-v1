@@ -24,6 +24,15 @@ const SEO = ({ title, description, image, article }) => {
     url: `${siteUrl}${pathname}`,
   };
 
+  // const RichSnippetSchema = {
+  //   '@context': 'https://schema.org',
+  //   '@type': 'LocalBusiness',
+  //   name: seo.title,
+  //   url: seo.url,
+  //   telephone: phone,
+  // };
+
+
   return (
     <Helmet title={seo.title} titleTemplate={titleTemplate}>
       <meta name="description" content={seo.description} />
@@ -66,6 +75,9 @@ const SEO = ({ title, description, image, article }) => {
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Noto+Sans+JP&display=swap"
         rel="stylesheet"
       />
+            {/* <script type="application/ld+json">
+        {JSON.stringify(RichSnippetSchema)}
+      </script> */}
     </Helmet>
   );
 };
