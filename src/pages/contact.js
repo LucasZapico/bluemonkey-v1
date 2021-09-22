@@ -18,6 +18,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import { axiosLeads} from '../api/axios'
 
 const ContactPage = ({ data }) => {
   const ref = useRef();
@@ -85,10 +86,8 @@ const ContactPage = ({ data }) => {
   const onSubmit = async (leadData) => {
     setWaiting(true);
     console.log('submit all', leadData);
-    const results = await axios
-      .post('/leads', leadData, {
-        baseURL: 'https://odwwt9.deta.dev'
-      })
+    const results = await axiosLeads
+      .post('/leads/add', leadData)
       .then((res) => {
         console.log('status', res.status);
         setWaiting(false);
@@ -358,7 +357,7 @@ const ContactPage = ({ data }) => {
                     />
                   )}
                 </form>
-                <Box minheight="50px">
+                <Box minheight="50px" mt={4}>
                   {alertMessage.message !== '' ? (
                     <AlertMessage
                       backgroundColor="transparent"

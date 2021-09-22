@@ -17,6 +17,7 @@ import AddName from './add-name';
 import AddNotes from './add-notes';
 import AddEnthusiasm from './add-enthusiasm';
 import axios from 'axios';
+import { axiosLeads} from '../../api/axios'
 
 const steps = ['email', 'name', 'notes', 'enthusiasm'];
 
@@ -72,11 +73,8 @@ const StartAConversation = () => {
   const onSubmitAll = async () => {
     setWaiting(true);
     console.log('submit all', store);
-    const results = await axios
-      .post('/leads', store, {
-        baseURL: 'https://odwwt9.deta.dev',
-        
-      })
+    const results = await axiosLeads
+      .post('/leads/add', store)
       .then((res) => {
         console.log(res);
         setWaiting(false);
@@ -164,7 +162,7 @@ const StartAConversation = () => {
           )}
         </Box>
       </Box>
-      <Box minheight="50px">
+      <Box minheight="50px"  mt={4}>
         {alertMessage.message !== '' ? (
           <AlertMessage backgroundColor="transparent" message={alertMessage} />
         ) : undefined}
