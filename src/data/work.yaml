@@ -1,3 +1,57 @@
+- title: Cowboy Country Title
+  path: /cases/cowboy-country-title/
+  link: 'https://cowboycountrytitle.com/'
+  subheader: Cowboy  Country Title
+  date-created: 2021/09/13
+  last-modified: 2021/09/22 13:19:28
+  categories:
+    - case
+    - web-app
+    - web-site
+  tags:
+    - react
+    - user-experience
+    - development
+    - ui-design
+    - illustration
+  isdraft: false
+  isComingSoon: true
+  technology-stack:
+    - figma
+    - react
+  images:
+    featured:
+      - alt: ''
+        src: >-
+          ../images/showcase/work/cowboy-country-title/cct-webdesign-showcase.png
+    branding:
+      - alt: Image of brand style guide
+        src: >-
+          ../images/showcase/work/top-line-property-solutions/tlps-branding-showcase.png
+    design:
+      - alt: showcase image of webdesign
+        src: >-
+          ../images/showcase/work/top-line-property-solutions/tlps-webdesign-showcase.png
+      - alt: 2 showcase image of webdesign
+        src: >-
+          ../images/showcase/work//top-line-property-solutions/tlps-webdesign-showcase.png
+  content:
+    title: >-
+      Topline Property Solutions is a nation wide real estate investor.
+    summary: >-
+      They needed to give their web presence a modern facelift while maintaining a clean, professional tone. This included holding onto some original photography from the '90s.
+    deliverables:
+      - consulting
+      - website design
+      - development
+    branding: >-
+      We modernized the brand by leveraging the well-established personality of their business. We used a deep navy to invoke feeling of trust and consistency pulling from their depth of experience and expertise. We used a warmer tope to offset the navy, symbolizing confidence and professionalism.
+    design: >-
+      After establishing a clear tone, we created an experience for a modern audience. We emphasized mobile, scalable content and ease of access to points of contact and proof of value.
+    development: >-
+      We used the fastest build framework on the web, Gatsby.js, to give a blazing fast experience for customers and higher ranking in search results.
+    business_integrations: >-
+      We set up Google Analytics and Netlify CMS to easily update content.
 - title: Top Line Property Solutions
   path: /cases/topline-property-solutions/
   link: 'https://toplinepropertysolutions.com/'
