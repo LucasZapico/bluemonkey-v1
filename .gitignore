@@ -4,6 +4,11 @@ public
 .eslintcache
 .vscode/
 
+.env*
+.env
+.env.production
+.env.development
+
 # Created by https://www.toptal.com/developers/gitignore/api/macos,react,wordpress
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,react,wordpress
 
@@ -58,13 +63,3 @@ sketch
 # htaccess
 /.htaccess
 
-# All plugins
-# Note: If you wish to whitelist plugins,
-# uncomment the next line
-#/wp-content/plugins
-
-# All themes
-# Note: If you wish to whitelist themes,
-# uncomment the next line
-#/wp-content/themes
-# End of https://www.toptal.com/developers/gitignore/api/macos,react,wordpress
