@@ -2,6 +2,9 @@ import React, { useEffect } from 'react';
 import { Box } from '@chakra-ui/react';
 import { Helmet } from 'react-helmet';
 import { Header, Footer, SEO, Banner, Cursor } from './index';
+import { EnvCheckPoint } from '../dev-helpers/logging'
+
+EnvCheckPoint()
 
 const Layout = ({ location, children }) => {
   useEffect(() => {

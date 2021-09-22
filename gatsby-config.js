@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: 'Blue Monkey Business Savy Web Design and Development',
@@ -5,7 +9,7 @@ module.exports = {
     description:
       'Premium frugal branding, design, development and business integration for small business and brands',
     author: '@bluemonkey',
-    siteUrl: 'https://bluemonkeymakes.com',
+    siteUrl: process.env.SITE_URL,
     baseUrl: 'bluemonkeymakes.com',
     image: '/opengraph-gen.png',
     twitterUsername: '@bluemonkey',
