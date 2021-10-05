@@ -17,6 +17,7 @@ import {
 import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { ArrowForwardIcon } from '@chakra-ui/icons';
+import { generate} from 'shortid'
 import MonkeyOne from '../assets/monkey_1.svg';
 import {
   Layout,
@@ -24,14 +25,19 @@ import {
   LinkThree,
   SliderOne,
 } from '../components/index';
-import GatsbyLogo from '../assets/Gatsby-Logo.svg';
-import ReactLogo from '../assets/react-logo.svg';
-import NextLogo from '../assets/next-logo.svg';
+import { GatsbyjsLogo, NextjsLogo, ReactjsLogo, CommercejsLogo, NetlifyLogo } from '../assets/logos';
+import BackgroundIll from '../assets/backgroound.svg'
+
+
 
 const services = ({ data }) => {
+  const Logos = [<GatsbyjsLogo/>, <NextjsLogo/>, <ReactjsLogo/>, <CommercejsLogo/>, <NetlifyLogo/>]
   return (
     <main>
-      <Box py={40}>
+      <Box py={40} position="relative">
+      <Box zIndex="-1" position="absolute" top="0" left="0" width="100%">
+    <BackgroundIll/>
+    </Box>
         <Box pt={20}>
           <Container maxW="container.xl">
             <Heading
@@ -48,6 +54,7 @@ const services = ({ data }) => {
             >
               Services
             </Heading>
+            
           </Container>
           <Box
             minHeight="400px"
@@ -171,7 +178,7 @@ const services = ({ data }) => {
             backgroundColor="brand.five"
           >
             <Container maxW="container.xl">
-              <Flex>
+              <Flex flexWrap="wrap">
                 <Box>
                   <Heading
                     as="h3"
@@ -208,23 +215,24 @@ const services = ({ data }) => {
                     </Box>
                   </Flex>
                 </Box>
-                {/* <Box
+                <Box
                   p={20}
                   display="flex"
-                  flexDirection="column"
-                  justifyContent="space-between"
+                  flexDirection="row"
+                  justifyContent="flex-start"
                   flexWrap="wrap"
                 >
-                  <Box width="300px" my={6}>
-                    <GatsbyLogo />
-                  </Box>
-                  <Box width="200px" my={6}>
-                    <ReactLogo />
-                  </Box>
-                  <Box width="300px" my={6}>
-                    <NextLogo />
-                  </Box>
-                </Box> */}
+                  {Logos.map((l, i) => (
+                  <Box key={generate()} 
+                  width="200px"
+                  maxW="200px" 
+                  maxH="150px" 
+                  m={4}>
+                  {l}
+                </Box>  
+                  ))}
+                  
+                </Box>
               </Flex>
             </Container>
           </Box>

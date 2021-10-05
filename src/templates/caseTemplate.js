@@ -6,7 +6,7 @@ import {
 } from 'react-icons/io';
 import { LinkOne, ScrollAniFadeIn } from '../components';
 
-import GatsbyLogo from '../assets/Gatsby-Logo.svg';
+import {GatsbyjsLogo} from '../assets/logos';
 import Img from 'gatsby-image';
 import React from 'react';
 import { graphql } from 'gatsby';
@@ -125,7 +125,7 @@ const caseTemplate = (props, location) => {
               {node.content.development}
             </Text>
             <Box width="300px" my={6}>
-              <GatsbyLogo />
+              <GatsbyjsLogo />
             </Box>
           </Box>
           <Box>

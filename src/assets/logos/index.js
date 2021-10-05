@@ -1,0 +1,5 @@
+export { default as GatsbyjsLogo} from './Gatsby-Logo.svg'
+export { default as NetlifyLogo } from './netlify-logo.svg'
+export { default as ReactjsLogo} from './react-logo.svg'
+export { default as NextjsLogo} from './next-logo.svg'
+export { default as CommercejsLogo} from './commerce-js.svg'

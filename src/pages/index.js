@@ -36,6 +36,7 @@ import MonkeyOneThree from '../assets/monkey_1_3.svg';
 import MonkeyTwo from '../assets/monkey_2.svg';
 import MonkeyThree from '../assets/monkey_3.svg';
 import GridPattern from '../assets/grid-patter.svg';
+import BackgroundIll from '../assets/backgroound.svg'
 
 const Flare = () => (
   <Box
@@ -68,9 +69,10 @@ const Hero = ({ data }) => (
     flexDirection="column"
     justifyContent="space-between"
     minH="700px"
-    zIndex="1"
-    // 
+    zIndex="0"
+    pos="relative"
   >
+    
     <Container maxW="container.xl" position="relative">
       <Box
         display={{ base: 'none', md: 'block' }}
@@ -236,98 +238,14 @@ const OurWorkSection = ({ data }) => (
       </Grid>
     </Container>
     <Box
-      // backgroundColor="brand.five"
+      
       p={{ base: 0, sm: 10 }}
       height="auto"
       flexGrow={1}
       flexBasis={{ base: '100%', md: '100%', lg: '40%', xl: '40%' }}
       pb={20}
     >
-      {/* <Container maxWidth="container.xl" centerContent="true">
-        <ScrollAniFadeIn>
-          <Box mb={10} mr={10} position="relative">
-            
-            <Box
-              display={{ base: 'none', md: 'block' }}
-              height="500px"
-              position="relative"
-            >
-              <Heading
-                as="h3"
-                fontSize="lg"
-                lineHeight="base"
-                zIndex="1"
-                color="brand.one"
-                pb={10}
-                className="movy-text"
-              >
-                Hover Around Here
-              </Heading>
-              <Box
-                position="absolute"
-                top="-20%"
-                left="40%"
-                width="100%"
-                height="auto"
-                className="clip-show-effect"
-              >
-                <Link to="/services/#branding">
-                  <Img
-                    fit="cover"
-                    fluid={data.showcaseBrandImageTwo.childImageSharp.fluid}
-                  />
-                </Link>
-              </Box>
-              <Box
-                position="absolute"
-                top="20%"
-                left="20%"
-                width="100%"
-                height="auto"
-                className="clip-show-effect"
-              >
-                <Link to="/services/#branding">
-                  <Img
-                    fit="cover"
-                    fluid={data.showcaseBrandImage.childImageSharp.fluid}
-                  />
-                </Link>
-              </Box>
-              <Box
-                left="-10%"
-                top="60%"
-                width="100%"
-                position="absolute"
-                height="auto"
-                className="clip-show-effect"
-              >
-                <Link to="/services/#design">
-                  <Img
-                    fit="cover"
-                    fluid={data.showcaseDesignImageOne.childImageSharp.fluid}
-                  />
-                </Link>
-              </Box>
-
-              <Box
-                left="-10%"
-                top="40%"
-                width="100%"
-                position="absolute"
-                height="auto"
-                className="clip-show-effect"
-              >
-                <Link to="/services/#design">
-                  <Img
-                    fit="cover"
-                    fluid={data.showcaseDesignImageTwo.childImageSharp.fluid}
-                  />
-                </Link>
-              </Box>
-            </Box>
-          </Box>
-        </ScrollAniFadeIn>
-      </Container> */}
+   
     </Box>
   </Box>
 );
@@ -448,6 +366,9 @@ export const IndexPage = ({ data }) => {
   return (
     <div ref={ref}>
       <Box minH="700px" position="relative" pt={28} zIndex="0">
+      <Box zIndex="-1" position="absolute" top="0" left="0" width="100%" height="1000px">
+    <BackgroundIll/>
+    </Box>
         <Hero data={data} />
         <main>
           <OurWorkSection data={data} />
