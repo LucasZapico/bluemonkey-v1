@@ -8,11 +8,13 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
+    "clean": "gatsby clean",
+    "develop": "gatsby develop --port 8004",
+    "start": "npm run develop",
     "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "build:staging": "STAGING=true gatsby build",
+    "serve": "gatsby serve"
+    
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.0.7",
