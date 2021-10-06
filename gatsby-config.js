@@ -16,7 +16,7 @@ module.exports = {
     description:
       'Premium frugal branding, design, development and business integration for small business and brands',
     author: '@bluemonkey',
-    siteUrl: process.env.SITE_URL,
+    siteUrl: process.env.GATSBY_SITE_URL,
     baseUrl: 'bluemonkeymakes.com',
     image: '/opengraph-gen.png',
     twitterUsername: '@bluemonkey',

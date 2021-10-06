@@ -1,5 +1,20 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
+const chalk = require('chalk');
+
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
+// logging utils
+const { log } = console;
+const logSp = () => log(
+  chalk.redBright(`
+
+=================================
+
+`),
+);
 
 
 logSp();
