@@ -24,7 +24,7 @@
 [context.production.environment]
   NODE_OPTIONS="--max_old_space_size=4096"
   GATSBY_SITE_URL="https://bluemonkeymakes.com/"
-  GATSBY_LEAD_URL="https://bluemonkeyleadapi.dev/"
+  GATSBY_LEAD_URL="https://bluemonkeyleadapi.deta.dev"
   GATSBY_ENV="production"
   GATSBY_GOOGLE_ANALYTIC_ID="G-Q2GC028QSQ"
 
@@ -39,7 +39,7 @@
 [context.staging.environment]
   NODE_OPTIONS="--max_old_space_size=4096"
   GATSBY_SITE_URL="https://staging.bluemonkeymakes.com/"
-  GATSBY_LEAD_URL="https://bluemonkeyleadapi.dev/"
+  GATSBY_LEAD_URL="https://bluemonkeyleadapi.deta.dev"
   GATSBY_ENV="staging"
   GATSBY_GOOGLE_ANALYTIC_ID="UA-dumy"
 
