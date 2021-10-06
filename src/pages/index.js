@@ -224,7 +224,7 @@ const OurWorkSection = ({ data }) => (
                   height="auto"
                   overflow="hidden"
                   mb={10}
-                  filter={c.isComingSoon ? 'blur(60px)' : 'blur(0px)'}
+                  filter={c.isComingSoon ? 'blur(10px)' : 'blur(0px)'}
                 >
                   <Img
                     fluid={c.images.featured[0].src.childImageSharp.fluid}

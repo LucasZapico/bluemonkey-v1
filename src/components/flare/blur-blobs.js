@@ -11,8 +11,8 @@ export const BlurBlobOne = ({ ...rest }) => (
   >
     <g filter="url(#filter0_f)">
       <ellipse cx="1187" cy="624" rx="339" ry="267" 
-      fill="#8CE1F9"
-      // fill="#A3BCCF"
+      // fill="#8CE1F9"
+      fill="#A3BCCF"
        />
     </g>
     <defs>
@@ -49,8 +49,8 @@ export const BlurBlobTwo = () => (
     <g clipPath="url(#clip0)">
       <g filter="url(#filter0_f)">
         <ellipse cx="1186.5" cy="727.5" rx="303.5" ry="277.5" 
-        fill="#8CE1F9"
-        // fill="#2C3142" 
+        // fill="#8CE1F9"
+        fill="#2C3142" 
         />
       </g>
     </g>
@@ -90,8 +90,8 @@ export const BlurBlobThree = ({ ...rest }) => (
   >
     <g filter="url(#filter0_f)">
       <ellipse cx="1186.5" cy="727" rx="257.5" ry="284" 
-      fill="#FBEC6A"
-      // fill="#A3BCCF" 
+      // fill="#FBEC6A"
+      fill="#A3BCCF" 
       />
     </g>
     <defs>
