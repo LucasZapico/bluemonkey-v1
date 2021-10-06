@@ -6,15 +6,24 @@ export const log = (str, data, color = 'cyanBright') => {
   }
 }
 
+const {
+  GATSBY_ENV, STAGING, GATSBY_LEAD_URL, GATSBY_SITE_URL,
+  NODE_ENV, GATSBY_GOOGLE_ANALYTIC_ID,
+ PORT,
+} = process.env;
+
+
 export const EnvCheckPoint = () => {
   if (process.env.NODE_ENV !== 'production') {
-    const { NODE_ENV } = process.env
-    const { PORT } = process.env
-    const { SITE_URL } = process.env
-    const API = process.env.SERVICE_URL
-    console.log(`%cNode env ${NODE_ENV}.`, 'color:cyan')
-    console.log(`%cListening on port: ${PORT}.`, 'color:cyan')
-    console.log(`%cURL: ${SITE_URL}${PORT}`, 'color:cyan')
-    console.log(`%cAPI url: ${API}`, 'color:cyan')
+    
+    console.log(`%c
+Node env ${NODE_ENV},
+staging env ${STAGING},
+Listening on port: ${PORT},
+URL: ${GATSBY_SITE_URL},
+lead url: ${GATSBY_LEAD_URL},
+gatsby env: ${GATSBY_ENV},
+google analytic: ${GATSBY_GOOGLE_ANALYTIC_ID}
+`, 'color:cyan')
   }
 }

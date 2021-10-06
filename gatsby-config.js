@@ -1,6 +1,13 @@
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+if (process.env.STAGING) {
+  require('dotenv').config({
+    path: `.env.${process.env.NODE_ENV}.staging`,
+  });
+} else {
+  require('dotenv').config({
+    path: `.env.${process.env.NODE_ENV}`,
+  });
+}
+
 
 module.exports = {
   siteMetadata: {
@@ -44,7 +51,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: process.env.GOOGLE_ANALYTIC_ID,
+        trackingId: process.env.GATSBY_GOOGLE_ANALYTIC_ID,
       },
     },
     {

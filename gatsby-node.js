@@ -1,6 +1,31 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
 
+
+logSp();
+const {
+  GATSBY_ENV, STAGING, GATSBY_LEAD_URL, GATSBY_SITE_URL,
+  NODE_ENV, GATSBY_GOOGLE_ANALYTIC_ID,
+ PORT,
+} = process.env;
+
+log(chalk.yellowBright(
+  `
+
+Node env ${NODE_ENV},
+staging env ${STAGING},
+Listening on port: ${PORT},
+URL: ${GATSBY_SITE_URL},
+lead url: ${GATSBY_LEAD_URL},
+gatsby env: ${GATSBY_ENV},
+google analytic: ${GATSBY_GOOGLE_ANALYTIC_ID},
+
+
+`,
+));
+logSp();
+
+
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions;
   const ymlDoc = yaml.load(fs.readFileSync('./src/data/work.yaml', 'utf-8'));
