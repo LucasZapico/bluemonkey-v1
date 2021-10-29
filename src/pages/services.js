@@ -26,7 +26,7 @@ import {
   SliderOne,
 } from '../components/index';
 import { GatsbyjsLogo, NextjsLogo, ReactjsLogo, CommercejsLogo, NetlifyLogo } from '../assets/logos';
-import BackgroundIll from '../assets/backgroound.svg'
+import BackgroundIll from '../assets/background.svg'
 
 
 

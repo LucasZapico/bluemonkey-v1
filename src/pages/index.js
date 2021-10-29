@@ -36,7 +36,7 @@ import MonkeyOneThree from '../assets/monkey_1_3.svg';
 import MonkeyTwo from '../assets/monkey_2.svg';
 import MonkeyThree from '../assets/monkey_3.svg';
 import GridPattern from '../assets/grid-patter.svg';
-import BackgroundIll from '../assets/backgroound.svg'
+import BackgroundIll from '../assets/background.svg'
 
 const Flare = () => (
   <Box
@@ -366,7 +366,10 @@ export const IndexPage = ({ data }) => {
   return (
     <div ref={ref}>
       <Box minH="700px" position="relative" pt={28} zIndex="0">
-      <Box zIndex="-1" position="absolute" top="0" left="0" width="100%" height="1000px">
+      <Box zIndex="-1" position="absolute" top="0" left="0"   
+      width={{base: 'auto', md: '100vw'}}
+      height={{base: '100vh', md: 'auto'}}
+      >
     <BackgroundIll/>
     </Box>
         <Hero data={data} />
@@ -374,7 +377,7 @@ export const IndexPage = ({ data }) => {
           <OurWorkSection data={data} />
           <ServicesSection data={data} />
         </main>
-        <Flare />
+        {/* <Flare /> */}
       </Box>
     </div>
   );
