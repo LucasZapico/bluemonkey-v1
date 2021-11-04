@@ -2,7 +2,7 @@
 // import { graphql } from 'gatsby';
 // import { Heading, Flex, Box, Text, Container } from '@chakra-ui/react';
 // import Img from 'gatsby-image';
-// import { ScrollAniFadeIn } from '../../components';
+// import { AnimatedFadeUpBox } from '../../components';
 // import GatsbyLogo from '../../assets/Gatsby-Logo.svg';
 
 // import {
@@ -69,11 +69,11 @@
 //           <Text pr={6} fontSize="2xl">
 //             {contentData.branding}
 //           </Text>
-//           <ScrollAniFadeIn>
+//           <AnimatedFadeUpBox>
 //             <Box height="auto" overflow="hidden" my={16}>
 //               <Img fluid={caseImages.nodes[0].childImageSharp.fluid} alt="" />
 //             </Box>
-//           </ScrollAniFadeIn>
+//           </AnimatedFadeUpBox>
 //         </Box>
 //         <Box>
 //           <Heading
@@ -88,16 +88,16 @@
 //           <Text pr={6} fontSize="2xl">
 //             {contentData['web-design']}
 //           </Text>
-//           <ScrollAniFadeIn>
+//           <AnimatedFadeUpBox>
 //             <Box height="auto" overflow="hidden" my={16}>
 //               <Img fluid={caseImages.nodes[1].childImageSharp.fluid} alt="" />
 //             </Box>
-//           </ScrollAniFadeIn>
-//           <ScrollAniFadeIn>
+//           </AnimatedFadeUpBox>
+//           <AnimatedFadeUpBox>
 //             <Box height="auto" overflow="hidden" my={16}>
 //               <Img fluid={caseImages.nodes[2].childImageSharp.fluid} alt="" />
 //             </Box>
-//           </ScrollAniFadeIn>
+//           </AnimatedFadeUpBox>
 //         </Box>
 //         <Box>
 //           <Heading

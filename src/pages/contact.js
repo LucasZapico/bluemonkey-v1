@@ -11,7 +11,7 @@ import {
   AlertTitle,
   AlertDescription,
 } from '@chakra-ui/react';
-import { ScrollAniFadeIn, LinkOne, LinkEmail, LinkPhone } from '../components';
+import { AnimatedFadeUpBox, LinkOne, LinkEmail, LinkPhone } from '../components';
 import { useSpring, animated as a } from 'react-spring';
 import MonkeyThree from '../assets/monkey_3.svg';
 import PropTypes from 'prop-types';
@@ -161,7 +161,7 @@ const ContactPage = ({ data }) => {
 
           <Box ref={ref}>
             <Container>
-              <ScrollAniFadeIn>
+              <AnimatedFadeUpBox showOffset="300">
                 <Heading as="h3" size="md" mb={10} lineHeight="base">
                   <LinkEmail>{`Connect@${baseUrl}`}</LinkEmail>
                 </Heading>
@@ -173,12 +173,12 @@ const ContactPage = ({ data }) => {
                     👋 Join our slack channel <ExternalLinkIcon />
                   </LinkOne>
                 </Heading>
-              </ScrollAniFadeIn>
+                </AnimatedFadeUpBox>
             </Container>
           </Box>
           <Box color="brand.one" backgroundColor="brand.five" py={20}>
             <Container>
-              <ScrollAniFadeIn>
+              <AnimatedFadeUpBox showOffset="300">
                 <Heading
                   as="h3"
                   size="3xl"
@@ -190,10 +190,10 @@ const ContactPage = ({ data }) => {
                 >
                   Start A Conversation
                 </Heading>
-              </ScrollAniFadeIn>
+              </AnimatedFadeUpBox>
             </Container>
             <Container>
-              <ScrollAniFadeIn>
+              <AnimatedFadeUpBox showOffset="300">
                 <form
                   className="contact start-conversation"
                   onSubmit={handleSubmit(onSubmit)}
@@ -366,7 +366,7 @@ const ContactPage = ({ data }) => {
                   ) : undefined}
                 </Box>
                 <Heading as="h3" size="xl" mb={10} lineHeight="base"></Heading>
-              </ScrollAniFadeIn>
+              </AnimatedFadeUpBox>
             </Container>
           </Box>
         </Box>

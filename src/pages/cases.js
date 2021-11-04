@@ -9,7 +9,7 @@ import {
   Grid,
   GridItem,
 } from '@chakra-ui/react';
-import { Layout, ScrollAniFadeIn, LinkOne } from '../components';
+import { Layout, AnimatedFadeUpBox, LinkOne } from '../components';
 import { useSpring, animated as a } from 'react-spring';
 import { graphql, Link } from 'gatsby';
 import { StaticImage, GatsbyImage } from 'gatsby-plugin-image';
@@ -45,8 +45,8 @@ const CasesPage = (props) => {
         <Box className="aurora dark" minH="500px" zIndex="1">
           <Container maxW="container.xl">
             <Grid templateColumns="repeat(5, 1fr)" pt={40} gap={12}>
-              <GridItem colSpan={{ base: 5, md: 3 }} maxW="container.xl">
-                <ScrollAniFadeIn>
+              <AnimatedFadeUpBox showOffset="300" as={GridItem} colSpan={{ base: 5, md: 3 }} maxW="container.xl">
+                
                   <Box
                     py={{ base: 0, sm: 20 }}
                     flexBasis={{ base: '100%', md: '60%' }}
@@ -71,17 +71,18 @@ const CasesPage = (props) => {
                       </Heading>
                     </Box>
                   </Box>
-                </ScrollAniFadeIn>
-              </GridItem>
+                
+              </AnimatedFadeUpBox>
               {data.cases.nodes.map((c, i) => (
-                <GridItem
-                  colSpan={{ base: 5, md: `${i % 3 === 0 ? 3 : 2}` }}
+                <AnimatedFadeUpBox showOffset="300" as={GridItem}
+                  colStart={{base: 0, md: `${i % 2 === 0 ? 1 : 2}`}}
+                  colEnd={{ base: 5, md: `${i % 2 === 0 ? 4 : 5}` }}
                   mb={10}
                 >
-                  <ScrollAniFadeIn>
+                  
                     <Heading
                       as="h2"
-                      size="xl"
+                      size="2xl"
                       fontFamily="montas-semibold"
                       lineHeight="base"
                       zIndex="1"
@@ -123,7 +124,7 @@ const CasesPage = (props) => {
                         height="auto"
                         overflow="hidden"
                         mb={10}
-                        filter={c.isComingSoon ? 'blur(60px)' : 'blur(0px)'}
+                        filter={c.isComingSoon ? 'blur(10px)' : 'blur(0px)'}
                       >
                         <Img
                           fluid={c.images.featured[0].src.childImageSharp.fluid}
@@ -131,15 +132,15 @@ const CasesPage = (props) => {
                         />
                       </Box>
                     )}
-                  </ScrollAniFadeIn>
-                </GridItem>
+                  
+                </AnimatedFadeUpBox>
               ))}
             </Grid>
           </Container>
           <Flex justifyContent="space-between" flexWrap="wrap" pb={40}>
             <Container maxW="container.xl">
-              <ScrollAniFadeIn>
-                <Box
+              
+                <AnimatedFadeUpBox showOffset="300"
                   py={{ base: 0, sm: 20 }}
                   flexBasis={{ base: '100%', md: '60%' }}
                 >
@@ -156,8 +157,8 @@ const CasesPage = (props) => {
                       Side Projects
                     </Heading>
                   </Box>
-                </Box>
-              </ScrollAniFadeIn>
+                </AnimatedFadeUpBox>
+              
             </Container>
             <Container maxW="container.xl">
               <Flex
@@ -166,8 +167,8 @@ const CasesPage = (props) => {
               "
               >
                 {data.projects.edges.map((c) => (
-                  <Box width="400px" mb={10} mr={10}>
-                    <ScrollAniFadeIn>
+                  <AnimatedFadeUpBox showOffset="300" width="400px" mb={10} mr={10}>
+                    
                       <Heading
                         as="h2"
                         size="xl"
@@ -196,8 +197,8 @@ const CasesPage = (props) => {
                         />
                       </Box>
                       {/* </Link> */}
-                    </ScrollAniFadeIn>
-                  </Box>
+                    
+                  </AnimatedFadeUpBox>
                 ))}
               </Flex>
             </Container>

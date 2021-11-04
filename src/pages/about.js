@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { Box, Container, Heading } from '@chakra-ui/react';
-import { Layout, ScrollAniFadeIn, LinkOne } from '../components';
+import { Layout, AnimatedFadeUpBox, LinkOne } from '../components';
 import { useSpring, animated as a } from 'react-spring';
 import MonkeyThree from '../assets/monkey_3.svg';
 
@@ -66,16 +66,16 @@ const AboutPage = () => {
 
           <Box ref={ref}>
             <Container>
-              <ScrollAniFadeIn>
+              <AnimatedFadeUpBox showOffset="300">
                 <Heading as="h2" size="xl" mb={10} lineHeight="base">
                   We are a fully remote group of solvers and makers. Who turn
                   coffee into solutions.
                 </Heading>
-              </ScrollAniFadeIn>
+              </AnimatedFadeUpBox>
             </Container>
 
             <Container>
-              <ScrollAniFadeIn>
+              <AnimatedFadeUpBox showOffset="300">
                 <Heading as="h3" size="3xl" mb={5} mt={10} lineHeight="base">
                   Mission
                 </Heading>
@@ -85,18 +85,18 @@ const AboutPage = () => {
                   Our mission is to take the stress out of the digital side of
                   your business. So you can focus on your product or service.
                 </Heading>
-              </ScrollAniFadeIn>
+              </AnimatedFadeUpBox>
             </Container>
             <Container>
-              <ScrollAniFadeIn>
+              <AnimatedFadeUpBox showOffset="300">
                 <Heading as="h3" size="xl" mb={10} lineHeight="base">
                   We see this as a partnership where our job is to enable you to
                   succeed. Period.
                 </Heading>
-              </ScrollAniFadeIn>
+              </AnimatedFadeUpBox>
             </Container>
             <Container>
-              <ScrollAniFadeIn>
+              <AnimatedFadeUpBox showOffset="300">
                 <Heading as="h3" size="3xl" mb={5} mt={10} lineHeight="base">
                   We're Here to Help
                 </Heading>
@@ -106,7 +106,7 @@ const AboutPage = () => {
                     Join our slack channel <ExternalLinkIcon />
                   </LinkOne>
                 </Heading>
-              </ScrollAniFadeIn>
+              </AnimatedFadeUpBox>
             </Container>
           </Box>
         </Box>

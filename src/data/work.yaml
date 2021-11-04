@@ -1,9 +1,9 @@
-- title: Cowboy Country Title
+- title: Autumn Years Network
   path: /cases/cowboy-country-title/
   link: 'https://cowboycountrytitle.com/'
   subheader: Cowboy  Country Title
   date-created: 2021/09/13
-  last-modified: 2021/09/22 13:19:28
+  last-modified: 2021/11/04 11:29:06
   categories:
     - case
     - web-app
@@ -23,21 +23,75 @@
     featured:
       - alt: ''
         src: >-
+          ../images/showcase/work/autumn-years-network/autumnyearsnetwork-webdesign-showcase.png
+    branding:
+      - alt: Image of brand style guide
+        src: >-
+          ../images/showcase/work/cowboy-country-title/cowcountrytitle-branding-showcase.png
+    design:
+      - alt: showcase image of webdesign
+        src: >-
+          ../images/showcase/work/cowboy-country-title/cct-webdesign-showcase.png
+      - alt: 2 showcase image of webdesign
+        src: >-
+          ../images/showcase/work/cowboy-country-title/cowcountrytitle-webdesign-showcase-2.png
+  content:
+    title: >-
+      Cowboy Country Title is a local focused title company
+    summary: >-
+      They needed to modernize there web presence with clean design and a suit of services to ease the title process. 
+    deliverables:
+      - consulting
+      - website design
+      - development
+    branding: >-
+      We created a custom brand drawing from their Cowboy identity. We choose natural colors and tones that you would see and feel looking over any Texas Wyoming ranch. We had a bit of fun curating custom cowboy iconography and images. 
+    design: >-
+      After refining the brand, we created a polished experience conveying the business value proposition for new customers. We focuses on making our quality of life service and resources clear and easily accessible.
+    development: >-
+      We used the React.js for performance and scalability. Our customer build process allow for a fast, dynamic and extendable experience for customers and higher ranking in search results.
+    business_integrations: >-
+      We set up a custom integration from our quality of life services to the business back office, thereby creating a more fluid workflow.  
+- title: Cowboy Country Title
+  path: /cases/cowboy-country-title/
+  link: 'https://cowboycountrytitle.com/'
+  subheader: Cowboy  Country Title
+  date-created: 2021/09/13
+  last-modified: 2021/11/03 22:51:09
+  categories:
+    - case
+    - web-app
+    - web-site
+  tags:
+    - react
+    - user-experience
+    - development
+    - ui-design
+    - illustration
+  isdraft: false
+  isComingSoon: false
+  technology-stack:
+    - figma
+    - react
+  images:
+    featured:
+      - alt: ''
+        src: >-
           ../images/showcase/work/cowboy-country-title/cct-webdesign-showcase.png
     branding:
       - alt: Image of brand style guide
         src: >-
-          ../images/showcase/work/top-line-property-solutions/tlps-branding-showcase.png
+          ../images/showcase/work/cowboy-country-title/cowcountrytitle-branding-showcase.png
     design:
       - alt: showcase image of webdesign
         src: >-
-          ../images/showcase/work/top-line-property-solutions/tlps-webdesign-showcase.png
+          ../images/showcase/work/cowboy-country-title/cct-webdesign-showcase.png
       - alt: 2 showcase image of webdesign
         src: >-
-          ../images/showcase/work//top-line-property-solutions/tlps-webdesign-showcase.png
+          ../images/showcase/work/cowboy-country-title/cowcountrytitle-webdesign-showcase-2.png
   content:
     title: >-
-      Topline Property Solutions is a nation wide real estate investor.
+      Cowboy Country Title is a local focused title company
     summary: >-
       They needed to give their web presence a modern facelift while maintaining a clean, professional tone. This included holding onto some original photography from the '90s.
     deliverables:
@@ -67,15 +121,11 @@
     - development
     - ui-design
   isdraft: false
-  isComingSoon: true
+  isComingSoon: false
   technology-stack:
     - figma
     - gatsby
     - react
-    - netlify
-    - netlify-cms
-    - hubspot
-    - calendarly
   images:
     featured:
       - alt: ''
@@ -158,7 +208,7 @@
     title: >-
       We Buy House In Bay Area is a quality real estate investor focused on the bay area.
     summary: >-
-      They needed to enhance their on page experience for a smoother lead capture. 
+      They needed to enhance their on page experience for a smoother lead capture.
     deliverables:
       - branding
       - website design

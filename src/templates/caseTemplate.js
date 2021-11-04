@@ -4,7 +4,7 @@ import {
   IoIosArrowRoundForward,
   IoIosOpen,
 } from 'react-icons/io';
-import { LinkOne, ScrollAniFadeIn } from '../components';
+import { LinkOne, AnimatedFadeUpBox } from '../components';
 
 import {GatsbyjsLogo} from '../assets/logos';
 import Img from 'gatsby-image';
@@ -72,14 +72,14 @@ const caseTemplate = (props, location) => {
             <Text pr={6} fontSize="2xl">
               {node.content.branding}
             </Text>
-            <ScrollAniFadeIn>
-              <Box height="auto" overflow="hidden" my={16}>
+            
+              <AnimatedFadeUpBox height="auto" overflow="hidden" my={16}>
                 <Img
                   fluid={node.images.branding[0].src.childImageSharp.fluid}
                   alt=""
                 />
-              </Box>
-            </ScrollAniFadeIn>
+              </AnimatedFadeUpBox>
+            
           </Box>
           <Box>
             <Heading
@@ -94,22 +94,22 @@ const caseTemplate = (props, location) => {
             <Text pr={6} fontSize="2xl">
               {node.content.design}
             </Text>
-            <ScrollAniFadeIn>
+            <AnimatedFadeUpBox>
               <Box height="auto" overflow="hidden" my={16}>
                 <Img
                   fluid={node.images.design[0].src.childImageSharp.fluid}
                   alt={node.images.design[0].alt}
                 />
               </Box>
-            </ScrollAniFadeIn>
-            <ScrollAniFadeIn>
+            </AnimatedFadeUpBox>
+            <AnimatedFadeUpBox>
               <Box height="auto" overflow="hidden" my={16}>
                 <Img
                   fluid={node.images.design[1].src.childImageSharp.fluid}
                   alt={node.images.design[1].alt}
                 />
               </Box>
-            </ScrollAniFadeIn>
+            </AnimatedFadeUpBox>
           </Box>
           <Box>
             <Heading

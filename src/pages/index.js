@@ -24,8 +24,7 @@ import {
 } from '../components/flare/blur-blobs'
 
 import {
-  Layout,
-  ScrollAniFadeIn,
+  AnimatedFadeUpBox,
   ScrollAniMonkey,
   LinkThree,
   LinkOne,
@@ -151,8 +150,8 @@ const Hero = ({ data }) => (
 const OurWorkSection = ({ data }) => (
   <Box minH="500px" py={20} zIndex="1" className="aurora dark">
     <Container maxW="container.xl">
-      <ScrollAniFadeIn>
-        <Box py={{ base: 0, sm: 20 }} flexBasis={{ base: '100%', md: '60%' }}>
+      
+        <AnimatedFadeUpBox showOffset="300" py={{ base: 0, sm: 20 }} flexBasis={{ base: '100%', md: '60%' }}>
           <Box maxWidth="650px">
             <Heading
               as="h3"
@@ -175,14 +174,17 @@ const OurWorkSection = ({ data }) => (
               <LinkOne to="/cases">See More Work</LinkOne>
             </Box>
           </Box>
-        </Box>
-      </ScrollAniFadeIn>
+        </AnimatedFadeUpBox>
+      
     </Container>
     <Container maxW="container.xl">
       <Grid templateColumns="repeat(5, 1fr)" gap={12}>
         {data.cases.nodes.map((c, i) => (
-          <GridItem colSpan={{ base: 5, md: `${i % 3 === 0 ? 3 : 2}` }} mb={10}>
-            <ScrollAniFadeIn>
+          <AnimatedFadeUpBox showOffset="300" 
+          as={GridItem} 
+          colStart={{base: 0, md: `${i % 2 === 0 ? 1 : 2}`}}
+          colEnd={{ base: 5, md: `${i % 2 === 0 ? 4 : 5}` }} mb={10}>
+            
               <Heading
                 as="h4"
                 size="xl"
@@ -232,8 +234,8 @@ const OurWorkSection = ({ data }) => (
                   />
                 </Box>
               )}
-            </ScrollAniFadeIn>
-          </GridItem>
+            
+          </AnimatedFadeUpBox>
         ))}
       </Grid>
     </Container>
@@ -281,12 +283,12 @@ const ServicesSection = ({ data }) => (
           Services
         </Heading>
         <Flex flexWrap="wrap">
-          <Box
+          <AnimatedFadeUpBox showOffset="300"
             py={{ base: 0, md: 20 }}
             flexBasis={{ base: '100%', md: '50%' }}
             flexGrow="1"
           >
-            <ScrollAniFadeIn>
+            
               <Heading
                 size="3xl"
                 m="auto"
@@ -315,11 +317,11 @@ const ServicesSection = ({ data }) => (
                   <FiArrowDown style={{ display: 'inline' }} />
                 </Box>
               </Heading>
-            </ScrollAniFadeIn>
-          </Box>
+            
+          </AnimatedFadeUpBox>
           <Box flexBasis={{ base: '100%', md: '50%' }} flexGrow="1">
-            <ScrollAniFadeIn>
-              <Box ml={-4} maxWidth="600px" mx={{ base: 'auto' }}>
+            
+              <AnimatedFadeUpBox showOffset="300" ml={-4} maxWidth="600px" mx={{ base: 'auto' }}>
                 <Box mb={10}>
                   <LinkThree to="/services/#branding">
                     Branding
@@ -350,8 +352,8 @@ const ServicesSection = ({ data }) => (
                     <FiArrowUpRight />
                   </LinkThree>
                 </Box>
-              </Box>
-            </ScrollAniFadeIn>
+              </AnimatedFadeUpBox>
+            
           </Box>
         </Flex>
       </Container>
@@ -430,7 +432,7 @@ export const query = graphql`
         }
       }
     }
-    cases: allWorkYaml( sort: {fields: date_created, order: ASC} limit: 6)  {
+    cases: allWorkYaml( sort: {fields: date_created, order: DESC} limit: 6)  {
       nodes {
         images {
           featured {
