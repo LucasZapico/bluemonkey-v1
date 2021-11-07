@@ -41,16 +41,10 @@ const services = ({ data }) => {
         <Box pt={20}>
           <Container maxW="container.xl">
             <Heading
-              fontFamily="montas-semibold"
+              variant="pri"
               as="h1"
               lineHeight="base"
-              fontSize={{
-                base: '70',
-                sm: '90',
-                md: '100',
-                lg: '80',
-                xl: '110',
-              }}
+              size="5xl"
             >
               Services
             </Heading>
@@ -71,7 +65,7 @@ const services = ({ data }) => {
                   pt={28}
                   size="4xl"
                   color="brand.one"
-                  fontFamily="montas-semibold"
+                  variant="pri"
                 >
                   Branding
                 </Heading>
@@ -86,7 +80,7 @@ const services = ({ data }) => {
                     <Heading as="h5" mb={6} color="brand.one">
                       What we do
                     </Heading>
-                    <Text maxWidth="500px" lineHeight="base" fontSize="xl">
+                    <Text maxWidth="500px" lineHeight="base" fontSize="xl" color="brand.one">
                       Market competitiveness through unique brand
                       differentiation
                     </Text>
@@ -130,7 +124,7 @@ const services = ({ data }) => {
                 mb={20}
                 pt={28}
                 size="4xl"
-                fontFamily="montas-semibold"
+                variant="pri"
               >
                 <a id="design">Design</a>
               </Heading>
@@ -144,7 +138,7 @@ const services = ({ data }) => {
                   <Heading as="h5" mb={6}>
                     What we do
                   </Heading>
-                  <Text maxWidth="500px" lineHeight="base" fontSize="xl">
+                  <Text maxWidth="500px" lineHeight="base" fontSize="xl" >
                     Custom web design tailored to business objectives
                   </Text>
                   <UnorderedList mt={4}>
@@ -187,7 +181,7 @@ const services = ({ data }) => {
                     mb={20}
                     pt={28}
                     color="brand.one"
-                    fontFamily="montas-semibold"
+                    variant="pri"
                   >
                     <a id="development">Development</a>
                   </Heading>
@@ -200,7 +194,7 @@ const services = ({ data }) => {
                       <Heading as="h5" mb={6} color="brand.one">
                         What we do
                       </Heading>
-                      <Text maxWidth="500px" lineHeight="base" fontSize="xl">
+                      <Text maxWidth="500px" lineHeight="base" fontSize="xl" color="brand.one">
                         Performant development with React.js, Gatsby.js,
                         Next.js, Node.js and Python
                       </Text>
@@ -213,13 +207,12 @@ const services = ({ data }) => {
                         <ListItem>Custom API integrations</ListItem>
                       </UnorderedList>
                     </Box>
-                  </Flex>
-                </Box>
-                <Box
+                    <Box
                   p={20}
                   display="flex"
                   flexDirection="row"
                   justifyContent="flex-start"
+                  alignItems="flex-end"
                   flexWrap="wrap"
                 >
                   {Logos.map((l, i) => (
@@ -233,6 +226,9 @@ const services = ({ data }) => {
                   ))}
                   
                 </Box>
+                  </Flex>
+                </Box>
+            
               </Flex>
             </Container>
           </Box>
@@ -244,7 +240,7 @@ const services = ({ data }) => {
                 size="4xl"
                 mb={20}
                 pt={28}
-                fontFamily="montas-semibold"
+                variant="pri"
               >
                 <a id="search-engine-optimized">Search Engine Optimized</a>
               </Heading>
@@ -257,7 +253,7 @@ const services = ({ data }) => {
                   <Heading as="h5" mb={6}>
                     What we do
                   </Heading>
-                  <Text maxWidth="500px" lineHeight="base" fontSize="xl">
+                  <Text maxWidth="500px" lineHeight="base" fontSize="xl" >
                     We ensure your web presence is discoverable
                   </Text>
                   <UnorderedList mt={4}>
@@ -291,7 +287,7 @@ const services = ({ data }) => {
                     mb={20}
                     pt={28}
                     color="brand.one"
-                    fontFamily="montas-semibold"
+                    variant="pri"
                   >
                     <a id="business-integrations">Business Integrations</a>
                   </Heading>
@@ -300,7 +296,7 @@ const services = ({ data }) => {
                       <Heading as="h5" mb={6} color="brand.one">
                         What we do
                       </Heading>
-                      <Text maxWidth="500px" lineHeight="base" fontSize="xl">
+                      <Text maxWidth="500px" lineHeight="base" fontSize="xl" color="brand.one">
                         We set up your business to succeed
                       </Text>
                       <UnorderedList mt={4}>

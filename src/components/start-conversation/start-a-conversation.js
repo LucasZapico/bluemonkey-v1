@@ -111,7 +111,7 @@ const StartAConversation = () => {
   return (
     <>
       <Box>
-        <Heading size="3xl" fontFamily="montas-semibold" mb={6}>
+        <Heading size="3xl" variant="pri" mb={6}>
           Start A Conversation
         </Heading>
       </Box>

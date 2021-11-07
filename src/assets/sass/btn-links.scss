@@ -253,16 +253,18 @@
 // image links 
 
 a {
-	div ~ .gatsby-image-wrapper {
-		overflow: hidden;
-	}
-	.gatsby-image-wrapper {
-		transform: scale(1);
-		transition: all ease-in-out 2s;
-		&:hover {
-			transform: scale(1.1);
+	div {
+		div ~ .gatsby-image-wrapper {
+			overflow: hidden;
 		}
-		 
+		.gatsby-image-wrapper {
+			transform: scale(1);
+			transition: all ease-in-out 2s;
+			&:hover {
+				transform: scale(1.1);
+			}
+			 
+		}
 	}
 }
 

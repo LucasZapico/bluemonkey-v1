@@ -1,13 +1,14 @@
-import { Flex, Box, Container, Heading, Text } from '@chakra-ui/layout';
+import { Flex, Box, Container, Heading, Text, Link } from '@chakra-ui/layout';
 import PropTypes from 'prop-types';
 import { useLocation } from '@reach/router';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
-import { useStaticQuery, graphql } from 'gatsby';
+import {Link as GatsbyLink, useStaticQuery, graphql } from 'gatsby';
 import React, { useState } from 'react';
-import Link from 'gatsby-plugin-transition-link/AniLink';
-import moment from 'moment';
-import { LinkPhone, LinkEmail, StartAConversation, LinkOne } from './index';
-// import Logo from '../assets/ccg-mark.svg';
+
+
+import { LinkPhone, LinkEmail, StartAConversation } from '../index';
+import Mark from '../../assets/mark/blue-monkey-hanging.svg';
+import SubFooter from './subfooter'
 
 const Footer = ({ title, description, location }) => {
   const { pathname } = useLocation();
@@ -52,15 +53,23 @@ const Footer = ({ title, description, location }) => {
                   </Flex>
                 </Container>
               )}
+              <Flex bg="brand.five"
+                color="brand.one" flexDirection="column" py={6}>
+                  <Container maxW="container.xl">
               <Box
-                bg="brand.five"
-                color="brand.one"
+                
                 display="flex"
-                flexDirection="column"
+                flexDirection="row"
                 justifyContent="space-between"
                 px={{ base: 2, sm: 6 }}
                 pt={20}
               >
+                <Flex flexDirection="column">
+                  <Mark width="200px" height="auto" />
+                  
+                  </Flex>
+                <Flex flexDirection="column">
+                  <Heading variant="pri" color="brand.zero">Contact</Heading>
                 <Heading as="h4" size="sm" mb={3}>
                   <LinkEmail color="brand.one">{`Connect@${baseUrl}`}</LinkEmail>
                 </Heading>
@@ -76,23 +85,21 @@ const Footer = ({ title, description, location }) => {
                   available via slack. English is our first language.
                 </Text>
                 <Heading as="h4" size="sm" mb={3} color="brand.one" />
-                <LinkOne
+                <Box>
+                <Link display="inline" variant="linkOneLight"
                   color="brand.one"
                   href="https://join.slack.com/t/bluemonkey-group/shared_invite/zt-pgxxc4tc-B2KVEZkicybmpBdS3o6I4A"
                 >
                   Join our slack channel <ExternalLinkIcon />
-                </LinkOne>
-
-                <Box pb={4} mt={20}>
-                  <Text>Last updated: {moment(Date()).format('l')}</Text>
-                  <Text>
-                    Copyright {baseUrl} {moment(Date()).format('y')}
-                  </Text>
-                  <Link to="/privacy" swipe direction="left">
-                    <Text>Privacy</Text>
-                  </Link>
+                </Link>
                 </Box>
+                </Flex>
+                
+
               </Box>
+              <SubFooter baseUrl={baseUrl}/>
+              </Container>
+              </Flex>
             </Box>
           </Flex>
         </Box>

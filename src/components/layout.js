@@ -31,7 +31,7 @@ const Layout = ({ location, children }) => {
         <CursorTest/>
       <Box minHeight="100vh" overflow="hidden">
         <Header zIndex={10} location={location} />
-        <Box background="brand.two">{children}</Box>
+        <Box background="brand.one">{children}</Box>
         {/* <Banner /> */}
       </Box>
       <Footer location={location} />

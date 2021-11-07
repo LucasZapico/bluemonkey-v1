@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
-import { Box, Container, Heading } from '@chakra-ui/react';
-import { Layout, AnimatedFadeUpBox, LinkOne } from '../components';
+import { Box, Container, Heading, Link } from '@chakra-ui/react';
+import { AnimatedFadeUpBox, LinkOne } from '../components';
+import { Link as GatsbyLink } from 'gatsby'
 import { useSpring, animated as a } from 'react-spring';
 import MonkeyThree from '../assets/monkey_3.svg';
 
@@ -45,18 +46,12 @@ const AboutPage = () => {
           py={40}
           zIndex="3"
         >
-          <Container>
+          <Container maxW="container.md">
             <Heading
               as="h1"
               maxWidth="800px"
-              fontFamily="montas-semibold"
-              fontSize={{
-                base: '70',
-                sm: '90',
-                md: '100',
-                lg: '80',
-                xl: '110',
-              }}
+              variant="pri"
+              size="4xl"
               lineHeight="base"
               mb={20}
             >
@@ -65,21 +60,21 @@ const AboutPage = () => {
           </Container>
 
           <Box ref={ref}>
-            <Container>
+            <Container maxW="container.md">
               <AnimatedFadeUpBox showOffset="300">
-                <Heading as="h2" size="xl" mb={10} lineHeight="base">
+                <Heading as="h2" size="xl" mb={10} lineHeight="base" variant="sec">
                   We are a fully remote group of solvers and makers. Who turn
                   coffee into solutions.
                 </Heading>
               </AnimatedFadeUpBox>
             </Container>
 
-            <Container>
+            <Container maxW="container.md">
               <AnimatedFadeUpBox showOffset="300">
                 <Heading as="h3" size="3xl" mb={5} mt={10} lineHeight="base">
                   Mission
                 </Heading>
-                <Heading as="h3" size="xl" mb={10} lineHeight="base">
+                <Heading as="h3" size="xl" mb={10} lineHeight="base" variant="sec">
                   {/* Our mission is to make the digital side of your business
               competitive. */}
                   Our mission is to take the stress out of the digital side of
@@ -87,25 +82,28 @@ const AboutPage = () => {
                 </Heading>
               </AnimatedFadeUpBox>
             </Container>
-            <Container>
+            <Container maxW="container.md">
               <AnimatedFadeUpBox showOffset="300">
-                <Heading as="h3" size="xl" mb={10} lineHeight="base">
+                <Heading as="h3" size="xl" mb={10} lineHeight="base" variant="sec">
                   We see this as a partnership where our job is to enable you to
                   succeed. Period.
                 </Heading>
               </AnimatedFadeUpBox>
             </Container>
-            <Container>
+            <Container maxW="container.md">
               <AnimatedFadeUpBox showOffset="300">
-                <Heading as="h3" size="3xl" mb={5} mt={10} lineHeight="base">
+                <Heading as="h3" size="3xl" mb={5} mt={10} lineHeight="base" >
                   We're Here to Help
                 </Heading>
-                <Heading as="h3" size="xl" mb={10} lineHeight="base">
+                <Box>
+                <Heading display="inline" as="h3" size="xl" mb={10} lineHeight="base" variant="sec">
                   Have a question for us or just want to say hello. 👋{' '}
-                  <LinkOne href="https://join.slack.com/t/bluemonkey-group/shared_invite/zt-pgxxc4tc-B2KVEZkicybmpBdS3o6I4A">
-                    Join our slack channel <ExternalLinkIcon />
-                  </LinkOne>
+                  
                 </Heading>
+                <Heading display="inline" cursor="pointer"  size="xl" as={Link} variant="linkOne" href="https://join.slack.com/t/bluemonkey-group/shared_invite/zt-pgxxc4tc-B2KVEZkicybmpBdS3o6I4A">
+                    Join our slack channel <ExternalLinkIcon />
+                  </Heading>
+                  </Box>
               </AnimatedFadeUpBox>
             </Container>
           </Box>

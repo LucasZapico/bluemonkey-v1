@@ -18,7 +18,7 @@ import {
 import { Link } from 'gatsby';
 import { useSpring, animated as a } from 'react-spring';
 import { HamburgerIcon } from '@chakra-ui/icons';
-import Logo from '../assets/blue-monkey-hanging.svg';
+import Logo from '../assets/mark/blue-monkey-hanging.svg';
 
 const ROUTES = [
   {
@@ -64,7 +64,7 @@ const Header = ({ location }) => {
         overflow="hidden"
         width="100vw"
         position="fixed"
-        background="brand.two"
+        background="brand.one"
         zIndex="100"
         justifyContent="space-between"
         alignItems="center"
@@ -74,7 +74,7 @@ const Header = ({ location }) => {
           <Link to="/">
             <Flex alignItems="center">
               <Logo width={50} height="auto" />
-              <Heading as="h5" size="md" marginLeft={4}>
+              <Heading as="h5" size="md" marginLeft={4} mb={0}>
                 Blue Monkey
               </Heading>
             </Flex>

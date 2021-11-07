@@ -1,11 +1,16 @@
 import React from 'react';
 import { extendTheme } from '@chakra-ui/react';
+import { Buttons, Links } from './buttons-links'
+import { Headings, Fonts, Texts } from './typography'
 
-const components = {};
 
 const theme = extendTheme({
   textStyles: {},
-  components: {
+  components:  {
+    Heading: Headings,
+    Link: Links,
+    Button: Buttons,
+    Text: Texts,
     Input: {
       baseStyle: {
         borderRadius: 'none',
@@ -16,87 +21,36 @@ const theme = extendTheme({
         borderRadius: 'none',
       },
     },
-
-    Box: {
-      variants: {
-        dark: {
-          backgroundColor: 'brand.three',
-          color: 'brand.one',
-        },
-      },
-    },
-    Link: {
-      baseStyle: {
-        color: 'brand.three',
-        textDecoration: 'underline',
-      },
-    },
-    Button: {
-      baseStyle: {
-        _focus: { boxShadow: 'none' },
-        _hover: {
-          textDecoration: 'underline',
-        },
-        borderRadius: '100px',
-        // paddingLeft: '2rem',
-        px: '50px',
-      },
-      variants: {
-        btnCTA: {
-          backgroundColor: 'brand.seven',
-        },
-        btnOne: {
-          color: 'brand.dark',
-          backgroundColor: 'brand.six',
-        },
-        btnTwo: {
-          // backgroundColor: 'transparent',
-          color: 'brand.dark',
-          border: '2px',
-          borderColor: 'brand.three',
-        },
-      },
-    },
-    Heading: {
-      baseStyle: {
-        color: '#3c474e',
-      },
-      h1: {
-        fontFamily: 'montas-semibold',
-      },
+  },
+  fonts: Fonts,
+  colors: {
+    brand: {
+      zero: '#FAF3E0',
+      one: '#faf6e9',
+      two: '#FAF8F2',
+      three: '#faf8f2',
+      four: '#1E212D',
+      five: '#2C3142',
+      six: '#2f3b62',
+      
     },
   },
-  fonts: {
-    heading: "'Noto Sans JP'",
-    headingTwo: 'montas-semibold',
-    body: "'Inter', sans-serif;",
+  fontSizes: {
+    '10xl': '9rem',
   },
   styles: {
     global: {
       body: {
-        minHeight: '100vh',
-      },
-      a: {
-        color: 'teal.500',
-      },
-      h1: {
-        fontFamily: 'montas-semibold',
+        bg: 'brand.zero',
+        color: 'gray.600',
+        fontSize: '18px',
+        // color: 'brand.four',
+        fontWeight: 600,
+        letterSpacing: '0.1rem',
+        lineHeight: 1.5,
       },
     },
-  },
-  colors: {
-    black: '#1D1D1E',
-    white: '#F0F2FA', // '#E8ECFA', //'#F5F8FC',
-    brand: {
-      one: '#FAF3E0', // tan
-      two: '#FAF8F2', // tan - 1
-      three: '#1E212D', //'#1C4766', // blue dark
-      four: '#A3BCCF', // blue light
-      five: '#1E212D', // dark
-      six: '#2C3142', // dark + 1
-      seven: '#E5AA91', // peach
-    },
-  },
+  },  
 });
 
 export default theme;

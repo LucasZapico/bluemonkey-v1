@@ -11,9 +11,9 @@ import {
   Heading,
   Button,
   Text,
-  Link as ChLink,
+  Link
 } from '@chakra-ui/react';
-import { graphql, Link } from 'gatsby';
+import { graphql, Link as GatsbyLink } from 'gatsby';
 import Img from 'gatsby-image';
 import { ArrowForwardIcon } from '@chakra-ui/icons';
 import { FiArrowUpRight, FiArrowRight, FiArrowDown } from 'react-icons/fi';
@@ -25,9 +25,10 @@ import {
 
 import {
   AnimatedFadeUpBox,
-  ScrollAniMonkey,
+  ScrollAniMonkey, 
   LinkThree,
   LinkOne,
+  BoxButton,
 } from '../components/index';
 import MonkeyOne from '../assets/monkey_1.svg';
 import MonkeyOneTwo from '../assets/monkey_1_2.svg';
@@ -112,26 +113,20 @@ const Hero = ({ data }) => (
       <Heading
         as="h1"
         maxWidth="800px"
-        
-        fontFamily="montas-semibold"
-        fontSize={{
-          base: '70',
-          sm: '120',
-          md: '140',
-          lg: '175',
-        }}
+        variant="pri"
+        size="5xl"
       >
-        Blue Monkey Makes....
+        Blue Monkey Makes...
       </Heading>
-      <Heading as="h2" size="xl" lineHeight="base" mb={20} maxWidth="600px">
+      <Heading as="h2" size="xl" lineHeight="base" variant="sec" mb={20} maxWidth="600px">
         ...custom digital presences that are engaging, performant, and search
         engine&nbsp;optimized.
       </Heading>
-      <Box mb={10} width="450px">
-        <LinkThree to="/#start-a-conversation">
+      <Box mb={10} width="475px">
+        <BoxButton as={GatsbyLink} to="/#start-a-conversation" fontWeight="medium">
           Start A Conversation
           <FiArrowDown />
-        </LinkThree>
+        </BoxButton>
       </Box>
       <Box
         zIndex="-1"
@@ -155,57 +150,53 @@ const OurWorkSection = ({ data }) => (
           <Box maxWidth="650px">
             <Heading
               as="h3"
-              fontSize={{
-                base: '70',
-                sm: '90',
-                md: '100',
-                lg: '80',
-                xl: '110',
-              }}
-              fontFamily="montas-semibold"
+              variant="pri"
+              size="4xl"
               lineHeight="base"
               zIndex="1"
-              color="brand.one"
+              color="brand.zero"
               pb={10}
             >
               Our Work
             </Heading>
-            <Box className="link-one dark" w="120px">
-              <LinkOne to="/cases">See More Work</LinkOne>
-            </Box>
+            <Link as={GatsbyLink} to="/cases" variant="light" w="120px">
+              See More Work
+            </Link>
           </Box>
         </AnimatedFadeUpBox>
-      
     </Container>
     <Container maxW="container.xl">
       <Grid templateColumns="repeat(5, 1fr)" gap={12}>
         {data.cases.nodes.map((c, i) => (
           <AnimatedFadeUpBox showOffset="300" 
           as={GridItem} 
-          colStart={{base: 0, md: `${i % 2 === 0 ? 1 : 2}`}}
-          colEnd={{ base: 5, md: `${i % 2 === 0 ? 4 : 5}` }} mb={10}>
-            
+          colStart={{base: 1, md: `${i % 2 === 0 ? 1 : 3}`}}
+          colSpan={{ base: 5, md: `${i % 2 === 0 ? 3 : 5}`}} mb={10}>
               <Heading
                 as="h4"
                 size="xl"
-                fontFamily="montas-semibold"
                 lineHeight="base"
                 zIndex="1"
-                color="brand.one"
-                pb={6}
+                color="brand.zero"
+                variant="pri"
+                
               >
                 {!c.isComingSoon ? c.title : `${c.title} - Coming Soon`}
               </Heading>
               <Box maxWidth="400px" mb={4}>
-                <Heading as="h5" size="md" color="brand.one">
+                <Heading 
+                as="h5" 
+                size="lg" 
+                color="brand.zero" 
+                mb={0}>
                   Services
                 </Heading>
                 {c.content.deliverables.map((s, i) => (
                   <Text
-                    size="md"
+                    size="sm"
                     display="inline"
                     lineHeight="base"
-                    color="brand.one"
+                    color="brand.zero"
                   >
                     {s}
                     {c.content.deliverables.length - 1 === i ? '' : ', '}
@@ -213,14 +204,26 @@ const OurWorkSection = ({ data }) => (
                 ))}
               </Box>
               {!c.isComingSoon ? (
-                <Link to={c.path}>
-                  <Box height="auto" overflow="hidden" mb={10}>
+                <Box 
+                as={GatsbyLink} 
+                to={c.path} 
+                >
+                  <Box
+                  overflow="hidden" 
+                  position='relative' 
+                     height="auto"  mb={10}>
                     <Img
                       fluid={c.images.featured[0].src.childImageSharp.fluid}
                       alt=""
                     />
+                    <Box height="800px" width="900px" top="0px" left="0px" position="absolute" opacity="0.5" backgroundColor={i % 2 === 0 ? 'brand.four' : 'brand.four'}
+                  transition="all 0.2s cubic-bezier(.08,.52,.52,1)"
+                  _hover={{opacity: '0'}}
+                  _active={{opacity: '0'}}
+                  _focus={{opacity: '0'}} />
+                </Box>
                   </Box>
-                </Link>
+                  
               ) : (
                 <Box
                   height="auto"
@@ -234,20 +237,24 @@ const OurWorkSection = ({ data }) => (
                   />
                 </Box>
               )}
-            
           </AnimatedFadeUpBox>
         ))}
       </Grid>
+      <Flex>
+      <Link as={GatsbyLink} to="/cases" variant="light" fontWeight="medium" >
+              See More Work
+            </Link>
+            
+            
+            </Flex>
     </Container>
-    <Box
-      
+    <Box 
       p={{ base: 0, sm: 10 }}
       height="auto"
       flexGrow={1}
       flexBasis={{ base: '100%', md: '100%', lg: '40%', xl: '40%' }}
       pb={20}
     >
-   
     </Box>
   </Box>
 );
@@ -257,7 +264,7 @@ const ServicesSection = ({ data }) => (
     minH="500px"
     zIndex="1"
     py={20}
-    bgGradient="linear(to-br, brand.one , brand.two )"
+    bgGradient="linear(to-br, brand.zero , brand.two )"
   >
     <Flex
       flexDirection="row"
@@ -268,14 +275,8 @@ const ServicesSection = ({ data }) => (
       <Container maxW="container.xl">
         <Heading
           as="h3"
-          fontSize={{
-            base: '70',
-            sm: '90',
-            md: '100',
-            lg: '80',
-            xl: '110',
-          }}
-          fontFamily="montas-semibold"
+          variant="pri"
+          size="5xl"
           lineHeight="base"
           zIndex="1"
           pb={10}
@@ -288,7 +289,6 @@ const ServicesSection = ({ data }) => (
             flexBasis={{ base: '100%', md: '50%' }}
             flexGrow="1"
           >
-            
               <Heading
                 size="3xl"
                 m="auto"
@@ -323,34 +323,34 @@ const ServicesSection = ({ data }) => (
             
               <AnimatedFadeUpBox showOffset="300" ml={-4} maxWidth="600px" mx={{ base: 'auto' }}>
                 <Box mb={10}>
-                  <LinkThree to="/services/#branding">
+                  <BoxButton as={GatsbyLink} fontWeight="medium" to="/services/#branding">
                     Branding
                     <FiArrowUpRight />
-                  </LinkThree>
+                  </BoxButton>
                 </Box>
                 <Box mb={10}>
-                  <LinkThree to="/services/#design">
+                  <BoxButton as={GatsbyLink} fontWeight="medium" to="/services/#design">
                     Design
                     <FiArrowUpRight />
-                  </LinkThree>
+                  </BoxButton>
                 </Box>
                 <Box mb={10}>
-                  <LinkThree to="/services/#development">
+                  <BoxButton as={GatsbyLink} fontWeight="medium" to="/services/#development">
                     Development
                     <FiArrowUpRight />
-                  </LinkThree>
+                  </BoxButton>
                 </Box>
                 <Box mb={10}>
-                  <LinkThree to="/services/#search-engine-optimized">
+                  <BoxButton fontWeight="medium" to="/services/#search-engine-optimized">
                     Search Engine Optimized
                     <FiArrowUpRight />
-                  </LinkThree>
+                  </BoxButton>
                 </Box>
                 <Box mb={10}>
-                  <LinkThree to="/services/#search-engine-optimized">
+                  <BoxButton as={GatsbyLink} fontWeight="medium" to="/services/#search-engine-optimized">
                     Business Integrations
                     <FiArrowUpRight />
-                  </LinkThree>
+                  </BoxButton>
                 </Box>
               </AnimatedFadeUpBox>
             

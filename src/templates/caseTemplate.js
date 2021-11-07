@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Heading, Text } from '@chakra-ui/react';
+import { Box, Container, Flex, Heading, Text, Link } from '@chakra-ui/react';
 import {
   IoIosArrowRoundBack,
   IoIosArrowRoundForward,
@@ -9,7 +9,7 @@ import { LinkOne, AnimatedFadeUpBox } from '../components';
 import {GatsbyjsLogo} from '../assets/logos';
 import Img from 'gatsby-image';
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link as GatsbyLink } from 'gatsby';
 
 const caseTemplate = (props, location) => {
   console.log('props', props);

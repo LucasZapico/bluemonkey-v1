@@ -6,12 +6,13 @@ import {
   Heading,
   Flex,
   Text,
+  Link,
   Grid,
   GridItem,
 } from '@chakra-ui/react';
 import { Layout, AnimatedFadeUpBox, LinkOne } from '../components';
 import { useSpring, animated as a } from 'react-spring';
-import { graphql, Link } from 'gatsby';
+import { graphql, Link as GatsbyLink } from 'gatsby';
 import { StaticImage, GatsbyImage } from 'gatsby-plugin-image';
 import Img from 'gatsby-image';
 
@@ -109,16 +110,25 @@ const CasesPage = (props) => {
                     </Box>
 
                     {!c.isComingSoon ? (
-                      <Link to={c.path}>
-                        <Box height="auto" overflow="hidden" mb={10}>
+                      <Box 
+                      as={GatsbyLink} 
+                      to={c.path} 
+                      >
+                        <Box
+                        overflow="hidden" 
+                        position='relative' 
+                           height="auto"  mb={10}>
                           <Img
-                            fluid={
-                              c.images.featured[0].src.childImageSharp.fluid
-                            }
+                            fluid={c.images.featured[0].src.childImageSharp.fluid}
                             alt=""
                           />
+                          <Box height="800px" width="800px" top="0px" left="0px" position="absolute" opacity="0.5" backgroundColor={i % 2 === 0 ? 'brand.four' : 'brand.four'}
+                        transition="all 0.2s cubic-bezier(.08,.52,.52,1)"
+                        _hover={{opacity: '0'}}
+                        _active={{opacity: '0'}}
+                        _focus={{opacity: '0'}} />
+                      </Box>
                         </Box>
-                      </Link>
                     ) : (
                       <Box
                         height="auto"

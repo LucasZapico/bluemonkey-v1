@@ -5,6 +5,7 @@ import {
   Box,
   Container,
   Heading,
+  Link,
   Alert,
   Flex,
   AlertIcon,
@@ -17,7 +18,6 @@ import MonkeyThree from '../assets/monkey_3.svg';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { useForm } from 'react-hook-form';
-import axios from 'axios';
 import { axiosLeads} from '../api/axios'
 
 const ContactPage = ({ data }) => {
@@ -144,34 +144,27 @@ const ContactPage = ({ data }) => {
             <Heading
               as="h1"
               maxWidth="800px"
-              fontFamily="montas-semibold"
-              fontSize={{
-                base: '90',
-                sm: '90',
-                md: '100',
-                lg: '80',
-                xl: '110',
-              }}
+              variant="pri"
+              size="5xl"
               lineHeight="base"
               mb={20}
             >
               Contact
             </Heading>
           </Container>
-
           <Box ref={ref}>
             <Container>
               <AnimatedFadeUpBox showOffset="300">
                 <Heading as="h3" size="md" mb={10} lineHeight="base">
-                  <LinkEmail>{`Connect@${baseUrl}`}</LinkEmail>
+                  <LinkEmail variant="linkOne">{`Connect@${baseUrl}`}</LinkEmail>
                 </Heading>
                 <Heading as="h3" size="md" mb={10} lineHeight="base">
-                  <LinkPhone>{phone}</LinkPhone>
+                  <LinkPhone variant="linkOne">{phone}</LinkPhone>
                 </Heading>
                 <Heading as="h3" size="md" mb={10} lineHeight="base">
-                  <LinkOne href="https://join.slack.com/t/bluemonkey-group/shared_invite/zt-pgxxc4tc-B2KVEZkicybmpBdS3o6I4A">
+                  <Link  variant="linkOne" href="https://join.slack.com/t/bluemonkey-group/shared_invite/zt-pgxxc4tc-B2KVEZkicybmpBdS3o6I4A">
                     👋 Join our slack channel <ExternalLinkIcon />
-                  </LinkOne>
+                  </Link>
                 </Heading>
                 </AnimatedFadeUpBox>
             </Container>
@@ -185,7 +178,7 @@ const ContactPage = ({ data }) => {
                   mb={5}
                   color="brand.one"
                   mt={10}
-                  fontFamily="montas-semibold"
+                  variant="pri"
                   lineHeight="base"
                 >
                   Start A Conversation
