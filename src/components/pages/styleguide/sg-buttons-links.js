@@ -104,7 +104,7 @@ const LinkStyles = () => (
   </Box>
 )
 
-export const ButtonSection = () => (
+export const SGButtonSection = () => (
   <Box py={20}>
     <Divider />
     <Box py={10}>

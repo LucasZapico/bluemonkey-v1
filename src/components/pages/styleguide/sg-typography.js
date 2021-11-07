@@ -119,29 +119,32 @@ const Sizes = () => {
         All sizes are responsive and resize accordingly to best practices for
         various screen widths.
       </Text>
+      <Heading as="h4" size="5xl">
+        Size 5xl
+      </Heading>
       <Heading as="h4" size="4xl">
-        Size One
+        Size 4xl
       </Heading>
       <Heading as="h4" size="3xl">
-        Size Two
+        Size 3xl
       </Heading>
       <Heading as="h4" size="2xl">
-        Size Three
+        Size 2xl
       </Heading>
       <Heading as="h4" size="xl">
-        Size Four
+        Size xl
       </Heading>
       <Heading as="h4" size="lg">
-        Size Five
+        Size lg
       </Heading>
       <Heading as="h4" size="md">
-        Size Six
+        Size md
       </Heading>
       </Box>
   )
 }
 
-export const ContentSection = () => (
+export const SGContentSection = () => (
   <Box py={20}>
     
     <TypographySection />

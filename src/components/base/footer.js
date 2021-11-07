@@ -57,7 +57,7 @@ const Footer = ({ title, description, location }) => {
                 color="brand.one" flexDirection="column" py={6}>
                   <Container maxW="container.xl">
               <Box
-                
+                flexWrap="wrap"
                 display="flex"
                 flexDirection="row"
                 justifyContent="space-between"

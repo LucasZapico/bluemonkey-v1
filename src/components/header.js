@@ -59,7 +59,7 @@ const Header = ({ location }) => {
   return (
     <header>
       <Flex
-        style={{ mixBlendMode: 'exclusion' }}
+        // style={{ mixBlendMode: 'exclusion' }}
         display={{ base: 'flex', md: 'flex' }}
         overflow="hidden"
         width="100vw"

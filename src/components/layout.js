@@ -2,11 +2,11 @@
 import { Box } from '@chakra-ui/react';
 import { Helmet } from 'react-helmet';
 import { Header, Footer, SEO, Banner, Cursor } from './index';
-import { EnvCheckPoint } from '../dev-helpers/logging'
+
 
 const isBrowser = typeof window !== "undefined"
 
-EnvCheckPoint()
+
 
 const CursorTest = () => {
   if(isBrowser ){

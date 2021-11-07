@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { Heading, Box, Container } from '@chakra-ui/react'
 
-import { ColorSection } from './color-section'
-import { ButtonSection } from './buttons-links'
-import { ContentSection } from './typography'
+import { SGColorSection } from './sg-color-section'
+import { SGButtonSection } from './sg-buttons-links'
+import { SGContentSection } from './sg-typography'
 // import { Tag } from '../../_index'
 
 // const ElementsSection = () => (
@@ -30,10 +30,10 @@ const Styleguide = () => {
           Collections of common styles used throughout the project
         </Heading>
 
-        <ColorSection />
-        <ButtonSection />
+        <SGColorSection />
+        <SGButtonSection />
         {/* <ElementsSection /> */}
-        <ContentSection />
+        <SGContentSection />
       </Container>
     </Box>
   )

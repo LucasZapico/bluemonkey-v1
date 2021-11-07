@@ -12,9 +12,14 @@ export { default as StartAConversation } from './start-conversation/start-a-conv
 // elements 
 export  { formatePhone, formatePhoneBot, BoxButton, LinkPhone,  LinkTwo, LinkThree, LinkEmail, LinkOne } from './elements/buttons-links'
 
+// templates sections 
+export { default as HalfByHalfSection} from './section-templates/half-by-half-section'
+
 // animations 
 export { AnimatedFadeUpBox, ScrollAniMonkey } from './animations/scroll-animation'
 export { default as Parallax } from './animations/parallax'
 
 // pages
 export { default as Styleguide } from './pages/styleguide/index'
+export { default as Services} from './pages/services/index'
+export { default as Branding } from './pages/services/branding/index'
