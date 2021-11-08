@@ -7,7 +7,7 @@ export const Fonts = {
 export const Headings = {
   baseStyle: {
     fontWeight: 700,
-    color: 'brand.five',
+    color: 'brand.six',
     marginBottom: '6',
     lineHeight: 'lineHeights.taller',
     letterSpacing: '0.1rem',
@@ -15,20 +15,33 @@ export const Headings = {
   // Styles for the size variations
   sizes: {
     '5xl': {
-      fontSize: ['4xl', '7xl', '10xl'],
+      fontSize: {base: '6xl', sm: '6xl', md: '7xl', lg: '9xl'},
       lineHeight: 1.3,
       letterSpacing: '0.2rem',
     },
     '4xl': {
-      fontSize: ['4xl', null, '8xl'],
+      fontSize: [
+        "6xl",
+        null,
+        "7xl"
+    ],
       lineHeight: 1.5,
       letterSpacing: '0.2rem',
     },
     '3xl': {
-      fontSize: ['4xl', null, '6xl'],
+      fontSize: [
+        "5xl",
+        null,
+        "6xl"
+    ],
       lineHeight: 1.5,
     },
     '2xl': {
+      fontSize: [
+        "4xl",
+        null,
+        "5xl"
+    ],
       lineHeight: 1.5,
     },
     xl: {

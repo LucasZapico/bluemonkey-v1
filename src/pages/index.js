@@ -276,7 +276,7 @@ const ServicesSection = ({ data }) => (
         <Heading
           as="h3"
           variant="pri"
-          size="5xl"
+          size="4xl"
           lineHeight="base"
           zIndex="1"
           pb={10}
@@ -291,7 +291,7 @@ const ServicesSection = ({ data }) => (
           >
               <Heading
                 size="3xl"
-                m="auto"
+                
                 as="h4"
                 mb={{ base: 10, md: 'auto' }}
                 mt={{ base: 10, md: 'auto' }}

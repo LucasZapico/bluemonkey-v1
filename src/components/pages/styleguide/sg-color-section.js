@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {
   Text,
@@ -39,7 +40,7 @@ export const ColorGrey = () => (
     <Box height="200px" flexGrow="1" bg="gray.900" />
   </Flex>
 );
-export const ColorSection = () => (
+export const SGColorSection = () => (
   <Box py={20}>
     <Divider />
     <Box py={10}>
