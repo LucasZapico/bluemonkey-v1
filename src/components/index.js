@@ -1,7 +1,7 @@
-export { default as Layout } from './layout.js';
+export { default as Layout } from './base/layout.js';
 
-export { default as SEO } from './seo';
-export { default as Header } from './header';
+export { default as SEO } from './base/seo';
+export { default as Header } from './base/header';
 export { default as Banner } from './banner';
 export { default as Footer } from './base/footer.js';
 export { default as Cursor } from './cursor.js';

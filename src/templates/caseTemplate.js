@@ -4,7 +4,7 @@ import {
   IoIosArrowRoundForward,
   IoIosOpen,
 } from 'react-icons/io';
-import { LinkOne, AnimatedFadeUpBox } from '../components';
+import {  AnimatedFadeUpBox, SEO } from '../components';
 
 import {GatsbyjsLogo} from '../assets/logos';
 import Img from 'gatsby-image';
@@ -12,19 +12,26 @@ import React from 'react';
 import { graphql, Link as GatsbyLink } from 'gatsby';
 
 const caseTemplate = (props, location) => {
-  console.log('props', props);
   const { element } = props.pageContext;
   const { previous, node, next } = element;
-  console.log('node', node);
+
+  const pageSeo = {
+    seoTitle: `Case: ${node.content.title}`,
+    seoDescription: `${node.content.summary}`,
+    seoKeywords: '',
+    seoImage: ''
+  }
+  
+  
+  
   return (
     <main>
+      <SEO title={pageSeo.seoTitle} description={pageSeo.seoDescription}/>
       <Box py={40}>
         <Container maxW="container.md">
           <Heading
             as="h1"
-            fontFamily="montas-semibold"
-            bgGradient="linear(to-b, brand.three, brand.five)"
-            bgClip="text"
+            variant="pri"
             size="2xl"
             lineHeight="base"
             mb={16}
@@ -35,7 +42,7 @@ const caseTemplate = (props, location) => {
           <Flex flexWrap="wrap">
             <Box flexBasis={{ base: '100%', md: '70%' }}>
               <Heading
-                fontFamily="montas-semibold"
+                variant="pri" 
                 as="h2"
                 size="3xl"
                 mt={16}
@@ -49,7 +56,7 @@ const caseTemplate = (props, location) => {
               </Text>
             </Box>
             <Box flexBasis={{ base: '40%', md: '30%' }}>
-              <Heading fontFamily="montas-semibold" mb={6} mt={16} as="h4">
+              <Heading variant="pri"  mb={6} mt={16} as="h4">
                 Services
               </Heading>
               {node.content.deliverables.map((s, i) => {
@@ -61,7 +68,7 @@ const caseTemplate = (props, location) => {
           </Flex>
           <Box>
             <Heading
-              fontFamily="montas-semibold"
+              variant="pri" 
               as="h3"
               size="3xl"
               mt={16}
@@ -83,7 +90,7 @@ const caseTemplate = (props, location) => {
           </Box>
           <Box>
             <Heading
-              fontFamily="montas-semibold"
+              variant="pri" 
               as="h3"
               size="3xl"
               mt={16}
@@ -113,7 +120,7 @@ const caseTemplate = (props, location) => {
           </Box>
           <Box>
             <Heading
-              fontFamily="montas-semibold"
+              variant="pri" 
               as="h3"
               size="3xl"
               mt={16}
@@ -130,7 +137,7 @@ const caseTemplate = (props, location) => {
           </Box>
           <Box>
             <Heading
-              fontFamily="montas-semibold"
+              variant="pri" 
               as="h3"
               size="3xl"
               mt={16}
@@ -144,16 +151,16 @@ const caseTemplate = (props, location) => {
           </Box>
           <Flex mt={10} justifyContent="space-between">
             {previous ? (
-              <LinkOne className="link-one light" to={previous.path}>
+              <Link variant="linkOne" as={GatsbyLink} to={previous.path}>
                 Last Case
-              </LinkOne>
+              </Link>
             ) : (
               <div></div>
             )}
             {next ? (
-              <LinkOne className="link-one light" to={next.path}>
+              <Link variant="linkOne" as={GatsbyLink} to={next.path}>
                 Next Case
-              </LinkOne>
+              </Link>
             ) : (
               <div></div>
             )}

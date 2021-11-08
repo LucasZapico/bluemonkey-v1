@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Container } from '@chakra-ui/react';
 import { Helmet } from 'react-helmet';
-import { Header, Footer, SEO, Banner, Cursor } from './index';
+import { Header, Footer, SEO, Banner, Cursor } from '../index';
 // import { Favicon } from '../images/ccg-mark_favicon.ico';
 
 const Layout = ({ children }) => {

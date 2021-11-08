@@ -3,6 +3,7 @@ import {
   Flex,
   Box,
   Heading,
+  Link,
   Button,
   useDisclosure,
   Drawer,
@@ -15,10 +16,10 @@ import {
   DrawerContent,
   DrawerCloseButton,
 } from '@chakra-ui/react';
-import { Link } from 'gatsby';
+import { Link as GatsbyLink } from 'gatsby';
 import { useSpring, animated as a } from 'react-spring';
 import { HamburgerIcon } from '@chakra-ui/icons';
-import Logo from '../assets/mark/blue-monkey-hanging.svg';
+import Logo from '../../assets/mark/blue-monkey-hanging.svg';
 
 const ROUTES = [
   {
@@ -71,33 +72,31 @@ const Header = ({ location }) => {
         p={4}
       >
         <Box>
-          <Link to="/">
-            <Flex alignItems="center">
+          
+            <Flex to="/" as={GatsbyLink} alignItems="center">
               <Logo width={50} height="auto" />
               <Heading as="h5" size="md" marginLeft={4} mb={0}>
                 Blue Monkey
               </Heading>
             </Flex>
-          </Link>
+          
         </Box>
 
         <Flex
           alignItems="center"
           overflow="hidden"
+          py={2}
           width={{ base: '0px', md: 'auto' }}
         >
           {ROUTES.map((r) => (
-            <Box
-              className={`link-one light ${false ? 'active' : ''}`}
-              pr={4}
+              <Link  
+              variant="linkOne"
+              px={4}              
               key={`route${r.id}`}
-              onClick={() => {
-                console.log('to');
-                // console.log('test', curPath?.test(r.to));
-              }}
-            >
-              <Link to={`${r.to}`}>{r.name}</Link>
-            </Box>
+              as={GatsbyLink} 
+              to={`${r.to}`}>
+                {r.name}
+              </Link>
           ))}
         </Flex>
 
@@ -139,7 +138,7 @@ const Header = ({ location }) => {
                 size="2xl"
                 onClick={() => setShow(!show)}
               >
-                <Link to={`${r.to}`}>{r.name}</Link>
+                <Link to="/" as={GatsbyLink} to={`${r.to}`}>{r.name}</Link>
               </Heading>
             </Box>
           ))}

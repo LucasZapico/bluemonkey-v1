@@ -12,7 +12,7 @@ import {
   AlertTitle,
   AlertDescription,
 } from '@chakra-ui/react';
-import { AnimatedFadeUpBox, LinkOne, LinkEmail, LinkPhone } from '../components';
+import { AnimatedFadeUpBox, LinkOne, LinkEmail, LinkPhone, SEO } from '../components';
 import { useSpring, animated as a } from 'react-spring';
 import MonkeyThree from '../assets/monkey_3.svg';
 import PropTypes from 'prop-types';
@@ -21,6 +21,12 @@ import { useForm } from 'react-hook-form';
 import { axiosLeads} from '../api/axios'
 
 const ContactPage = ({ data }) => {
+  const pageSeo = {
+    seoTitle: 'Connect',
+    seoDescription: "Have an idea? Or want hear more about our process? We would love to hear from you.",
+    seoKeywords: '',
+    seoImage: ''
+  }
   const ref = useRef();
   const [waiting, setWaiting] = useState(false);
   const [alertMessage, setAlertMessage] = useState({
@@ -135,6 +141,7 @@ const ContactPage = ({ data }) => {
         </a.div>
       </Box> */}
       <main>
+      <SEO title={pageSeo.seoTitle} description={pageSeo.seoDescription}/>
         <Box
           bgGradient="linear(to-br, brand.one , brand.two )"
           py={40}
@@ -169,7 +176,7 @@ const ContactPage = ({ data }) => {
                 </AnimatedFadeUpBox>
             </Container>
           </Box>
-          <Box color="brand.one" backgroundColor="brand.five" py={20}>
+          <Box color="brand.one" backgroundColor="brand.four" py={20}>
             <Container>
               <AnimatedFadeUpBox showOffset="300">
                 <Heading

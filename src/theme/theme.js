@@ -45,7 +45,7 @@ const theme = extendTheme({
         color: 'gray.600',
         fontSize: '18px',
         // color: 'brand.four',
-        fontWeight: 600,
+        fontWeight: 500,
         letterSpacing: '0.1rem',
         lineHeight: 1.5,
       },

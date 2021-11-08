@@ -11,8 +11,8 @@ if (process.env.STAGING) {
 
 module.exports = {
   siteMetadata: {
-    title: 'Blue Monkey Business Savy Web Design and Development',
-    titleTemplate: '%s · Blue Monkey Web Design and Development',
+    title: 'Blue Monkey Business | Savy Web Design and Development',
+    titleTemplate: 'Blue Monkey Web Design and Development | %s',
     description:
       'Premium frugal branding, design, development and business integration for small business and brands',
     author: '@bluemonkey',
@@ -45,7 +45,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-layout`,
       options: {
-        component: require.resolve(`./src/components/layout.js`),
+        component: require.resolve(`./src/components/base/layout.js`),
       },
     },
     {
@@ -66,7 +66,7 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
-          default: require.resolve(`./src/components/layout-cases.js`),
+          default: require.resolve(`./src/components/base/layout-cases.js`),
         },
         gatsbyRemarkPlugins: [
           {

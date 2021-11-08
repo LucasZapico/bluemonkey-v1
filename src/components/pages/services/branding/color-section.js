@@ -9,12 +9,12 @@ const ColorSection = () => {
         
         <Container maxW="container.xl" position="relative">
           <Box positions="absolute" top="0px" left="0px">
-            <Heading size="5xl" variant="pri">04</Heading>
+            <Heading size="5xl" variant="pri" opacity="0.6" mb={0}>04</Heading>
           </Box>
           <HalfByHalfSection
             left={
               <Box px={{ base: 2, md: 4 }}>
-              <Heading as="h5">
+              <Heading as="h3" variant="pri" size="2xl">
                 Color Palette Curation and Enhancement
               </Heading>
               <Text>
