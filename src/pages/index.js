@@ -26,8 +26,7 @@ import {
 import {
   AnimatedFadeUpBox,
   ScrollAniMonkey, 
-  LinkThree,
-  LinkOne,
+  SEO,
   BoxButton,
 } from '../components/index';
 import MonkeyOne from '../assets/monkey_1.svg';
@@ -37,6 +36,14 @@ import MonkeyTwo from '../assets/monkey_2.svg';
 import MonkeyThree from '../assets/monkey_3.svg';
 import GridPattern from '../assets/grid-patter.svg';
 import BackgroundIll from '../assets/background.svg'
+
+const pageSeo = {
+  seoTitle: 'Savy Digital Solutions',
+  seoDescription: 'We are a design and development agency that enable small businesses with design and digital solutions.',
+  seoKeywords: '',
+  seoImage: ''
+}
+
 
 const Flare = () => (
   <Box
@@ -111,7 +118,7 @@ const Hero = ({ data }) => (
         </ScrollAniMonkey>
       </Box>
       <Heading
-        as="h1"
+        as="h3"
         maxWidth="800px"
         variant="pri"
         size="5xl"
@@ -367,6 +374,7 @@ export const IndexPage = ({ data }) => {
 
   return (
     <div ref={ref}>
+      <SEO title={pageSeo.seoTitle} description={pageSeo.seoDescription}/>
       <Box minH="700px" position="relative" pt={28} zIndex="0">
       <Box zIndex="-1" position="absolute" top="0" left="0"   
       width={{base: 'auto', md: '100vw'}}

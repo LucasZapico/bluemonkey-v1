@@ -1,7 +1,7 @@
   import React, { useEffect } from 'react';
 import { Box } from '@chakra-ui/react';
 import { Helmet } from 'react-helmet';
-import { Header, Footer, SEO, Banner, Cursor } from './index';
+import { Header, Footer, SEO, Banner, Cursor } from '../index';
 
 
 const isBrowser = typeof window !== "undefined"

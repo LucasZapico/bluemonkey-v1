@@ -10,7 +10,7 @@ import {
   Grid,
   GridItem,
 } from '@chakra-ui/react';
-import { Layout, AnimatedFadeUpBox, LinkOne } from '../components';
+import { AnimatedFadeUpBox, SEO } from '../components';
 import { useSpring, animated as a } from 'react-spring';
 import { graphql, Link as GatsbyLink } from 'gatsby';
 import { StaticImage, GatsbyImage } from 'gatsby-plugin-image';
@@ -20,10 +20,18 @@ const cases = [1, 2, 3, 4, 5];
 
 const CasesPage = (props) => {
   const { data } = props;
-  console.log('cases', data);
+
+  
+    const pageSeo = {
+      seoTitle: 'Our Work',
+      seoDescription: "We partner with each of our customers to create personal, competitive, and, frugal solutions.",
+      seoKeywords: '',
+      seoImage: ''
+    }
 
   return (
     <main>
+      <SEO title={pageSeo.seoTitle} description={pageSeo.seoDescription}/>
       <Box zIndex="3">
         {/* <Container>
         <Heading

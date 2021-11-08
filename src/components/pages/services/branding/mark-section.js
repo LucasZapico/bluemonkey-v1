@@ -7,10 +7,13 @@ const MarkSection = () => {
   return (
     <Box backgroundColor="brand.zero" py={10}>
         <Container maxW="container.xl">
+        <Box positions="absolute" top="0px" left="0px">
+            <Heading size="5xl" variant="pri" opacity="0.6" mb={0}>02</Heading>
+          </Box>
           <HalfByHalfSection
             left={
               <Box px={{ base: 2, md: 4 }}>
-                <Heading as="h5" >
+                <Heading as="h3" variant="pri" size="2xl">
                   Mark and Logo Enhancement
                 </Heading>
                 <Text>

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { Container, Heading } from '@chakra-ui/react';
 import { useStaticQuery, graphql } from 'gatsby';
-import Layout from '../components/layout';
+
 
 const PrivacyPage = ({ children, location }) => {
   const { site } = useStaticQuery(graphql`

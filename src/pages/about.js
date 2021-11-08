@@ -1,12 +1,19 @@
 import React, { useEffect, useRef } from 'react';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { Box, Container, Heading, Link } from '@chakra-ui/react';
-import { AnimatedFadeUpBox, LinkOne } from '../components';
+import { AnimatedFadeUpBox, LinkOne, SEO } from '../components';
 import { Link as GatsbyLink } from 'gatsby'
 import { useSpring, animated as a } from 'react-spring';
 import MonkeyThree from '../assets/monkey_3.svg';
 
 const AboutPage = () => {
+  const pageSeo = {
+    seoTitle: 'About the Monkeys',
+    seoDescription: "We are a remote group of builders that come together to create effective digital solutions.",
+    seoKeywords: '',
+    seoImage: ''
+  }
+  
   const ref = useRef();
   const [{ offset }, set] = useSpring(() => ({ offset: 0 }));
   const calc = (o) => `translateY(${o * (0.2 * -1)}px)`;
@@ -41,6 +48,7 @@ const AboutPage = () => {
         </a.div>
       </Box>
       <main>
+      <SEO title={pageSeo.seoTitle} description={pageSeo.seoDescription}/>
         <Box
           bgGradient="linear(to-b, brand.one , brand.two )"
           py={40}

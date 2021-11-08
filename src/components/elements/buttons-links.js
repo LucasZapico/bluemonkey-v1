@@ -121,7 +121,7 @@ export const LinkEmail = ({ children, ...rest }) => {
   const toast = useToast()
   return (
     <Flex
-      
+      display="inline"
       alignItems="center"
       justifyContent="space-between"
       minWidth="180px"

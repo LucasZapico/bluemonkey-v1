@@ -24,11 +24,10 @@ const Services = () => {
   })
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      
+    const interval = setInterval(() => {
       set(state => (state + 1) % Words.length)
-    }, 4000);
-    return () => clearTimeout(timeout);
+    }, 2000);
+    return () => clearTimeout(interval);
     
   }, [])
 

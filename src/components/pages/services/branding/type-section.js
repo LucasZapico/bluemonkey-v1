@@ -8,12 +8,12 @@ const TypeSection = () => {
     <Box backgroundColor="brand.zero" py={10}>
         <Container maxW="container.xl" position="relative">
           <Box positions="absolute" top="0px" left="0px">
-            <Heading size="5xl" variant="pri">03</Heading>
+            <Heading size="5xl" variant="pri" mb={0} opacity="0.6">03</Heading>
           </Box>
           <HalfByHalfSection
             left={
               <Box px={{ base: 2, md: 4 }}>
-              <Heading  as="h5">
+              <Heading as="h3" variant="pri" size="2xl">
                 Typography Palette Curation and Enhancement
               </Heading>
               <Text >
