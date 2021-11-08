@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://bluemonkeymakes.netlify.app">
-    <img alt="blue monkey makes - mark" src="./src/assets/blue-monkey-hanging.svg" width="60" />
+    <img alt="blue monkey makes - mark" src="./src/assets/mark/blue-monkey-hanging.svg" width="60" />
   </a>
 </p>
 <h1 align="center">
