@@ -84,7 +84,7 @@ const CasesPage = (props) => {
               </AnimatedFadeUpBox>
               {data.cases.nodes.map((c, i) => (
                 <AnimatedFadeUpBox showOffset="300" as={GridItem}
-                  colStart={{base: 0, md: `${i % 2 === 0 ? 1 : 2}`}}
+                  colStart={{base: 1, md: `${i % 2 === 0 ? 1 : 2}`}}
                   colEnd={{ base: 5, md: `${i % 2 === 0 ? 4 : 5}` }}
                   mb={10}
                 >

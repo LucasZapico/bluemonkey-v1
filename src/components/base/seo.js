@@ -4,6 +4,12 @@ import { Helmet } from 'react-helmet';
 import { useLocation } from '@reach/router';
 import { useStaticQuery, graphql } from 'gatsby';
 
+const {
+  GATSBY_ENV, STAGING, 
+  NODE_ENV, GATSBY_GOOGLE_ANALYTIC_ID,
+} = process.env;
+
+
 const SEO = ({ title, description, image, article }) => {
   const { pathname } = useLocation();
   const { site } = useStaticQuery(query);
@@ -75,9 +81,6 @@ const SEO = ({ title, description, image, article }) => {
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Noto+Sans+JP&display=swap"
         rel="stylesheet"
       />
-            {/* <script type="application/ld+json">
-        {JSON.stringify(RichSnippetSchema)}
-      </script> */}
     </Helmet>
   );
 };

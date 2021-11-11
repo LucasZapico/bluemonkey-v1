@@ -3,7 +3,7 @@
   link: 'https://cowboycountrytitle.com/'
   subheader: Cowboy  Country Title
   date-created: 2021/09/13
-  last-modified: 2021/11/04 11:29:06
+  last-modified: 2021/11/10 12:57:34
   categories:
     - case
     - web-app
@@ -93,19 +93,19 @@
     title: >-
       Cowboy Country Title is a local focused title company
     summary: >-
-      They needed to give their web presence a modern facelift while maintaining a clean, professional tone. This included holding onto some original photography from the '90s.
+      They needed to modernize there web presence with clean design and a suit of services to ease the title process. 
     deliverables:
       - consulting
       - website design
       - development
     branding: >-
-      We modernized the brand by leveraging the well-established personality of their business. We used a deep navy to invoke feeling of trust and consistency pulling from their depth of experience and expertise. We used a warmer tope to offset the navy, symbolizing confidence and professionalism.
+      We created a custom brand drawing from their Cowboy identity. We choose natural colors and tones that you would see and feel looking over any Texas Wyoming ranch. We had a bit of fun curating custom cowboy iconography and images. 
     design: >-
-      After establishing a clear tone, we created an experience for a modern audience. We emphasized mobile, scalable content and ease of access to points of contact and proof of value.
+      After refining the brand, we created a polished experience conveying the business value proposition for new customers. We focuses on making our quality of life service and resources clear and easily accessible.
     development: >-
-      We used the fastest build framework on the web, Gatsby.js, to give a blazing fast experience for customers and higher ranking in search results.
+      We used the React.js for performance and scalability. Our customer build process allow for a fast, dynamic and extendable experience for customers and higher ranking in search results.
     business_integrations: >-
-      We set up Google Analytics and Netlify CMS to easily update content.
+      We set up a custom integration from our quality of life services to the business back office, thereby creating a more fluid workflow.  
 - title: Top Line Property Solutions
   path: /cases/topline-property-solutions/
   link: 'https://toplinepropertysolutions.com/'
